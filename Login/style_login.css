@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --color-vermelho: #BD2323;
+    --color-branco: #ffffff;
+    --color-fontecinza: #463B3B;
+    --color-cinzaclaro: #F8F8F8;
+
+    --shadow-caixagrande: 0px 5px 10px 2px rgba(0, 0, 0, 0.2);
+    --shadow-caixainput: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+* {
+    /* Remove margin e padding de todos os elementos do html */
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Outfit';
+
+    text-align: center;
+}
+
+/* Estilos de Textos */
+.login_title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 45px;
+}
+
+.login_subtitle {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+}
+
+/* Caixa de Inputs */
+.autenticacao_caixa {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 350px;
+    height: 500px;
+    font-family: 'Outfit';
+
+    background-color: var(--color-cinzaclaro);
+    box-shadow: var(--shadow-caixagrande);
+    border-radius: 20px;
+}
+
+.input_box {
+    box-shadow: var(--shadow-caixainput);
+    border: none;
+    border-radius: 5px;
+
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+}
+
+/**/
