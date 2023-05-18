@@ -42,13 +42,13 @@ body{
     background-size: cover;
     background-color: var(--color-cinzafundo);  
     font-family: 'Outfit'; 
-    color: var(--color-fontecinza)
+    color: var(--color-fontecinza);
 }
 
 #div_form_login{
     display: flex;
     justify-content: center;
-    margin-top: 6.5%;
+    margin-top: 10%;
 }
 
 #formulario{
@@ -248,6 +248,5 @@ a.none_inscrever:hover{
     color: var(--color-hover-fontecinza);
     transition: 0.4s;
 }
-
 
 

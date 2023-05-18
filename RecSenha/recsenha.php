@@ -1,8 +1,8 @@
 
 <?php
 
-if(isset($_GET['submit'])){
-    $email = (string)$_GET['email'];
+if(isset($_POST['submit'])){
+    $email = (string)$_POST['email'];
     
     }
 ?>

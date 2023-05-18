@@ -3,14 +3,12 @@
 ini_set('default_charset', 'utf-8');
 
 
-if(isset($_GET['submit'])){
-$senha = (string)$_GET['password'];
-$email = (string)$_GET['username'];
+if(isset($_POST['submit'])){
+$senha = (string)$_POST['password'];
+$email = (string)$_POST['username'];
 
 }
 ?>
-
-
 
 
 <!DOCTYPE html>
@@ -31,9 +29,9 @@ $email = (string)$_GET['username'];
                 <form method="post" id="formulario">
                     <h1 class="login_title">Login</h1>
                     <label class="login_subtitle">Usuário:</label>
-                    <input type="text" name="username" id="username" class="input_box" placeholder="|">
+                    <input type="text" name="username" id="username" class="input_box">
                     <label class="login_subtitle">Senha:</label>
-                    <input type="password" name="password" id="password" class="input_box" placeholder="|">
+                    <input type="password" name="password" id="password" class="input_box">
                     <div id="container_login">
                         <label class="container_conectado">Mantenha-me conectado
                             <input type="checkbox">

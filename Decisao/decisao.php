@@ -1,12 +1,12 @@
 
 <?php
 
-if(isset($_GET['empresa'])){
+if(isset($_POST['empresa'])){
 $tipo = "Empresa";
 
 }
 
-if(isset($_GET['cliente'])){
+if(isset($_POST['cliente'])){
     $tipo = "Cliente";
     
     }
