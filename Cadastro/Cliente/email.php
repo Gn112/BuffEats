@@ -20,18 +20,18 @@
                 <h1 class="cadastro_title">Cadastro</h1>
 
                 <div class="row">
-                    <label class="label">*Nome Completo:</label>
-                    <input type="text" name="full_name" id="full_name" class="input_box" required>
+                    <label class="label">*Email:</label>
+                    <input type="email" name="email" id="email" class="input_box" required>
                 </div>
 
                 <div class="row">
-                    <label class="label">*CPF:</label>
-                    <input type="text" name="cpf" id="cpf" class="input_box" required>
+                    <label class="label">*Senha:</label>
+                    <input type="password" name="senha" id="senha" class="input_box" required>
                 </div>
 
                 <div class="row">
-                    <label class="label">*Número Celular:</label>
-                    <input type="text" name="cell_number" id="confirmaSenha" class="input_box" required>
+                    <label class="label">*Confirmação de Senha:</label>
+                    <input type="password" name="confirmaSenha" id="confirmaSenha" class="input_box" required>
                 </div>
 
                 <div class="row">
