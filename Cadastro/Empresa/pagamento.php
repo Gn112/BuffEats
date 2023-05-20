@@ -27,14 +27,14 @@
 
                 <div class="row " id="dropdown">
                     <a href="#" class="opcao">
-                        <img src="img/card.png" alt="" srcset="">
-                        <span>Cartão de Crédito ou Débito</span>
+                        <img src="img/bank.png" alt="" srcset="">
+                        <span>Conta Bancária</span>
                     </a>
                 </div>
 
                 <div class="row " id="dropdown">
                     <a href="#" class="opcao">
-                        <img src="img/barcode.png" alt="" srcset="">
+                        <img src="img/bar.png" alt="" srcset="">
                         <span>PIX</span>
                     </a>
                 </div>

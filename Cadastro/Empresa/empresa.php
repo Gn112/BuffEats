@@ -20,18 +20,18 @@
                 <h1 class="main_title">Cadastro</h1>
 
                 <div class="row">
-                    <label class="label">*Nome Completo:</label>
-                    <input type="text" name="full_name" id="full_name" class="input_box" required>
+                    <label class="label">*Nome da Empresa:</label>
+                    <input type="text" name="nome_empresa" id="nome_empresa" class="input_box" required>
                 </div>
 
                 <div class="row">
-                    <label class="label">*CPF:</label>
-                    <input type="text" name="cpf" id="cpf" class="input_box" required>
+                    <label class="label">*CNPJ/CPF:</label>
+                    <input type="text" name="CNPJ/CPF" id="CNPJ/CPF" class="input_box" required>
                 </div>
 
                 <div class="row">
-                    <label class="label">*Número Celular:</label>
-                    <input type="text" name="numero_cel" id="numero_cel" class="input_box" required>
+                    <label class="label">*Número de Contato:</label>
+                    <input type="text" name="num_contato" id="num_contato" class="input_box" required>
                 </div>
 
                 <div class="row">
