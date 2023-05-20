@@ -31,7 +31,12 @@
 
                 <div class="row">
                     <label class="label">*Número Celular:</label>
-                    <input type="text" name="cell_number" id="confirmaSenha" class="input_box" required>
+                    <input type="text" name="numero_cel" id="numero_cel" class="input_box" required>
+                </div>
+
+                <div class="row">
+                    <label class="label">*CEP:</label>
+                    <input type="text" name="cep" id="cep" class="input_box" required>
                 </div>
 
                 <div class="row">
