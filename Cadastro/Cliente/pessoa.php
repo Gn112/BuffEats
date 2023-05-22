@@ -1,3 +1,6 @@
+<?php
+header('Content-Type: text/html; charset=utf-8');
+?>
 <!DOCTYPE html>
 <html lang="PT-br">
 
@@ -9,10 +12,27 @@
     <link rel="icon" type="image/x-icon">
     <link rel="stylesheet" href="mainCad.css">
 </head>
+<style>
+    html,
+    body {
+        margin: 0;
+        height: 100%;
+        /* Garante que o body e o html ocupem toda a tela */
+        color: var(--color-fontecinza);
+    }
 
+    body {
+        background-color: var(--color-cinzafundo);
+        background: url(img/onda_fundo.svg);
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: contain;
+    }
+</style>
 <body>
     <main>
-        <div> <!-- Essa div n faz nada (acho). Mas deixa ai -->
+        <div>
+            <!-- Essa div n faz nada (acho). Mas deixa ai -->
             <form method="post" id="formulario">
 
                 <div class="page_counter"></div>
@@ -40,11 +60,13 @@
                 </div>
 
                 <div class="row">
-                    <button type="submit" name="submit" class="button_submit">PRÓXIMO</button>
+                    <a href="main.php?dir=etapas&file=email" >
+                        <input type="button" class="button_submit" value="PRÓXIMO">
+                    </a>
                 </div>
 
                 <div class="row" id="return_button">
-                    <a href="#">VOLTAR</a>
+                    <a href="../../Decisao/decisao.php">VOLTAR</a>
                 </div>
 
             </form>
