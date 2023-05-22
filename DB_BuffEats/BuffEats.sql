@@ -1,5 +1,3 @@
--- FALTAM INDEX PARA AS FOREIGN KEYS
-
 create database BuffEats;
 use BuffEats;
 
