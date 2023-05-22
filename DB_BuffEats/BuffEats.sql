@@ -2,7 +2,7 @@ create database BuffEats;
 use BuffEats;
 
 create table CADASTRO_EMPRESA(
-id_empresa INT unsigned primary key  not null auto_increment,
+id_empresa INT primary key  not null auto_increment,
 nome_empresa VARCHAR(18) not null,
 CPF_CNPJ VARCHAR(18) not null,
 num_contato CHAR(15) not null,
@@ -13,7 +13,7 @@ formas_recebimento int not null
 )engine=innoDB;
 
 create table CADASTRO_CLIENTE(
-id_cliente INT unsigned primary key  not null auto_increment,
+id_cliente INT primary key  not null auto_increment,
 nome_completo VARCHAR(80),
 CPF CHAR(14) not null,
 celular CHAR(15) not null,
@@ -24,7 +24,7 @@ opcao_pagamento int not null
 )engine=InnoDB;
 
 create table MEIO_PAGAMENTO(
-id_meio INT unsigned primary key  not null auto_increment,
+id_meio INT primary key  not null auto_increment,
 fk_id_cliente INT unsigned not null,
 tipo VARCHAR(50) not null,
 detalhes VARCHAR(256) not null,
@@ -34,7 +34,7 @@ foreign key (fk_id_cliente) references CADASTRO_CLIENTE(id_cliente) on delete ca
 )engine=InnoDB;
 
 create table TRANSACAO(
-id_transacao INT unsigned primary key  not null auto_increment,
+id_transacao INT primary key  not null auto_increment,
 fk_id_cliente INT unsigned not null,
 fk_id_meio INT unsigned not null,
 fk_id_empresa INT unsigned not null,
