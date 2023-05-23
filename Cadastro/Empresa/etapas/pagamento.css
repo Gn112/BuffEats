@@ -1,0 +1,47 @@
+.subtitle_div {
+    margin: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.subtitle_div span {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.subtitle_div {
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.row_pagamento {
+    margin-bottom: 2%;
+    border-radius: 8px;
+}
+
+.data_cvv {
+    flex-direction: row;
+    gap: 10px;
+}
+
+.opcao {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+
+
+    width: 100%;
+    box-shadow: var(--shadow-caixainput);
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 10%;
+    padding: 12px;
+}
+
+.opcao span {
+    color: var(--color-fontecinza);
+    padding-left: 8px;
+    justify-self: center;
+}
