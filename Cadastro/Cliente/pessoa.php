@@ -27,7 +27,7 @@ function validaCPF($cpf, $callback)
     }
 
     // Verifica se foi informada uma sequência de digitos repetidos. Ex: 111.111.111-11
-    // $cpf = (int) $cpf;
+    $cpf = (int) $cpf;
     if (preg_match('/(\d)\1{10}/', $cpf)) {
         $retorno = false;
         $callback($retorno, "CPF");
@@ -56,7 +56,7 @@ function validaCPF($cpf, $callback)
 function validaCel($cel, $callback)
 {
     // Verificação de dígitos
-    $cel = preg_match("/^\([0-9]{2}\) 9\[0-9]{4}\-[0-9]{4}$/", $cel);
+    $cel = preg_match("/^\([0-9]{2}\) \9[0-9]{4}\-[0-9]{4}$/", $cel);
 
     if ($cel == false){
         $callback($cel, "Celular");
@@ -66,22 +66,29 @@ function validaCel($cel, $callback)
 
 // FUNÇÃO FEEDBACK
 $Feedback = function ($retorno, $tipo) {
+    // echo "<script type='javascript'>alert('CPF inválido');";
+    // if ($retorno == false) {
+    // echo "<script>alert('" . $tipo . " inválido');";
+    // echo "javascript:window.location='pessoa.php';</script>";
+    // } 
     if ($retorno == false) {
-        // echo "<script type='javascript'>alert('CPF inválido');";
-        echo "<script>alert('" . $tipo . " inválido');";
-        echo "javascript:window.location='cadastroCli.php';</script>";
+        echo(" <script type='javascript'> document.getElementById('teste').style.opacity = '1'; </script>");
+    } else{
+        echo(" <script type='javascript'> document.getElementById('teste').style.opacity = '0'; </script>");
     }
 };
 
 if (isset($_POST['submit'])) {
-    // $nomeCliente = (string)$_POST['nomeCompleto'];
+    // $nomeCliente = (string)$_POST['full_name'];
     $cpfCliente = (string) $_POST['cpf'];
-    $celCliente  = (string) $_POST['numCelular'];
+    $celCliente  = (string) $_POST['numero_cel'];
     // $cepCliente = (string)$_POST['cep'];
 
     validaCPF($cpfCliente, $Feedback);
+
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="PT-br">
 
@@ -109,6 +116,8 @@ if (isset($_POST['submit'])) {
         background-position: bottom;
         background-size: contain;
     }
+        
+    
 </style>
 <body>
     <main>
@@ -128,6 +137,8 @@ if (isset($_POST['submit'])) {
                 <div class="row">
                     <label class="label">*CPF:</label>
                     <input type="text" name="cpf" id="cpf" class="input_box" required>
+                    <!-- Feedback de erro -->
+                   <span id="teste" style="opacity: 0; position:absolute; margin-left: 50px; color:red;">CPF inválido!</span>
                 </div>
 
                 <div class="row">
@@ -142,7 +153,7 @@ if (isset($_POST['submit'])) {
 
                 <div class="row">
                     <a href="main.php?dir=etapas&file=email" >
-                        <input type="button" class="button_submit" value="PRÓXIMO">
+                    <button  type="submit" class="button_submit" name="submit">PRÓXIMO</button>
                     </a>
                 </div>
 
