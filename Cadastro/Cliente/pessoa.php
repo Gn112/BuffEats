@@ -72,9 +72,10 @@ $Feedback = function ($retorno, $tipo) {
     // echo "javascript:window.location='pessoa.php';</script>";
     // } 
     if ($retorno == false) {
-        echo(" <script type='javascript'> document.getElementById('teste').style.opacity = '1'; </script>");
+        echo('<script type="javascript"> document.getElementById("teste").style.opacity = "1"; </script>');
+        echo("teste");
     } else{
-        echo(" <script type='javascript'> document.getElementById('teste').style.opacity = '0'; </script>");
+        echo('<script type="javascript"> document.getElementById("teste").style.opacity = "0"; </script>');
     }
 };
 
@@ -164,6 +165,9 @@ if (isset($_POST['submit'])) {
             </form>
         </div>
     </main>
+    <!-- <script src="main.js"></script> -->
+    <!-- FUNÇÃO JS CHAMANDO A FUNÇÃO DO PHP: https://pt.stackoverflow.com/questions/369414/executar-uma-fun%C3%A7%C3%A3o-php-com-o-javascript -->
+    <!-- LINK PHP AQUI: https://webtalkhub.com/how-to-link-external-php-file-to-html/ -->
 </body>
 
 </html>
