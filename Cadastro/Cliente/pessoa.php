@@ -13,6 +13,7 @@ require("functions.php");
     <title>BuffEats | Login</title>
     <link rel="icon" type="image/x-icon">
     <link rel="stylesheet" href="mainCad.css">
+    <!-- <script> window.location.reload() </script> -->
 
 </head>
 <style>

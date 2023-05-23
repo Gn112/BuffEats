@@ -79,10 +79,16 @@ $Feedback = function ($retorno, $tipo) {
 };
 
 if (isset($_POST['submit'])) {
-    // $nomeCliente = (string)$_POST['full_name'];
+    $nomeCliente = (string)$_POST['full_name'];
     $cpfCliente = (string) $_POST['cpf'];
     $celCliente  = (string) $_POST['numero_cel'];
-    // $cepCliente = (string)$_POST['cep'];
+    $cepCliente = (string)$_POST['cep'];
+
+
+    $cookie_nomeCliente = "Nome do cliente";
+    $cookie_value = $nomeCliente;
+
+    setcookie((string) $cookie_nomeCliente, $cookie_value, 3600, '/Cliente/');
 
 
 }
