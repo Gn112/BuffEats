@@ -14,7 +14,7 @@ formas_recebimento int not null
 
 create table CADASTRO_CLIENTE(
 id_cliente INT primary key  not null auto_increment,
-nome_completo VARCHAR(80),
+nome_completo VARCHAR(80) not null,
 CPF CHAR(14) not null,
 celular CHAR(15) not null,
 CEP CHAR(9) not null,
