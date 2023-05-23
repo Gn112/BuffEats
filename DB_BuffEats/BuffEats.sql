@@ -25,7 +25,7 @@ opcao_pagamento int not null
 
 create table MEIO_PAGAMENTO(
 id_meio INT primary key  not null auto_increment,
-fk_id_cliente INT unsigned not null,
+fk_id_cliente INT not null,
 tipo VARCHAR(50) not null,
 detalhes VARCHAR(256) not null,
 index i2(fk_id_cliente),
@@ -35,9 +35,9 @@ foreign key (fk_id_cliente) references CADASTRO_CLIENTE(id_cliente) on delete ca
 
 create table TRANSACAO(
 id_transacao INT primary key  not null auto_increment,
-fk_id_cliente INT unsigned not null,
-fk_id_meio INT unsigned not null,
-fk_id_empresa INT unsigned not null,
+fk_id_cliente INT not null,
+fk_id_meio INT not null,
+fk_id_empresa INT not null,
 valor DECIMAL(6,2) unsigned not null,
 `data` DATETIME not null,
 status VARCHAR(25) not null,
