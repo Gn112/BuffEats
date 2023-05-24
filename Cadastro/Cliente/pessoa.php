@@ -1,5 +1,30 @@
 <?php
 require("functions.php");
+
+
+header('Content-Type: text/html; charset=utf-8');
+ini_set('default_charset', 'utf-8');
+
+$nomeCliente = "";
+$cpfCliente = "";
+$celCliente = "";
+$cepCliente = "";
+
+if (isset($_POST['submit'])) {
+    $nomeCliente = (string) $_POST['full_name'];
+    $cpfCliente = (string) $_POST['cpf'];
+    $celCliente = (string) $_POST['numero_cel'];
+    $cepCliente = (string) $_POST['cep'];
+
+
+    // TENTATIVA DE USO DE COOKIES 
+    // $cookie_nomeCliente = "Nome do cliente";
+    // $cookie_value = $nomeCliente;
+
+    // setcookie((string) $cookie_nomeCliente, $cookie_value, 3600, '/Cliente/');
+}
+
+
 ?>
 
 
@@ -32,9 +57,8 @@ require("functions.php");
         background-position: bottom;
         background-size: contain;
     }
-        
-    
 </style>
+
 <body>
     <main>
         <div>
@@ -48,6 +72,12 @@ require("functions.php");
                 <div class="row">
                     <label class="label">*Nome Completo:</label>
                     <input type="text" name="full_name" id="full_name" class="input_box" required>
+                    <!-- Feedback de erro -->
+                    <?php
+                    if (isset($_POST['submit'])) {
+                        validaNome($nomeCliente, $Feedback);
+                    }
+                    ?>
                 </div>
 
                 <div class="row">
@@ -64,16 +94,28 @@ require("functions.php");
                 <div class="row">
                     <label class="label">*Número Celular:</label>
                     <input type="text" name="numero_cel" id="numero_cel" class="input_box" required>
+                    <!-- Feedback de erro -->
+                    <?php
+                    if (isset($_POST['submit'])) {
+                        validaCel($celCliente, $Feedback);
+                    }
+                    ?>
                 </div>
 
                 <div class="row">
                     <label class="label">*CEP:</label>
                     <input type="text" name="cep" id="cep" class="input_box" required>
+                    <!-- Feedback de erro -->
+                    <?php
+                    if (isset($_POST['submit'])) {
+                        validaCep($cepCliente, $Feedback);
+                    }
+                    ?>
                 </div>
 
                 <div class="row">
-                    <a href="main.php?dir=etapas&file=email" >
-                    <button  type="submit" class="button_submit" name="submit">PRÓXIMO</button>
+                    <a href="main.php?dir=etapas&file=email">
+                        <button type="submit" class="button_submit" name="submit">PRÓXIMO</button>
                     </a>
                 </div>
 

@@ -1,15 +1,24 @@
 <?php
-header('Content-Type: text/html; charset=utf-8');
-ini_set('default_charset', 'utf-8');
 
 // CONSULTA: https://www.alura.com.br/artigos/php-validacao-dados-nacionais-br
 
-// FUNÇÃO REMOVER CARACTERES ESPECIAIS
-function clean($string)
-{
-    $string = str_replace(' ', '-', $string); // Substitui todos os espaços com hífens.
+// FUNÇÃO VALIDAR NOME
+function validaNome($name, $callback){
+    if(strlen($name)>80){
+        $retorno = false;
+        $callback($retorno, "Excedendo 80 caracteres. Nome");
+    }
 
-    $string = preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Remove caracteres especiais.
+    if (!preg_match('/^[a-zA-Z0-9]+/', $name)){
+        $retorno = false;
+        $callback($retorno, "Caracteres especiais detectados. Nome");
+
+    }
+    ucwords($name);
+    $retorno = true;
+    $callback($retorno, "Caracteres especiais detectados. Nome");
+
+
 }
 
 // FUNÇÃO VALIDAR CPF
@@ -27,7 +36,7 @@ function validaCPF($cpf, $callback)
     }
 
     // Verifica se foi informada uma sequência de digitos repetidos. Ex: 111.111.111-11
-    $cpf = (int) $cpf;
+        $cpf = (int) $cpf;
     if (preg_match('/(\d)\1{10}/', $cpf)) {
         $retorno = false;
         $callback($retorno, "CPF");
@@ -35,17 +44,17 @@ function validaCPF($cpf, $callback)
     }
 
     // Faz o calculo para validar o CPF
-    for ($t = 9; $t < 11; $t++) {
-        for ($d = 0, $c = 0; $c < $t; $c++) {
-            $d += $cpf[$c] * (($t + 1) - $c);
-        }
-        $d = ((10 * $d) % 11) % 10;
-        if ($cpf[$c] != $d) {
-            $retorno = false;
-            $callback($retorno, "CPF");
-            // return false;
-        }
-    }
+    // for ($t = 9; $t < 11; $t++) {
+    //     for ($d = 0, $c = 0; $c < $t; $c++) {
+    //             $d += $cpf[$c] * (($t + 1) - $c);
+    //     }
+    //     $d = ((10 * $d) % 11) % 10;
+    //     if ($cpf[$c] != $d) {
+    //         $retorno = false;
+    //         $callback($retorno, "CPF");
+    //         // return false;
+    //     }
+    // }
     $retorno = true;
     // return true;
 
@@ -56,7 +65,7 @@ function validaCPF($cpf, $callback)
 function validaCel($cel, $callback)
 {
     // Verificação de dígitos
-    $cel = preg_match("/^\([0-9]{2}\) \9[0-9]{4}\-[0-9]{4}$/", $cel);
+    $cel = preg_match("/^\([0-9]{2}\) 9?[0-9]{4}\-[0-9]{4}$/", $cel);
 
     if ($cel == false){
         $callback($cel, "Celular");
@@ -64,13 +73,19 @@ function validaCel($cel, $callback)
     
 }
 
+// FUNÇÃO VALIDAR CEP
+function validaCep($cep, $callback){
+    $cep = preg_match("/^[0-9]{5}\-[0-9]{3}$/", $cep);
+
+    if ($cep == false){
+        $callback($cep, "Cep");
+    }
+    
+
+}
+
 // FUNÇÃO FEEDBACK
 $Feedback = function ($retorno, $tipo) {
-    // echo "<script type='javascript'>alert('CPF inválido');";
-    // if ($retorno == false) {
-    // echo "<script>alert('" . $tipo . " inválido');";
-    // echo "javascript:window.location='pessoa.php';</script>";
-    // } 
     if ($retorno == false) {
         echo('<span id="teste" style="opacity: 1; position:absolute; margin-left: 50px; color:red;"> '.$tipo.' inválido!</span>');
     } else{
@@ -78,18 +93,6 @@ $Feedback = function ($retorno, $tipo) {
     }
 };
 
-if (isset($_POST['submit'])) {
-    $nomeCliente = (string)$_POST['full_name'];
-    $cpfCliente = (string) $_POST['cpf'];
-    $celCliente  = (string) $_POST['numero_cel'];
-    $cepCliente = (string)$_POST['cep'];
 
 
-    $cookie_nomeCliente = "Nome do cliente";
-    $cookie_value = $nomeCliente;
-
-    setcookie((string) $cookie_nomeCliente, $cookie_value, 3600, '/Cliente/');
-
-
-}
 ?>
