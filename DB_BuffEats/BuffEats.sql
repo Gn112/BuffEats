@@ -2,7 +2,7 @@ create database BuffEats;
 use BuffEats;
 
 create table CADASTRO_EMPRESA(
-id_empresa INT primary key  not null auto_increment,
+id_empresa INT primary key not null auto_increment,
 nome_empresa VARCHAR(18) not null,
 CPF_CNPJ VARCHAR(18) not null,
 num_contato CHAR(15) not null,
@@ -20,7 +20,7 @@ celular CHAR(15) not null,
 CEP CHAR(9) not null,
 email VARCHAR(256) not null,
 senha VARCHAR(25) not null,
-opcao_pagamento int not null
+opcao_pagamento int
 )engine=InnoDB;
 
 create table MEIO_PAGAMENTO(
