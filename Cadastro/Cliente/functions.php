@@ -7,14 +7,13 @@ function validaNome($name, $callback){
     if(strlen($name)>80){
         $retorno = false;
         $callback($retorno, "Excedendo 80 caracteres. Nome");
-    }
+    } else
 
     if (!preg_match('/^[a-zA-Z0-9]+/', $name)){
         $retorno = false;
         $callback($retorno, "Caracteres especiais detectados. Nome");
 
     }
-    ucwords($name);
     $retorno = true;
     $callback($retorno, "Caracteres especiais detectados. Nome");
 
@@ -36,7 +35,7 @@ function validaCPF($cpf, $callback)
     }
 
     // Verifica se foi informada uma sequência de digitos repetidos. Ex: 111.111.111-11
-        $cpf = (int) $cpf;
+        // $cpf = (int) $cpf;
     if (preg_match('/(\d)\1{10}/', $cpf)) {
         $retorno = false;
         $callback($retorno, "CPF");
@@ -44,17 +43,17 @@ function validaCPF($cpf, $callback)
     }
 
     // Faz o calculo para validar o CPF
-    // for ($t = 9; $t < 11; $t++) {
-    //     for ($d = 0, $c = 0; $c < $t; $c++) {
-    //             $d += $cpf[$c] * (($t + 1) - $c);
-    //     }
-    //     $d = ((10 * $d) % 11) % 10;
-    //     if ($cpf[$c] != $d) {
-    //         $retorno = false;
-    //         $callback($retorno, "CPF");
-    //         // return false;
-    //     }
-    // }
+    for ($t = 9; $t < 11; $t++) {
+        for ($d = 0, $c = 0; $c < $t; $c++) {
+                $d += $cpf[$c] * (($t + 1) - $c);
+        }
+        $d = ((10 * $d) % 11) % 10;
+        if ($cpf[$c] != $d) {
+            $retorno = false;
+            $callback($retorno, "CPF");
+            // return false;
+        }
+    }
     $retorno = true;
     // return true;
 
@@ -75,14 +74,34 @@ function validaCel($cel, $callback)
 
 // FUNÇÃO VALIDAR CEP
 function validaCep($cep, $callback){
-    $cep = preg_match("/^[0-9]{5}\-[0-9]{3}$/", $cep);
 
-    if ($cep == false){
+    if(!preg_match("/^[0-9]{5}\-[0-9]{3}$/", $cep) ){
+        $retorno = false;
         $callback($cep, "Cep");
+    }
+
+    if (preg_match('/(\d)\1{3}/', $cep)) {
+        $retorno = false;
+        $callback($retorno, "Cep");
     }
     
 
 }
+
+// FUNÇÃO VERIFICAR TAMANHO DO EMAIL
+function validaEmail($email, $callback){
+    if(strlen($email)>256){
+        $retorno = false;
+        $callback($retorno, "Excedendo 256 caracteres. Email");
+    } else {
+    $retorno = true;
+    $callback($retorno, "");
+    }
+
+}
+
+// FUNÇÃO DE VERIFICAR TAMANHOS
+
 
 // FUNÇÃO FEEDBACK
 $Feedback = function ($retorno, $tipo) {

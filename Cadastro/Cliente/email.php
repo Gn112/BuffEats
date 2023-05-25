@@ -1,3 +1,23 @@
+<?php
+require("functions.php");
+
+
+header('Content-Type: text/html; charset=utf-8');
+ini_set('default_charset', 'utf-8');
+
+$emailCliente = "";
+$senhaCliente = "";
+$confirmSenhaCliente = "";
+
+if (isset($_POST['submit'])) {
+    $emailCliente = strtolower((string) $_POST['email']);;
+    $senhaCliente = (string) $_POST['senha'];
+    $confirmSenhaCliente = (string) $_POST['confirma_senha'];    
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="PT-br">
 
@@ -21,17 +41,17 @@
 
                 <div class="row">
                     <label class="label">*Email:</label>
-                    <input type="email" name="email" id="email" class="input_box" required>
+                    <input type="email" name="email" id="email" class="input_box" required value=<?= $emailCliente?>>
                 </div>
 
                 <div class="row">
                     <label class="label">*Senha:</label>
-                    <input type="password" name="senha" id="senha" class="input_box" required>
+                    <input type="password" name="senha" id="senha" class="input_box" required value=<?= $senhaCliente?>>
                 </div>
 
                 <div class="row">
                     <label class="label">*Confirmação de Senha:</label>
-                    <input type="password" name="confirmaSenha" id="confirmaSenha" class="input_box" required>
+                    <input type="password" name="confirma_senha" id="confirmaSenha" class="input_box" required value=<?= $confirmSenhaCliente?>>
                 </div>
 
                 <div class="row">

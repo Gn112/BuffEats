@@ -11,9 +11,9 @@ $celCliente = "";
 $cepCliente = "";
 
 if (isset($_POST['submit'])) {
-    $nomeCliente = (string) $_POST['full_name'];
+    $nomeCliente = ucwords((string) $_POST["full_name"]);
     $cpfCliente = (string) $_POST['cpf'];
-    $celCliente = (string) $_POST['numero_cel'];
+    $celCliente = (string) $_POST["numero_cel"];
     $cepCliente = (string) $_POST['cep'];
 
 
@@ -71,18 +71,21 @@ if (isset($_POST['submit'])) {
 
                 <div class="row">
                     <label class="label">*Nome Completo:</label>
-                    <input type="text" name="full_name" id="full_name" class="input_box" required>
+                    <input type="text" name="full_name" placeholder="Ana Júlia" id="full_name" class="input_box" required value="<?= $nomeCliente ?>" >
                     <!-- Feedback de erro -->
                     <?php
                     if (isset($_POST['submit'])) {
                         validaNome($nomeCliente, $Feedback);
                     }
+
+                    print_r($_POST);
+                    echo($nomeCliente);
                     ?>
                 </div>
 
                 <div class="row">
                     <label class="label">*CPF:</label>
-                    <input type="text" name="cpf" id="cpf" class="input_box" required>
+                    <input onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false ;" placeholder="999.999.999-11" oninput=mascara_cpf() maxlegth="14" type="text" name="cpf" id="cpf" class="input_box" required value=<?= $cpfCliente ?>>
                     <!-- Feedback de erro -->
                     <?php
                     if (isset($_POST['submit'])) {
@@ -93,7 +96,7 @@ if (isset($_POST['submit'])) {
 
                 <div class="row">
                     <label class="label">*Número Celular:</label>
-                    <input type="text" name="numero_cel" id="numero_cel" class="input_box" required>
+                    <input onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;"  placeholder="(31) 99999-9999" type="text" oninput=mascara_telefone() maxlegth="15" name="numero_cel" id="numero_cel" class="input_box" required value="<?= $celCliente ?>">
                     <!-- Feedback de erro -->
                     <?php
                     if (isset($_POST['submit'])) {
@@ -104,7 +107,7 @@ if (isset($_POST['submit'])) {
 
                 <div class="row">
                     <label class="label">*CEP:</label>
-                    <input type="text" name="cep" id="cep" class="input_box" required>
+                    <input onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;"  placeholder="99999-911" type="text" oninput=mascara_cep() maxlegth="9" name="cep" id="cep" class="input_box" required value=<?= $cepCliente ?>>
                     <!-- Feedback de erro -->
                     <?php
                     if (isset($_POST['submit'])) {
@@ -125,7 +128,7 @@ if (isset($_POST['submit'])) {
             </form>
         </div>
     </main>
-    <!-- <script src="main.js"></script> -->
+    <script src="mascaras.js"></script>
     <!-- FUNÇÃO JS CHAMANDO A FUNÇÃO DO PHP: https://pt.stackoverflow.com/questions/369414/executar-uma-fun%C3%A7%C3%A3o-php-com-o-javascript -->
 </body>
 
