@@ -29,6 +29,8 @@ header('Content-Type: text/html; charset=utf-8');
         background-size: contain;
     }
 </style>
+<?php
+        print_r($_POST); ?>
 <body>
     <main>
         <div class="formulario">

@@ -29,20 +29,18 @@ $senha = $_POST["senha"];
 
 // Dado temporário até a implentação do sistema de pagamento
 $opcao = 1;
+
+print_r($_POST);
+
 ?>
 
 <body>
     <main>
-        <div>
-            <form method="post" id="formulario">
+        <div class="formulario">
+            <form method="post">
 
                 <h1 class="main_title">Cadastro</h1>
-                <div>
-                    <?php
-                    print_r($_POST);
 
-                    ?>
-                </div>
 
                 <!-- Inputs que guardam as varíaveis -->
 
@@ -91,12 +89,13 @@ $opcao = 1;
                 <input type="hidden" name="senha" value="<?php echo $senha; ?>">
 
 
-                    <button type="submit" id="return_button">PRÓXIMO</button>
+                <div class="row return_button">
+                    <button type="submit">VOLTAR</button>
+                </div>
             </form>
 
 
 
-        </div>
         </div>
     </main>
 </body>

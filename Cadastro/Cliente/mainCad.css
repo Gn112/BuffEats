@@ -124,10 +124,25 @@ main {
     color: var(--color-fontecinza);
     font-weight: 500;
     font-size: 14px;
+    border: none;
 }
 
 
 .return_button:hover {
     color: var(--color-hover-fontecinza);
     transition: 0.4s;
+}
+
+.return_button a{
+    font-weight: 500;
+    font-size: 14px;
+    border: none;
+    color: var(--color-fontecinza);
+ }
+
+.return_button button {
+    font-weight: 500;
+    font-size: 14px;
+    border: none;
+    color: var(--color-fontecinza);
 }
