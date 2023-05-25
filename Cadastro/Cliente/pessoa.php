@@ -32,10 +32,9 @@ header('Content-Type: text/html; charset=utf-8');
 <body>
     <main>
         <div>
-            <!-- Essa div n faz nada (acho). Mas deixa ai -->
-            <form method="post" id="formulario">
+            <form action="etapas/email.php" method="post" id="formulario">
 
-                <div class="page_counter"></div>
+                
 
                 <h1 class="main_title">Cadastro</h1>
 
@@ -61,7 +60,7 @@ header('Content-Type: text/html; charset=utf-8');
 
                 <div class="row">
                     <a href="main.php?dir=etapas&file=email" >
-                        <input type="button" class="button_submit" value="PRÓXIMO">
+                        <button type="submit" class="button_submit">PRÓXIMO</button>
                     </a>
                 </div>
 

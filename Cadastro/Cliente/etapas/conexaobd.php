@@ -27,22 +27,24 @@ if (isset($_POST['cadastrar'])) {
     $opcao = (int)$_POST["opcao"];
 
     // Insira os dados no banco de dados
-    $sql = "INSERT INTO CADASTRO_CLIENTE (id_cliente, nome_completo, CPF, celular, CEP, email, senha, opcao_pagamento) VALUES (default,'$nome', '$CPF', '$celular', '$cep', '$email', '$senha', '$opcao')";
-    if ($conn->query($sql) === TRUE) {
-        echo "Dados inseridos com sucesso.";
-        $full_name = " ";
-        $cpf = " ";
-        $numero_cel = " ";
-        $cep = " ";
-        $email = " ";
-        $senha = " ";
-        $opcao = 0;
+    $sql = "INSERT INTO CADASTRO_CLIENTE (id_cliente, nome_completo, CPF, celular, CEP, email, senha, opcao_pagamento) 
+    VALUES (default,'$full_name', '$cpf', '$numero_cel', '$cep', '$email', '$senha', '$opcao')";
 
-    } else {
-        echo "Erro ao inserir os dados: " . $conn->error;
-    }
+if (mysqli_query($conn, $sql)) {
+    echo "Dados inseridos com sucesso.";
+    $full_name = "";
+    $cpf = "";
+    $numero_cel = "";
+    $cep = "";
+    $email = "";
+    $senha = "";
+    $opcao = 0;
+} else {
+    echo "Erro ao inserir os dados: " . mysqli_error($conn);
 }
-	
+}
+
 	
 mysqli_close($conn);
+
 ?>
