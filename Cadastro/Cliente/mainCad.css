@@ -72,18 +72,17 @@ main {
     font-weight: 400;
 }
 
-#formulario {
+.formulario {
     width: clamp(200px, 350px, 350px); /* clamp(tamanhos Mínimo, Preferível(médio) , Máximo) */
     border-radius: 15px;
-    justify-content: center;
-    font-family: 'Outfit';
+    
     padding: 50px 30px;
     background-color: var(--color-cinzaclaro);
     box-shadow: var(--shadow-caixagrande);
 
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
 }
 
@@ -119,19 +118,16 @@ main {
     transition: 0.4s;
 }
 
-#return_button {
+.return_button {
     align-items: center;
     padding: 5% 0% 0 0;
-}
-
-#return_button a {
     color: var(--color-fontecinza);
-    text-decoration: none;
     font-weight: 500;
     font-size: 14px;
 }
 
-#return_button a:hover {
+
+.return_button:hover {
     color: var(--color-hover-fontecinza);
     transition: 0.4s;
 }

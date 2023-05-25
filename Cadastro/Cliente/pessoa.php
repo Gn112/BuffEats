@@ -31,8 +31,8 @@ header('Content-Type: text/html; charset=utf-8');
 </style>
 <body>
     <main>
-        <div>
-            <form action="etapas/email.php" method="post" id="formulario">
+        <div class="formulario">
+            <form action="etapas/email.php" method="post">
 
                 <h1 class="main_title">Cadastro</h1>
 
@@ -60,7 +60,7 @@ header('Content-Type: text/html; charset=utf-8');
                         <button type="submit" class="button_submit">PRÓXIMO</button>
                 </div>
 
-                <div class="row" id="return_button">
+                <div class="row return_button">
                     <a href="../../Decisao/decisao.php">VOLTAR</a>
                 </div>
 

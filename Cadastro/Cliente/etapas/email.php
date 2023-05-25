@@ -8,7 +8,7 @@ header('Content-Type: text/html; charset=utf-8');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BuffEats | Login</title>
+    <title>BuffEats | Email</title>
     <link rel="icon" type="image/x-icon">
     <link rel="stylesheet" href="../mainCad.css">
 </head>
@@ -63,15 +63,15 @@ print_r($_POST);
 
             </form>
 
-            <form method="post" action="pessoa.php" class="row">
+            <form method="post" action="../pessoa.php" class="row">
 
                 <input type="hidden" name="full_name" value="<?php echo $full_name; ?>">
                 <input type="hidden" name="cpf" value="<?php echo $cpf; ?>">
                 <input type="hidden" name="numero_cel" value="<?php echo $numero_cel; ?>">
                 <input type="hidden" name="cep" value="<?php echo $cep; ?>">
 
-                <div id="return_button">
-                    <button type="submit" id="return_button">PRÓXIMO</button>
+                <div class="row return_button">
+                    <button type="submit">VOLTAR</button>
                 </div>
             </form>
         </div>
