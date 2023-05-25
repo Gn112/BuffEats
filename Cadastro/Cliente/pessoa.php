@@ -77,9 +77,6 @@ if (isset($_POST['submit'])) {
                     if (isset($_POST['submit'])) {
                         validaNome($nomeCliente, $Feedback);
                     }
-
-                    print_r($_POST);
-                    echo($nomeCliente);
                     ?>
                 </div>
 
@@ -102,6 +99,7 @@ if (isset($_POST['submit'])) {
                     if (isset($_POST['submit'])) {
                         validaCel($celCliente, $Feedback);
                     }
+                    echo ($nomeCliente);
                     ?>
                 </div>
 

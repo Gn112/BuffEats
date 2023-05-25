@@ -42,16 +42,32 @@ if (isset($_POST['submit'])) {
                 <div class="row">
                     <label class="label">*Email:</label>
                     <input type="email" name="email" id="email" class="input_box" required value=<?= $emailCliente?>>
+                    <!-- Feedback de erro -->
+                    <?php
+                    if (isset($_POST['submit'])) {
+                        validaEmail($emailCliente, $Feedback);
+                    }
+                    ?>
                 </div>
 
                 <div class="row">
                     <label class="label">*Senha:</label>
                     <input type="password" name="senha" id="senha" class="input_box" required value=<?= $senhaCliente?>>
+                    <?php
+                    if (isset($_POST['submit'])) {
+                        validaSenha($senhaCliente, $Feedback);
+                    }
+                    ?>
                 </div>
 
                 <div class="row">
                     <label class="label">*Confirmação de Senha:</label>
                     <input type="password" name="confirma_senha" id="confirmaSenha" class="input_box" required value=<?= $confirmSenhaCliente?>>
+                    <?php
+                    if (isset($_POST['submit'])) {
+                        confirmacaoSenha($confirmSenhaCliente,$senhaCliente, $Feedback);
+                    }
+                    ?>
                 </div>
 
                 <div class="row">

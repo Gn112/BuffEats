@@ -32,7 +32,7 @@ if(isset($_POST['cliente'])){
                     <a href="#"><img class="img_empresa" src="img/icon_empresa.png" name="empresa" width="225px"></a>
                 </div>
                 <div class="container_nomes">
-                    <h6 id="lbl_clientes"><a href="#" class="cadastro_id">Cliente</a></h6>
+                    <h6 id="lbl_clientes"><a href="../Cadastro/Cliente/pessoa.php" class="cadastro_id">Cliente</a></h6>
                     <h6><a href="#" class="cadastro_id">Empresa</a></h6>
                 </div>
                     <button type="submit" name="submit" class="button_submit">RETORNAR</button>

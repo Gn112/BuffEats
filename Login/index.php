@@ -40,7 +40,7 @@ $email = (string)$_POST['username'];
                         <label class="login_senha"><a href="#" class="none_senha"><B>Esqueceu a senha?</B></a></label>
                     </div>
                     <button type="submit" name="submit" class="button_submit">ENTRAR</button>
-                    <label class="login_inscrever"><a href="#" class="none_inscrever" >Não tem uma conta? <B>Inscreva-se!</B></a></label>
+                    <label class="login_inscrever"><a href="../Decisao/decisao.php" class="none_inscrever" >Não tem uma conta? <B>Inscreva-se!</B></a></label>
                     <div id="container_gmail">
                         <img src="img/Icon_Google.svg" width="25px">
                         <label class="login_gmail">LOGAR COM O GMAIL</label>

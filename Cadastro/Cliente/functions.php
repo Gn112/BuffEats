@@ -6,10 +6,10 @@
 function validaNome($name, $callback){
     if(strlen($name)>80){
         $retorno = false;
-        $callback($retorno, "Excedendo 80 caracteres. Nome");
+        $callback($retorno, "Caracteres excedidos. Nome");
     } else
 
-    if (!preg_match('/^[a-zA-Z0-9]+/', $name)){
+    if (!preg_match('/^[a-zA-Z0-9]$/', $name)){
         $retorno = false;
         $callback($retorno, "Caracteres especiais detectados. Nome");
 
@@ -35,7 +35,7 @@ function validaCPF($cpf, $callback)
     }
 
     // Verifica se foi informada uma sequência de digitos repetidos. Ex: 111.111.111-11
-        // $cpf = (int) $cpf;
+        $cpf = (int) $cpf;
     if (preg_match('/(\d)\1{10}/', $cpf)) {
         $retorno = false;
         $callback($retorno, "CPF");
@@ -92,7 +92,7 @@ function validaCep($cep, $callback){
 function validaEmail($email, $callback){
     if(strlen($email)>256){
         $retorno = false;
-        $callback($retorno, "Excedendo 256 caracteres. Email");
+        $callback($retorno, "Caracteres excedidos. Email");
     } else {
     $retorno = true;
     $callback($retorno, "");
@@ -100,17 +100,44 @@ function validaEmail($email, $callback){
 
 }
 
-// FUNÇÃO DE VERIFICAR TAMANHOS
+//FUNÇÃO VERIFICAR TAMANHO DA SENHA
+function validaSenha($email, $callback){
+    if(strlen($email)>25){
+        $retorno = false;
+        $callback($retorno, "Caracteres excedidos. Senha");
+    } else if(strlen($email)<8)
+    {
+        $retorno = false;
+        $callback($retorno, "Mínimo de caracteres: 8. Senha");
+    }
+    
+    else {
+    $retorno = true;
+    $callback($retorno, "");
+    }
+
+}
+
+// VERIFICAR SE SENHA ESTÁ IGUAL
+function confirmacaoSenha($confimSenha, $senha, $callback){
+    if($confimSenha != $senha){
+        echo('<span id="teste" style="opacity: 1; position:absolute; margin-left: 50px; color:red;"> As senhas não são iguais. </span>');
+    } else{
+        echo('<script type="javascript"> document.getElementById("teste").style.opacity = "0"; </script>');
+
+    }
+}
 
 
-// FUNÇÃO FEEDBACK
+// FUNÇÃO FEEDBACK INVÁLIDO
 $Feedback = function ($retorno, $tipo) {
     if ($retorno == false) {
-        echo('<span id="teste" style="opacity: 1; position:absolute; margin-left: 50px; color:red;"> '.$tipo.' inválido!</span>');
+        echo('<span id="teste" style="opacity: 1; margin-top:75px; position:absolute; color:red; font-size:13px;"> '.$tipo.' inválido/a!</span>');
     } else{
         echo('<script type="javascript"> document.getElementById("teste").style.opacity = "0"; </script>');
     }
 };
+
 
 
 
