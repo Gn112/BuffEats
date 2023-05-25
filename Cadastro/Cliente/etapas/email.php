@@ -17,6 +17,8 @@ $full_name = $_POST["full_name"];
 $cpf = $_POST["cpf"];
 $numero_cel = $_POST["numero_cel"];
 $cep = $_POST["cep"];
+
+print_r($_POST);
 ?>
 
 <body>
@@ -56,15 +58,21 @@ $cep = $_POST["cep"];
                 </div>
 
                 <div class="row">
-                    <a href="main.php?dir=etapas&file=pagamentos">
-                        <button type="submit" class="button_submit">PRÓXIMO</button>
-                    </a>
+                    <button type="submit" class="button_submit">PRÓXIMO</button>
                 </div>
 
-                <div class="row" id="return_button">
-                    <a href="#">VOLTAR</a>
-                </div>
+            </form>
 
+            <form method="post" action="pessoa.php" class="row">
+
+                <input type="hidden" name="full_name" value="<?php echo $full_name; ?>">
+                <input type="hidden" name="cpf" value="<?php echo $cpf; ?>">
+                <input type="hidden" name="numero_cel" value="<?php echo $numero_cel; ?>">
+                <input type="hidden" name="cep" value="<?php echo $cep; ?>">
+
+                <div id="return_button">
+                    <button type="submit" id="return_button">PRÓXIMO</button>
+                </div>
             </form>
         </div>
     </main>

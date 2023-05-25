@@ -34,8 +34,6 @@ header('Content-Type: text/html; charset=utf-8');
         <div>
             <form action="etapas/email.php" method="post" id="formulario">
 
-                
-
                 <h1 class="main_title">Cadastro</h1>
 
                 <div class="row">
@@ -59,9 +57,7 @@ header('Content-Type: text/html; charset=utf-8');
                 </div>
 
                 <div class="row">
-                    <a href="main.php?dir=etapas&file=email" >
                         <button type="submit" class="button_submit">PRÓXIMO</button>
-                    </a>
                 </div>
 
                 <div class="row" id="return_button">

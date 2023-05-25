@@ -1,15 +1,14 @@
-
 <?php
 
-if(isset($_POST['submit'])){
-    $email = (string)$_POST['email'];
-    
-    }
+if (isset($_POST['submit'])) {
+    $email = (string) $_POST['email'];
+}
 ?>
 
 
 <!DOCTYPE html>
 <html lang="PT-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,6 +17,7 @@ if(isset($_POST['submit'])){
     <link rel="icon" type="image/x-icon">
     <link rel="stylesheet" href="recsenha.css">
 </head>
+
 <body>
     <div class="container_recsenha">
         <div>
@@ -30,11 +30,14 @@ if(isset($_POST['submit'])){
                 <input type="email" name="email" id="email" class="input_box">
             </div>
             <div class="container_button">
-            <button type="submit" name="submit" class="button_enviar">ENVIAR</button>
+                <button type="submit" name="submit" class="button_enviar">ENVIAR</button>
             </div>
         </div>
-        <button type="submit" name="submit" class="button_submit">RETORNAR</button>
-        </div>
+        <a href="../Login/index.php">
+            <button type="submit" name="submit" class="button_submit">RETORNAR</button>
+        </a>
+    </div>
     </div>
 </body>
+
 </html>
