@@ -26,14 +26,8 @@ function mascara_telefone ()
                     document.getElementById("numero_cel").value=tel_formatado.slice(0,3)+")"+tel_formatado[3]
                 }
             }
-
-            if (tel_formatado[5]!=" ")
-            {
-                if(tel_formatado[5]!=undefined)
-                {
-                    document.getElementById("numero_cel").value=tel_formatado.slice(0,5)+" "+tel_formatado[5]
-                }
-            }
+           
+           
                 
             if (tel_formatado[10]!="-")
             {

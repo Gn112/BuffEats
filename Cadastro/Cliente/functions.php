@@ -8,15 +8,13 @@ function validaNome($name, $callback){
         $retorno = false;
         $callback($retorno, "Caracteres excedidos. Nome");
     } else
-
-    if (!preg_match('/^[a-zA-Z0-9]$/', $name)){
+    if (!preg_match('/^[a-zA-Z ]+$/', $name)){
         $retorno = false;
-        $callback($retorno, "Caracteres especiais detectados. Nome");
+        $callback($retorno, "Deve conter apenas letras. Nome");
 
-    }
+    } else{
     $retorno = true;
-    $callback($retorno, "Caracteres especiais detectados. Nome");
-
+    }
 
 }
 
@@ -31,7 +29,6 @@ function validaCPF($cpf, $callback)
     if (strlen($cpf) != 11) {
         $retorno = false;
         $callback($retorno, "CPF");
-        // return false;
     }
 
     // Verifica se foi informada uma sequência de digitos repetidos. Ex: 111.111.111-11
@@ -39,7 +36,6 @@ function validaCPF($cpf, $callback)
     if (preg_match('/(\d)\1{10}/', $cpf)) {
         $retorno = false;
         $callback($retorno, "CPF");
-        // return false;
     }
 
     // Faz o calculo para validar o CPF
@@ -51,18 +47,16 @@ function validaCPF($cpf, $callback)
         if ($cpf[$c] != $d) {
             $retorno = false;
             $callback($retorno, "CPF");
-            // return false;
         }
     }
     $retorno = true;
-    // return true;
 
     $callback($retorno, "CPF");
 }
 
 // FUNÇÃO VALIDAR CELULAR
 function validaCel($cel, $callback)
-{
+{   
     // Verificação de dígitos
     $cel = preg_match("/^\([0-9]{2}\) 9?[0-9]{4}\-[0-9]{4}$/", $cel);
 
@@ -121,7 +115,7 @@ function validaSenha($email, $callback){
 // VERIFICAR SE SENHA ESTÁ IGUAL
 function confirmacaoSenha($confimSenha, $senha, $callback){
     if($confimSenha != $senha){
-        echo('<span id="teste" style="opacity: 1; position:absolute; margin-left: 50px; color:red;"> As senhas não são iguais. </span>');
+        echo('<span id="teste" style="opacity: 1; margin-top:75px; position:absolute; color:red; font-size:13px;"> As senhas não são iguais. </span>');
     } else{
         echo('<script type="javascript"> document.getElementById("teste").style.opacity = "0"; </script>');
 

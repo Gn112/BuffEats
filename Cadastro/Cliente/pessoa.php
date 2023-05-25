@@ -99,7 +99,6 @@ if (isset($_POST['submit'])) {
                     if (isset($_POST['submit'])) {
                         validaCel($celCliente, $Feedback);
                     }
-                    echo ($nomeCliente);
                     ?>
                 </div>
 
