@@ -80,11 +80,11 @@ main {
 
 .img_icon {
     width: 250px;
+    transition: transform 0.2s ease-in-out;
 }
 
 .img_icon:hover {
-    transform: translateY(-5%);
-    transition: 0.5s;
+    transform: translateY(-6%);
     cursor: pointer;
 }
 
