@@ -13,17 +13,7 @@ header('Content-Type: text/html; charset=utf-8');
     <link rel="stylesheet" href="mainCad.css">
 </head>
 
-<!-- Por algum motivo divino esse código só funciona aqui. No .css simplesmente não funciona -->
-<style> 
-    main {
-        background-color: var(--color-cinzafundo);
-        background: url(img/onda_fundo.svg);
-        background-repeat: no-repeat;
-        background-position: bottom;
-        background-size: contain;
-    }
-</style>
-<!-- -- -->
+
 
 <?php
 print_r($_POST); ?>

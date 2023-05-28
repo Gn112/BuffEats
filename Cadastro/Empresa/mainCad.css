@@ -28,7 +28,7 @@
 html,
 body {
     height: 100%; /* Garante que o body e o html ocupem toda a tela */
-    
+    background-color: var(--color-cinzafundo);
     color: var(--color-fontecinza);
 }
 
@@ -39,6 +39,12 @@ main {
     justify-content: center;
     width: 100%;
     height: 100%;
+
+    background-color: var(--color-cinzafundo);
+    background: url(img/onda_fundo.svg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
 }
 
 /* Formata as "linhas" da caixa do forms */
