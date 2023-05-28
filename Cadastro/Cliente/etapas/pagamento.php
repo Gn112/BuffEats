@@ -15,16 +15,6 @@ require('conexaobd_cliente.php'); // Conexão com o arquivo de envia para o BD
     <link rel="stylesheet" href="pagamento.css">
 </head>
 
-<style>
-    main {
-        background-color: var(--color-cinzafundo);
-        background: url(../img/onda_fundo.svg);
-        background-repeat: no-repeat;
-        background-position: bottom;
-        background-size: contain;
-    }
-</style>
-
 <!-- Puxa informações do forms anterior -->
 <?php
 // Página Pessoa
@@ -49,7 +39,7 @@ print_r($_POST);
         <div class="formulario">
             <form method="post">
 
-                <h1 class="main_title">Cadastro</h1>
+                <h1 class="smaller_text">Verifique suas Informações</h1>
 
 
                 <!-- Inputs que guardam as varíaveis -->
@@ -61,6 +51,33 @@ print_r($_POST);
                 <input type="hidden" name="email" value="<?php echo $email; ?>">
                 <input type="hidden" name="senha" value="<?php echo $senha; ?>">
                 <input type="hidden" name="opcao" value="<?php echo $opcao; ?>">
+
+                <div id="container_summary">
+                    <div class="row">
+                        <h5 class="label">Nome Completo:</h6>
+                        <h6><?php echo $full_name; ?></h6>
+                    </div>
+
+                    <div class="row">
+                        <h5 class="label">CPF:</h6>
+                        <h6 class="label"><?php echo $cpf; ?></h6>
+                    </div>
+
+                    <div class="row">
+                        <h5 class="label">Número Celular:</h6>
+                        <h6><?php echo $numero_cel; ?></h6>
+                    </div>
+
+                    <div class="row">
+                        <h5 class="label">CEP:</h6>
+                        <h6><?php echo $cep; ?></h6>
+                    </div>
+
+                    <div class="row">
+                        <h5 class="label">Email:</h6>
+                        <h6><?php echo $email; ?></h6>
+                    </div>
+                </div>
 
                 <!-- <div class="row subtitle_div">
                     <span>+ Adicione uma forma de pagamento</span>

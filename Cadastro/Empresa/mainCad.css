@@ -64,6 +64,15 @@ main {
     color: var(--color-fontecinza);
 }
 
+.smaller_text {
+    text-align: center;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    margin-bottom: 9.5%;
+    color: var(--color-fontecinza);
+}
+
 .label {
     font-style: normal;
     font-weight: 300;
