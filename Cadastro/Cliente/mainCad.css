@@ -27,9 +27,8 @@
 
 html,
 body {
-    margin: 0;
     height: 100%; /* Garante que o body e o html ocupem toda a tela */
-    background-color: var(--color-cinzafundo);
+    
     color: var(--color-fontecinza);
 }
 

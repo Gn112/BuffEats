@@ -12,6 +12,17 @@ header('Content-Type: text/html; charset=utf-8');
     <link rel="icon" type="image/x-icon">
     <link rel="stylesheet" href="../mainCad.css">
 </head>
+
+<style>
+    main {
+        background-color: var(--color-cinzafundo);
+        background: url(../img/onda_fundo.svg);
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: contain;
+    }
+</style>
+
 <?php
 $full_name = $_POST["full_name"];
 $cpf = $_POST["cpf"];

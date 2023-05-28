@@ -8,15 +8,30 @@ header('Content-Type: text/html; charset=utf-8');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BuffEats | Login</title>
+    <title>BuffEats | Empresa</title>
     <link rel="icon" type="image/x-icon">
-    <link rel="stylesheet" href="mainEmpresa.css">
+    <link rel="stylesheet" href="mainCad.css">
 </head>
+
+<!-- Por algum motivo divino esse código só funciona aqui. No .css simplesmente não funciona -->
+<style> 
+    main {
+        background-color: var(--color-cinzafundo);
+        background: url(img/onda_fundo.svg);
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: contain;
+    }
+</style>
+<!-- -- -->
+
+<?php
+print_r($_POST); ?>
 
 <body>
     <main>
-        <div>
-            <form action="etapas/email.php" method="post" id="formulario">
+        <div class="formulario">
+            <form action="etapas/email.php" method="post">
 
                 <h1 class="main_title">Cadastro</h1>
 
@@ -26,8 +41,8 @@ header('Content-Type: text/html; charset=utf-8');
                 </div>
 
                 <div class="row">
-                    <label class="label">*CNPJ/CPF:</label>
-                    <input type="text" name="CPF_CNPJ" id="CPF_CNPJ" class="input_box" required>
+                    <label class="label">*CNPJ:</label>
+                    <input type="text" name="CNPJ" id="CNPJ" class="input_box" required>
                 </div>
 
                 <div class="row">
@@ -41,17 +56,14 @@ header('Content-Type: text/html; charset=utf-8');
                 </div>
 
                 <div class="row">
-                    <button type="submit" name="submit" class="button_submit">PRÓXIMO</button>
+                    <button type="submit" class="button_submit">PRÓXIMO</button>
                 </div>
 
-                <div class="row" id="return_button">
+                <div class="row return_button">
                     <a href="../../Decisao/decisao.php">VOLTAR</a>
                 </div>
-                </form>
 
-
-
-            
+            </form>
         </div>
     </main>
 </body>

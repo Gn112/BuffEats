@@ -8,20 +8,12 @@ header('Content-Type: text/html; charset=utf-8');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BuffEats | Login</title>
+    <title>BuffEats | Cliente</title>
     <link rel="icon" type="image/x-icon">
     <link rel="stylesheet" href="mainCad.css">
 </head>
 <style>
-    html,
-    body {
-        margin: 0;
-        height: 100%;
-        /* Garante que o body e o html ocupem toda a tela */
-        color: var(--color-fontecinza);
-    }
-
-    body {
+    main {
         background-color: var(--color-cinzafundo);
         background: url(img/onda_fundo.svg);
         background-repeat: no-repeat;
@@ -30,7 +22,8 @@ header('Content-Type: text/html; charset=utf-8');
     }
 </style>
 <?php
-        print_r($_POST); ?>
+print_r($_POST); ?>
+
 <body>
     <main>
         <div class="formulario">
@@ -59,7 +52,7 @@ header('Content-Type: text/html; charset=utf-8');
                 </div>
 
                 <div class="row">
-                        <button type="submit" class="button_submit">PRÓXIMO</button>
+                    <button type="submit" class="button_submit">PRÓXIMO</button>
                 </div>
 
                 <div class="row return_button">

@@ -1,6 +1,6 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
-require('conexaobd.php'); // Conexão com o arquivo de envia para o BD
+require('conexaobd_cliente.php'); // Conexão com o arquivo de envia para o BD
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -14,6 +14,16 @@ require('conexaobd.php'); // Conexão com o arquivo de envia para o BD
     <link rel="stylesheet" href="../mainCad.css">
     <link rel="stylesheet" href="pagamento.css">
 </head>
+
+<style>
+    main {
+        background-color: var(--color-cinzafundo);
+        background: url(../img/onda_fundo.svg);
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: contain;
+    }
+</style>
 
 <!-- Puxa informações do forms anterior -->
 <?php
@@ -52,7 +62,7 @@ print_r($_POST);
                 <input type="hidden" name="senha" value="<?php echo $senha; ?>">
                 <input type="hidden" name="opcao" value="<?php echo $opcao; ?>">
 
-                <div class="row subtitle_div">
+                <!-- <div class="row subtitle_div">
                     <span>+ Adicione uma forma de pagamento</span>
                     <p>(opcional)</p>
                 </div>
@@ -69,7 +79,7 @@ print_r($_POST);
                         <img src="../img/barcode.png" alt="" srcset="">
                         <span>PIX</span>
                     </a>
-                </div>
+                </div> -->
 
 
                 <div class="row">
