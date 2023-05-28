@@ -10,9 +10,23 @@
     --shadow-caixainput: 0px 4px 10px rgba(0, 0, 0, 0.15);
 }
 
+
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth; /* Scrool suave */
+    font-family: 'Outfit';
+    text-decoration: none;
+    box-sizing: border-box; /* Previne que elementos vazem de dentro das divs */
+}
+
+html,
+body{
+    height: 100%;
+    background-color: var(--color-cinzafundo);
+}
+
 .cadastro_title {
-    padding-top: 6%;
-    padding-bottom: 1%;
     text-align: center;
     font-style: normal;
     font-weight: 500;
@@ -28,18 +42,6 @@
     color: var(--color-fontecinza);
 }
 
-*{
-    text-decoration: none;
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
-}
-
-body{
-    font-family: 'Outfit'; 
-    background-color: var(--color-cinzafundo);
-}
-
 .container_cadastro{
     width: 70%;
     height: 90%;
@@ -53,7 +55,8 @@ body{
 .container_icon{
     display: flex;
     justify-content: center;
-    padding-top: 5%;
+    padding: 5%;
+    margin: 5% 5%;
 }
 
 .img_cliente{
@@ -93,14 +96,14 @@ body{
 }
 
 .button_submit{
+    font-family: 'Outfit';
     color: var(--color-branco);
     background-color: var(--color-vermelho);
     border:none;
     border-radius: 7px;
     width: 120px;
     height: 35px;
-    font-size: 15px; 
-    font-style: normal;
+    font-size: 15px;
     font-weight: 400;
     cursor: pointer;
     box-shadow: var(--shadow-caixagrande);
