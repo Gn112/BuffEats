@@ -43,3 +43,17 @@
     font-size: 20px;
     color: var(--color-fontecinza);
 }
+
+#container_terms {
+    margin: 10px 0;
+}
+
+.terms_text {
+    font-size: 12px;
+    text-align: center;
+}
+
+.terms_text a {
+    color: var(--color-vermelho);
+    font-weight: 500;
+}

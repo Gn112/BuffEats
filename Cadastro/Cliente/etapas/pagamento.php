@@ -98,6 +98,11 @@ print_r($_POST);
                     </a>
                 </div> -->
 
+                <div class="row" id="container_terms">
+                    <span class="terms_text">Ao clicar em "Finalizar" você concorda com os 
+                        <a href="../../../Termos/index.php">Termos de Uso</a>
+                    e as <a href="../../../Privacidade/index.php">Políticas de Privacidade</a></span>
+                </div>
 
                 <div class="row">
                     <button type="submit" name="cadastrar" class="button_submit">FINALIZAR</button>
