@@ -11,39 +11,46 @@
 </head>
 
 <body>
-    <div class="container_cadastro">
-        <div>
-            <div>
+    <main>
+        <div class="container_cadastro">
+            <div id="container_titles">
                 <h1 class="cadastro_title">Cadastro</h1>
                 <h6 class="cadastro_subtitle">Você deseja se cadastrar como Cliente ou Empresa?</h6>
             </div>
 
             <div class="container_icon">
-                <a href="../Cadastro/Cliente/pessoa.php"><img class="img_cliente" src="img/icon_cliente.png"
-                        name="cliente" width="225px"></a>
-                <a href="../Cadastro/Empresa/empresa.php"><img class="img_empresa" src="img/icon_empresa.png"
-                        name="empresa" width="225px"></a>
+
+                <div class="container_image">
+                    <a href="../Cadastro/Cliente/pessoa.php">
+                        <img class="img_icon" src="img/icon_cliente.png" name="cliente">
+                    </a>
+
+                    <h6 id="lbl_clientes">
+                        <a href="#" class="cadastro_id">
+                            Cliente
+                        </a>
+                    </h6>
+                </div>
+
+                <div class="container_image">
+                    <a href="../Cadastro/Empresa/empresa.php">
+                        <img class="img_icon" src="img/icon_empresa.png" name="empresa">
+                    </a>
+
+                    <h6>
+                        <a href="#" class="cadastro_id">
+                            Empresa
+                        </a>
+                    </h6>
+                </div>
             </div>
 
-            <div class="container_nomes">
-                <h6 id="lbl_clientes">
-                    <a href="#" class="cadastro_id">
-                        Cliente
-                    </a>
-                </h6>
-
-                <h6>
-                    <a href="#" class="cadastro_id">
-                        Empresa
-                    </a>
-                </h6>
-            </div>
 
             <a href="../Login/index.php">
                 <button type="submit" name="submit" class="button_submit">RETORNAR</button>
             </a>
         </div>
-    </div>
+    </main>
 </body>
 
 </html>

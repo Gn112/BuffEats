@@ -13,21 +13,25 @@
     --shadow-caixagrande: 0px 5px 10px 2px rgba(0, 0, 0, 0.2);
     --shadow-caixainput: 0px 4px 10px rgba(0, 0, 0, 0.15);
 }
+
 /* --- */
 
 /* Formatação aplicada para todos os elementos */
 * {
     margin: 0;
     padding: 0;
-    scroll-behavior: smooth; /* Scrool suave */
+    scroll-behavior: smooth;
+    /* Scrool suave */
     font-family: 'Outfit';
     text-decoration: none;
-    box-sizing: border-box; /* Previne que elementos vazem de dentro das divs */
+    box-sizing: border-box;
+    /* Previne que elementos vazem de dentro das divs */
 }
 
 html,
 body {
-    height: 100%; /* Garante que o body e o html ocupem toda a tela */
+    height: 100%;
+    /* Garante que o body e o html ocupem toda a tela */
     background-color: var(--color-cinzafundo);
     color: var(--color-fontecinza);
 }
@@ -53,6 +57,7 @@ main {
     display: flex;
     flex-direction: column;
 }
+
 /* --- */
 
 .main_title {
@@ -78,9 +83,10 @@ main {
 }
 
 .formulario {
-    width: clamp(200px, 350px, 350px); /* clamp(tamanhos Mínimo, Preferível(médio) , Máximo) */
+    width: clamp(200px, 350px, 350px);
+    /* clamp(tamanhos Mínimo, Preferível(médio) , Máximo) */
     border-radius: 15px;
-    
+
     padding: 50px 30px;
     background-color: var(--color-cinzaclaro);
     box-shadow: var(--shadow-caixagrande);
@@ -138,16 +144,24 @@ main {
     transition: 0.4s;
 }
 
-.return_button a{
+.return_button a {
     font-weight: 500;
     font-size: 14px;
     border: none;
     color: var(--color-fontecinza);
- }
+}
 
 .return_button button {
     font-weight: 500;
     font-size: 14px;
     border: none;
     color: var(--color-fontecinza);
+}
+
+@media screen and (max-width: 800px) {
+    html,
+    body {
+
+        background-color: var(--color-vermelho);
+    }
 }

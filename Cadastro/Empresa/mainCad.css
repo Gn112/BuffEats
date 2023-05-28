@@ -151,3 +151,10 @@ main {
     border: none;
     color: var(--color-fontecinza);
 }
+
+@media screen and (max-width: 800px) {
+    html,
+    body {
+        background-color: var(--color-vermelho);
+    }
+}
