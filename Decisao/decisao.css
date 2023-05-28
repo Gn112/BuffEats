@@ -40,7 +40,6 @@ main {
 
 .container_cadastro {
     width: 60%;
-    /* clamp(tamanhos Mínimo, Preferível(médio) , Máximo) */
     background-color: var(--color-cinzaclaro);
     border-radius: 15px;
     box-shadow: var(--shadow-caixagrande);
@@ -116,6 +115,24 @@ main {
     background-color: var(--color-hover-vermelho);
     transition: 0.4s;
 }
+
+#return {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.material-symbols-outlined {
+    color: var(--color-vermelho);
+    font-size: 35px !important;
+  
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 800,
+    'GRAD' 200,
+    'opsz' 48
+    
+  }
 
 
 

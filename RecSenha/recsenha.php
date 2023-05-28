@@ -1,11 +1,3 @@
-<?php
-
-if (isset($_POST['submit'])) {
-    $email = (string) $_POST['email'];
-}
-?>
-
-
 <!DOCTYPE html>
 <html lang="PT-br">
 
@@ -16,28 +8,46 @@ if (isset($_POST['submit'])) {
     <title>BuffEats | Recuperação de senha</title>
     <link rel="icon" type="image/x-icon">
     <link rel="stylesheet" href="recsenha.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
-    <div class="container_recsenha">
-        <div>
-            <div class="container_icon">
-                <img src="img/icon_cadeado.png" width="180px">
+    <main>
+        <div id="container_rec">
+
+            <div id="return">
+                <a href="../Login/index.php">
+                    <span class="material-symbols-outlined">
+                        arrow_back
+                    </span>
+                </a>
             </div>
-            <h1 class="recsenha_title">Esqueceu a senha?</h1>
-            <h6 class="recsenha_subtitle">Insira seu email para enviarmos um código de recuperação de senha</h6>
-            <div class="container_input">
-                <input type="email" name="email" id="email" class="input_box">
+
+            <div class="row">
+                <img src="img/icon_cadeado.png" alt="lock.png">
             </div>
-            <div class="container_button">
-                <button type="submit" name="submit" class="button_enviar">ENVIAR</button>
+
+            <div class="row">
+                <h1 class="title">Esqueceu a senha?</h1>
+                <h2 class="subtitle">
+                    Insira seu email para enviarmos um código de recuperação de senha
+                </h2>
             </div>
+
+            <form action="" method="post">
+                <div class="row"">
+                <input type=" email" name="email" class="input_box" required>
+                </div>
+
+                <div class="row"">
+                <button type=" submit" name="submit" id="recuperar" class="small_button">
+                    ENVIAR
+                    </button>
+                </div>
+            </form>
         </div>
-        <a href="../Login/index.php">
-            <button type="submit" name="submit" class="button_submit">RETORNAR</button>
-        </a>
-    </div>
-    </div>
+    </main>
 </body>
 
 </html>

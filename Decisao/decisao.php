@@ -8,11 +8,21 @@
     <title>BuffEats | Cadastro</title>
     <link rel="icon" type="image/x-icon">
     <link rel="stylesheet" href="decisao.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
     <main>
         <div class="container_cadastro">
+            <div id="return">
+                <a href="../Login/index.php">
+                    <span class="material-symbols-outlined">
+                        arrow_back
+                    </span>
+                </a>
+            </div>
+
             <div id="container_titles">
                 <h1 class="cadastro_title">Cadastro</h1>
                 <h6 class="cadastro_subtitle">Você deseja se cadastrar como Cliente ou Empresa?</h6>
@@ -44,11 +54,6 @@
                     </h6>
                 </div>
             </div>
-
-
-            <a href="../Login/index.php">
-                <button type="submit" name="submit" class="button_submit">RETORNAR</button>
-            </a>
         </div>
     </main>
 </body>
