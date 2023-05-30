@@ -27,21 +27,26 @@ if (isset($_POST['cadastrar'])) {
     $formas_recebimento = (int) $_POST["formas_recebimento"];
 
     // Insira os dados no banco de dados
+    if($_POST["nome_empresa"] == " " || $_POST["CNPJ"] == " " || $_POST["num_contato"] == " " || $_POST["CEP"] == " " || $_POST["email"] == " " || $_POST["senha"] == " " ){
+        echo('os valores não podem ser zerados');
+    }
+    else{
     $sql = "INSERT INTO CADASTRO_EMPRESA 
     (id_empresa, nome_empresa, CPF_CNPJ, num_contato, CEP, email, senha, formas_recebimento) 
     VALUES (default,'$nome_empresa', '$CNPJ', '$num_contato', '$CEP', '$email', '$senha', '$formas_recebimento')";
 
     if (mysqli_query($conn, $sql)) {
         echo "Dados inseridos com sucesso.";
-        $full_name = "";
-        $cpf = "";
-        $numero_cel = "";
-        $cep = "";
-        $email = "";
-        $senha = "";
-        $opcao = 0;
+    $_POST["nome_empresa"] = " ";
+    $_POST["CNPJ"] = " ";
+    $_POST["num_contato"] = " ";
+    $_POST["CEP"] = " ";
+    $_POST["email"] = " ";
+    $_POST["senha"] = " ";
+    $_POST["formas_recebimento"] = " ";
     } else {
         echo "Erro ao inserir os dados: " . mysqli_error($conn);
+    }
     }
 }
 

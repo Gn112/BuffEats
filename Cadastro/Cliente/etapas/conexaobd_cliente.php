@@ -27,21 +27,27 @@ if (isset($_POST['cadastrar'])) {
     $opcao = (int)$_POST["opcao"];
 
     // Insira os dados no banco de dados
-    $sql = "INSERT INTO CADASTRO_CLIENTE (id_cliente, nome_completo, CPF, celular, CEP, email, senha, opcao_pagamento) 
-    VALUES (default,'$full_name', '$cpf', '$numero_cel', '$cep', '$email', '$senha', '$opcao')";
+    if($_POST["full_name"] == " " || $_POST["cpf"] == " " || $_POST["numero_cel"] == " " || $_POST["cep"] == " " || $_POST["email"] == " " || $_POST["senha"] == " " ){
+        echo('os valores não podem ser zerados');
+    }
+    else{
+        $sql = "INSERT INTO CADASTRO_CLIENTE (id_cliente, nome_completo, CPF, celular, CEP, email, senha, opcao_pagamento) 
+        VALUES (default,'$full_name', '$cpf', '$numero_cel', '$cep', '$email', '$senha', '$opcao')";
+    
+    if (mysqli_query($conn, $sql)) {
+        echo "Dados inseridos com sucesso.";
+        $_POST["full_name"] = " ";
+       $_POST["cpf"] = " ";
+        $_POST["numero_cel"] = " ";
+        $_POST["cep"] = " ";
+        $_POST["email"] = " ";
+       $_POST["senha"] = " ";
+       $_POST["opcao"] = 0;
+    } else {
+        echo "Erro ao inserir os dados: " . mysqli_error($conn);
+    }
+    }
 
-if (mysqli_query($conn, $sql)) {
-    echo "Dados inseridos com sucesso.";
-    $full_name = "";
-    $cpf = "";
-    $numero_cel = "";
-    $cep = "";
-    $email = "";
-    $senha = "";
-    $opcao = 0;
-} else {
-    echo "Erro ao inserir os dados: " . mysqli_error($conn);
-}
 }
 
 	
