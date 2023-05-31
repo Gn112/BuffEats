@@ -1,3 +1,20 @@
+<?php
+header('Content-Type: text/html; charset=utf-8');
+require("../interno/functions.php");
+ini_set('default_charset', 'utf-8');
+
+$emailCliente = "";
+$senhaCliente = "";
+$confirmSenhaCliente = "";
+
+ 
+if (isset($_POST["submitEmail"])) {
+    $emailCliente = strtolower((string) $_POST["email"]);
+    $senhaCliente = (string) $_POST["senha"];
+    $confirmSenhaCliente = (string) $_POST["confirma_senha"];
+}
+
+?>
 <!DOCTYPE html>
 <html lang="PT-br">
 
@@ -5,49 +22,73 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BuffEats | Login</title>
+    <title>BuffEats | Email</title>
     <link rel="icon" type="image/x-icon">
-    <link rel="stylesheet" href="mainCad.css">
+    <link rel="stylesheet" href="../mainCad.css">
 </head>
 
+<style>
+    main {
+        background-color: var(--color-cinzafundo);
+        background: url(../img/onda_fundo.svg);
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: contain;
+    }
+</style>
+
 <?php
-header('Content-Type: text/html; charset=utf-8');
+$full_name = $_POST["full_name"];
+$cpf = $_POST["cpf"];
+$numero_cel = $_POST["numero_cel"];
+$cep = $_POST["cep"];
+print_r($_POST);
 ?>
 
 <body>
     <main>
-        <div>
-            <form method="post" id="formulario">
+        <div class="formulario">
+            <form action="pagamento.php" method="post">
 
                 <div class="page_counter"></div>
 
                 <h1 class="main_title">Cadastro</h1>
 
-                <div class="row">
-                    <label class="label">*Email:</label>
-                    <input type="email" name="email" id="email" class="input_box" required>
-                </div>
+                <input type="hidden" name="full_name" value="<?php echo $full_name; ?>">
+                <input type="hidden" name="cpf" value="<?php echo $cpf; ?>">
+                <input type="hidden" name="numero_cel" value="<?php echo $numero_cel; ?>">
+                <input type="hidden" name="cep" value="<?php echo $cep; ?>">
 
                 <div class="row">
+                    <label class="label">*Email:</label>
+                    <input type="email" name="email" id="email" class="input_box" required value=<?= $emailCliente ?>>
+                </div>
+                <div class="row">
                     <label class="label">*Senha:</label>
-                    <input type="password" name="senha" id="senha" class="input_box" required>
+                    <input type="password" name="senha" id="senha" class="input_box" required value=<?= $senhaCliente ?>>
                 </div>
 
                 <div class="row">
                     <label class="label">*Confirmação de Senha:</label>
-                    <input type="password" name="confirmaSenha" id="confirmaSenha" class="input_box" required>
+                    <input type="password" name="confirma_senha" id="confirmaSenha" class="input_box" required value=<?= $confirmSenhaCliente ?>>
                 </div>
 
                 <div class="row">
-                    <a href="main.php?dir=etapas&file=pagamento">
-                        <input type="button" class="button_submit" value="PRÓXIMO">
-                    </a>
+                    <button type="submit" class="button_submit" name="submitEmail">PRÓXIMO</button>
                 </div>
 
-                <div class="row" id="return_button">
-                    <a href="pessoa.php">VOLTAR</a>
-                </div>
+            </form>
 
+            <form method="post" action="../pessoa.php" class="row">
+
+                <input type="hidden" name="full_name" value="<?php echo $full_name; ?>">
+                <input type="hidden" name="cpf" value="<?php echo $cpf; ?>">
+                <input type="hidden" name="numero_cel" value="<?php echo $numero_cel; ?>">
+                <input type="hidden" name="cep" value="<?php echo $cep; ?>">
+
+                <div class="row return_button">
+                    <button type="submit" name="voltarEmail">VOLTAR</button>
+                </div>
             </form>
         </div>
     </main>
