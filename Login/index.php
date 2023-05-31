@@ -45,7 +45,7 @@ if (isset($_POST['submit'])) {
                     <label class="login_gmail">LOGAR COM O GMAIL</label>
                 </div>
                 <div id="container_termos">
-                    <label class="login_termos"><a href="#" class="none_termos">Termos de privacidade</a></label>
+                    <label class="login_termos"><a href="../Privacidade/index.php" class="none_termos">Termos de privacidade</a></label>
                 </div>
             </form>
         </div>
