@@ -1,7 +1,6 @@
 <?php
 ini_set('default_charset', 'utf-8');
 
-
 if (isset($_POST['submit'])) {
     $senha = (string) $_POST['password'];
     $email = (string) $_POST['username'];

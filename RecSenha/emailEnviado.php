@@ -1,8 +1,11 @@
-
-
 <!DOCTYPE html>
 <html lang="PT-br">
+<script>
 
+    setTimeout(() => {
+        window.location.href = "../Login/index.php"
+    }, 3000);
+</script>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,36 +21,32 @@
     <main>
         <div id="container_rec">
 
-            <div id="return">
+            <!-- <div id="return">
                 <a href="../Login/index.php">
                     <span class="material-symbols-outlined">
                         arrow_back
                     </span>
                 </a>
-            </div>
+            </div> -->
 
-            <div class="row">
+            <!-- <div class="row">
                 <img src="img/icon_cadeado.png" alt="lock.png">
-            </div>
+            </div> -->
 
             <div class="row">
-                <h1 class="title">Esqueceu a senha?</h1>
+                <h1 class="title">Email Encviado</h1>
                 <h2 class="subtitle">
-                    Insira seu email para enviarmos um código de recuperação de senha
+                    Siga as instruções enviadas no seu email para seguir com a recuperação
                 </h2>
             </div>
 
-            <form action="email.php" method="post">
                 <div class="row"">
-                <input type="email" name="email" class="input_box" required>
-                </div>
-
-                <div class="row"">
-                <button type="submit" name="submit" id="recuperar" class="small_button">
-                    ENVIAR
+                <a href="../Login/index.php"
+                <button onclick="" name="volta" id="buttonVoltar" class="small_button">
+                    CLIQUE AQUI PARA VOLTAR OU AGUARDE 3 SEGUNDOS
                     </button>
+</a>
                 </div>
-            </form>
         </div>
     </main>
 </body>
