@@ -21,20 +21,8 @@
     <main>
         <div id="container_rec">
 
-            <!-- <div id="return">
-                <a href="../Login/index.php">
-                    <span class="material-symbols-outlined">
-                        arrow_back
-                    </span>
-                </a>
-            </div> -->
-
-            <!-- <div class="row">
-                <img src="img/icon_cadeado.png" alt="lock.png">
-            </div> -->
-
             <div class="row">
-                <h1 class="title">Email Encviado</h1>
+                <h1 class="title">Email Enviado</h1>
                 <h2 class="subtitle">
                     Siga as instruções enviadas no seu email para seguir com a recuperação
                 </h2>

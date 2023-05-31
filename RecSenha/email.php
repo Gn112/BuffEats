@@ -27,12 +27,12 @@ $mail = new PHPMailer(true);
     // Define o remetente
     $mail->setFrom('buffeats.food@gmail.com', 'Buffeats');
     // Define o destinatário
-    $mail->addAddress($email, 'Buffeats Recuperação');
+    $mail->addAddress($email, 'Usuário BuffEats');
     // Conteúdo da mensagem
     $mail->isHTML(true);  // Seta o formato do e-mail para aceitar conteúdo HTML
     $mail->Subject = 'Recuperação de Senha';
-    $mail->Body    = 'Este é o corpo da mensagem <b>Olá em negrito!</b>';
-    $mail->AltBody = 'Este é o cortpo da mensagem para clientes de e-mail que não reconhecem HTML';
+    $mail->Body    = 'Para recuperar sua senha siga o <b>link abaixo</b>: <br> <a href="#">https://BuffEats.com.br/rec/userExemplo1111</a>!';
+    // $mail->AltBody = 'Este é o cortpo da mensagem para clientes de e-mail que não reconhecem HTML';
     // Enviar  
     if (!$mail->send()) {
         echo 'Email not sent an error was encountered: ' . $mail->ErrorInfo;
