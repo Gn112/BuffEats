@@ -16,6 +16,8 @@ if (!$conn) {
 }
 echo "Connected successfully";
 
+include(confirmacaoEmail.php);
+
 // Página Empresa
 $nome_empresa = $_POST["nome_empresa"];
 $CNPJ = $_POST["CNPJ"];
@@ -141,6 +143,9 @@ if (isset($_POST['cadastrarEmpresa'])) {
         echo ("TANANANAAN");
         if (mysqli_query($conn, $sql)) {
             echo "Dados inseridos com sucesso.";
+
+            confirmaEmail($email);
+
             $_POST["nome_empresa"] = " ";
             $_POST["CNPJ"] = " ";
             $_POST["num_contato"] = " ";
