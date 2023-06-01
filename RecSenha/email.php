@@ -4,28 +4,31 @@
 
 // Importa classes do PHPMailer 
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
+
+require 'Exception.php';
+require 'PHPMailer.php';
+require 'SMTP.php';
  
-require_once '../vendor/autoload.php';
+// require_once '../vendor/autoload.php';
 
 $email = $_POST["email"];
 
 $mail = new PHPMailer(true);
 
     // Configurações do servidor
+    $mail->SMTPDebug = 1;
     $mail->isSMTP();        //Devine o uso de SMTP no envio
     $mail->SMTPAuth = true; //Habilita a autenticação SMTP
-    $mail->Username   = 'gabrielsiriani19@gmail.com';
-    $mail->Password   = 'djynqqduneazvflo';
+    $mail->Username   = 'buffeats@outlook.com';
+    $mail->Password   = '#CotemigPIT3b2';
     // Criptografia do envio SSL também é aceito
     $mail->SMTPSecure = 'tls';
     // Informações específicadas pelo Google
-    $mail->Host = 'smtp.gmail.com';
-    $mail->Port = 465;
-    $mail->SMTPSecure = "ssl";
+    $mail->Host = 'smtp-mail.outlook.com';
+    $mail->Port = 587;
     // Define o remetente
-    $mail->setFrom('buffeats.food@gmail.com', 'Buffeats');
+    $mail->setFrom('buffeats@outlook.com', 'Buffeats');
     // Define o destinatário
     $mail->addAddress($email, 'Usuário BuffEats');
     // Conteúdo da mensagem
