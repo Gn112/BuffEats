@@ -1,15 +1,11 @@
 <?php
 ini_set('default_charset', 'utf-8');
 
-if (isset($_POST['submit'])) {
-    $senha = (string) $_POST['password'];
-    $email = (string) $_POST['username'];
-}
 ?>
 
 
 <!DOCTYPE html>
-<html lang="PT-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -27,7 +23,7 @@ if (isset($_POST['submit'])) {
         <div id="div_form_login">
             <form method="post" id="formulario">
                 <h1 class="login_title">Login</h1>
-                <label class="login_subtitle">Usuário:</label>
+                <label class="login_subtitle">Email:</label>
                 <input type="text" name="username" id="username" class="input_box">
                 <label class="login_subtitle">Senha:</label>
                 <input type="password" name="password" id="password" class="input_box">

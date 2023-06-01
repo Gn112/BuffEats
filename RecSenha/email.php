@@ -6,6 +6,7 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+
 require 'Exception.php';
 require 'PHPMailer.php';
 require 'SMTP.php';
@@ -17,7 +18,7 @@ $email = $_POST["email"];
 $mail = new PHPMailer(true);
 
     // Configurações do servidor
-    $mail->SMTPDebug = 1;
+    $mail->SMTPDebug = 0;
     $mail->isSMTP();        //Devine o uso de SMTP no envio
     $mail->SMTPAuth = true; //Habilita a autenticação SMTP
     $mail->Username   = 'buffeats@outlook.com';
@@ -34,8 +35,8 @@ $mail = new PHPMailer(true);
     // Conteúdo da mensagem
     $mail->isHTML(true);  // Seta o formato do e-mail para aceitar conteúdo HTML
     $mail->Subject = 'Recuperação de Senha';
-    $mail->Body    = 'Para recuperar sua senha siga o <b>link abaixo</b>: <br> <a href="#">https://BuffEats.com.br/rec/userExemplo1111</a>!';
-    // $mail->AltBody = 'Este é o cortpo da mensagem para clientes de e-mail que não reconhecem HTML';
+    $mail->Body    = 'Para recuperar sua senha siga o <b>link abaixo</b>: <br> <a href="#">https://BuffEats.com.br/rec/userExemplo1111</a>';
+    $mail->AltBody = 'Este é o cortpo da mensagem para clientes de e-mail que não reconhecem HTML';
     // Enviar  
     if (!$mail->send()) {
         echo 'Email not sent an error was encountered: ' . $mail->ErrorInfo;
