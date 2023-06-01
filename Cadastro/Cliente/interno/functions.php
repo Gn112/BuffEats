@@ -3,6 +3,7 @@
 // Página Pessoa
 
 ini_set('default_charset', 'utf-8');
+include('confirmacaoEmail.php');
 
 $servername = "34.95.153.229";
 $database = "buffeat";
@@ -61,17 +62,6 @@ function validaCPF($cpf)
     if (preg_match('/(\d)\1{10}/', $cpf)) {
         return false;
     }
-
-    // Faz o calculo para validar o CPF
-    // for ($t = 9; $t < 11; $t++) {
-    //     for ($d = 0, $c = 0; $c < $t; $c++) {
-    //         $d += $cpf[$c] * (($t + 1) - $c);
-    //     }
-    //     $d = ((10 * $d) % 11) % 10;
-    //     if ($cpf[$c] != $d) {
-    //         return false;
-    //     }
-    // }
     return true;
 }
 
@@ -97,6 +87,7 @@ function validaCep($cep)
     } else if (preg_match('/(\d)\1{3}/', $cep)) {
         return false;
     } else if (strlen($cep) != 9) {
+        return false;
     } else {
         return true;
     }
@@ -133,12 +124,13 @@ if (isset($_POST['cadastrar'])) {
         echo ("TANANANAAN");
         if (mysqli_query($conn, $sql)) {
             echo "Dados inseridos com sucesso.";
-            $_POST["full_name"] = " ";
-            $_POST["cpf"] = " ";
-            $_POST["numero_cel"] = " ";
-            $_POST["cep"] = " ";
-            $_POST["email"] = " ";
-            $_POST["senha"] = " ";
+            confirmaEmail($email);
+            $_POST["full_name"] = "";
+            $_POST["cpf"] = "";
+            $_POST["numero_cel"] = "";
+            $_POST["cep"] = "";
+            $_POST["email"] = "" ;
+            $_POST["senha"] = "";
             $_POST["opcao"] = 0;
         } else {
             echo "<br>Ei... Tu colocou dados errados aí guria/piá. Verifica esse BO aí :/ <br> Erro ao inserir os dados: " . mysqli_error($conn);

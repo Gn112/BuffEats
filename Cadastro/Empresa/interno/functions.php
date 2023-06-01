@@ -3,6 +3,7 @@
 // Página Pessoa
 
 ini_set('default_charset', 'utf-8');
+include('confirmacaoEmail.php');
 
 $servername = "34.95.153.229";
 $database = "buffeat";
@@ -16,7 +17,6 @@ if (!$conn) {
 }
 echo "Connected successfully";
 
-include(confirmacaoEmail.php);
 
 // Página Empresa
 $nome_empresa = $_POST["nome_empresa"];
@@ -143,16 +143,16 @@ if (isset($_POST['cadastrarEmpresa'])) {
         echo ("TANANANAAN");
         if (mysqli_query($conn, $sql)) {
             echo "Dados inseridos com sucesso.";
-
             confirmaEmail($email);
+            $_POST["nome_empresa"] = "";
+            $_POST["CNPJ"] = "";
+            $_POST["num_contato"] = "";
+            $_POST["CEP"] = "";
+            $_POST["email"] = "";
+            $_POST["senha"] = "";
+            $_POST["formas_recebimento"] = "";
 
-            $_POST["nome_empresa"] = " ";
-            $_POST["CNPJ"] = " ";
-            $_POST["num_contato"] = " ";
-            $_POST["CEP"] = " ";
-            $_POST["email"] = " ";
-            $_POST["senha"] = " ";
-            $_POST["formas_recebimento"] = " ";
+            
         } else {
             echo "<BR>Ei... Tu colocou dados errados aí guria/piá. Verifica esse BO aí :/ <br> Erro ao inserir os dados: " . mysqli_error($conn);
         }

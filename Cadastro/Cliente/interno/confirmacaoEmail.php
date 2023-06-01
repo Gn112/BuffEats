@@ -32,7 +32,7 @@ function confirmaEmail($confirmar) {
     $mail->addAddress($confirmar, 'Usuário BuffEats');
     // Conteúdo da mensagem
     $mail->isHTML(true); // Seta o formato do e-mail para aceitar conteúdo HTML
-    $mail->Subject = 'Confirmação de Email';
+    $mail->Subject = 'Confirmação de Email CLIENTE';
     $mail->Body = 'Para confirmar seu email siga o <b>link abaixo</b>: <br> <a href="#">https://BuffEats.com.br/rec/userExemploConfirma1111</a>';
     $mail->AltBody = 'Este é o cortpo da mensagem para clientes de e-mail que não reconhecem HTML';
     // Enviar  
