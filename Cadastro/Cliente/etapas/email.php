@@ -6,7 +6,7 @@ $emailCliente = "";
 $senhaCliente = "";
 $confirmSenhaCliente = "";
 
- 
+
 if (isset($_POST["submitEmail"])) {
     $emailCliente = strtolower((string) $_POST["email"]);
     $senhaCliente = (string) $_POST["senha"];
@@ -47,7 +47,7 @@ print_r($_POST);
 <body>
     <main>
         <div class="formulario">
-            <form action="pagamento.php" method="post">
+            <form action="pagamento.php" method="post" onsubmit="return validateForm()">
 
                 <div class="page_counter"></div>
 
@@ -69,11 +69,13 @@ print_r($_POST);
 
                 <div class="row">
                     <label class="label">*Confirmação de Senha:</label>
-                    <input type="password" name="confirma_senha" id="confirmaSenha" class="input_box" required value=<?= $confirmSenhaCliente ?>>
+                    <input type="password" name="confirma_senha" id="confirmaSenha" class="input_box" required
+                        value=<?= $confirmSenhaCliente ?>>
                 </div>
 
                 <div class="row">
-                    <button type="submit" class="button_submit" name="submitEmail">PRÓXIMO</button>
+                    <button type="submit" class="button_submit" onclick="validateForm()"
+                        name="submitEmail">PRÓXIMO</button>
                 </div>
 
             </form>
@@ -90,6 +92,56 @@ print_r($_POST);
                 </div>
             </form>
         </div>
+        <script>
+            function validateForm() {
+                // Chamar as funções de validação e armazenar os resultados
+                var isEmailValid = validateEmail();
+                var arePasswordsValid = comparePasswords();
+
+                // Verificar se todas as validações foram bem-sucedidas
+                if (isEmailValid && arePasswordsValid) {
+                    return true; // Permitir o envio do formulário
+                } else {
+                    return false; // Impedir o envio do formulário
+                }
+            }
+
+            function validateEmail() {
+                var email = document.getElementById('email').value;
+
+                // Expressão regular para validação de email
+                var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                if (!regex.test(email)) {
+                    alert('Por favor, verifique o Email informado.');
+                    return false;
+                }
+
+                return true;
+            }
+
+            function comparePasswords() {
+                var senha = document.getElementById('senha').value;
+                var confirmaSenha = document.getElementById('confirmaSenha').value;
+
+                if (senha.trim() === '') {
+                    alert('Por favor, preencha o campo Senha.');
+                    return false;
+                }
+
+                if (confirmaSenha.trim() === '') {
+                    alert('Por favor, preencha o campo Confirmação de Senha.');
+                    return false;
+                }
+
+                if (senha !== confirmaSenha) {
+                    alert('As senhas não coincidem. Por favor, verifique as senhas informadas.');
+                    return false;
+                }
+
+                return true;
+            }
+        </script>
     </main>
 </body>
 
