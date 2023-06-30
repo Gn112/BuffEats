@@ -64,7 +64,7 @@ print_r($_POST);
                 </div>
 
                 <div class="row">
-                    <button type="submit" class="button_submit">PRÓXIMO</button>
+                    <button type="submit" class="button_submit" onclick="validateForm()">PRÓXIMO</button>
                 </div>
 
             </form>
@@ -79,8 +79,60 @@ print_r($_POST);
 
                 <div class="row return_button">
                     <button type="submit">VOLTAR</button>
-                </div>
             </form>
+        </div>
+        <script>
+    function validateForm() {
+        // Chamar as funções de validação e armazenar os resultados
+        var isEmailValid = validateEmail();
+        var arePasswordsValid = comparePasswords();
+
+        // Verificar se todas as validações foram bem-sucedidas
+        if (isEmailValid && arePasswordsValid) {
+            return true; // Permitir o envio do formulário
+        } else {
+            return false; // Impedir o envio do formulário
+        }
+    }
+
+    function validateEmail() {
+        var email = document.getElementById('email').value;
+
+        // Expressão regular para validação de email
+        var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!regex.test(email)) {
+            alert('Por favor, verifique o Email informado.');
+            return false;
+        }
+
+        return true;
+    }
+
+    function comparePasswords() {
+        var senha = document.getElementById('senha').value;
+        var confirmaSenha = document.getElementById('confirmaSenha').value;
+
+        if (senha.trim() === '') {
+            alert('Por favor, preencha o campo Senha.');
+            return false;
+        }
+
+        if (confirmaSenha.trim() === '') {
+            alert('Por favor, preencha o campo Confirmação de Senha.');
+            return false;
+        }
+
+        if (senha !== confirmaSenha) {
+            alert('As senhas não coincidem. Por favor, verifique as senhas informadas.');
+            return false;
+        }
+
+        return true;
+    }
+</script>
+        </div>
+        </form>
         </div>
     </main>
     <script src="../interno/validacao.js"></script>
