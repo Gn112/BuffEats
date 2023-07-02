@@ -12,8 +12,8 @@
 // $color-hover-fontecinza: #000000;
 // $color-cinzaclaro: #F8F8F8;
 // $color-cinzafundo: #EEEEEE;
-// $shadow-caixagrande: 0px 5px 10px 2px rgba(0, 0, 0, 0.2);
-// $shadow-caixainput: 0px 4px 10px rgba(0, 0, 0, 0.15);
+// $shadow-caixagrande: 0rem .3125rem .625rem .125rem rgba(0, 0, 0, 0.2);
+// $shadow-caixainput: 0rem .25rem .625rem rgba(0, 0, 0, 0.15);
 
 /* --- */
 
@@ -21,7 +21,7 @@
 header {
     box-shadow: $shadow-caixagrande;
     position: relative;
-    padding: 1rem;
+    padding: 16px;
 }
 
 .navbar {
@@ -30,7 +30,7 @@ header {
 
     .links {
         @include flexCenter(row, nowrap, center);
-        gap: 2rem;
+        gap: 32px;
 
         a{
             text-decoration: none;
@@ -40,6 +40,15 @@ header {
                 @include fontHover;
             }
         }
+    }
+
+    .login {
+        @include flexCenter(row, nowrap, space-between);
+        gap: 10px;
+    }
+
+    .signUp_btn {
+        @include label(400, $color-vermelho)
     }
 
     .sign_btn {
@@ -60,6 +69,7 @@ header {
     
     .links {
         @include flexCenter(column, nowrap, center);
+
         a{
             text-decoration: none;
             @include label(400, $color-fontecinza);
@@ -68,6 +78,17 @@ header {
                 @include fontHover;
             }
         }
+
+    }
+
+    &.active {
+        display: block!important;
+    }
+
+    .login {
+        @include flexCenter(column, nowrap, center);
+        gap: 8px;
+        padding: .625rem 0;
     }
 
     .sign_btn {
@@ -75,23 +96,23 @@ header {
         @include redBtn;
         width: 100%;
     }
+
+    .signUp_btn {
+        @include label(400, $color-vermelho);
+        @include flexCenter(column, nowrap, center);
+        width: 100%;
+    }
 }
 
 
 @media (max-width: 800px){
-    .navbar .links, .navbar .sign_btn {
+    .navbar .links,
+    .navbar .sign_btn,
+    .navbar .signUp_btn {
         display: none !important;
     }
 
-    .navbar .sign_btn {
-        display: block !important;
-    }
-
-    .dropdown_menu{
-        display: block!important;
-    }
-
     .toggle_btn {
-        display: flex;
+        display: block!important;
     }
 }

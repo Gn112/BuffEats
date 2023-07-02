@@ -17,7 +17,11 @@
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Quem Somos</a></li>
             </ul>
-            <a href="#" class="sign_btn">Entrar</a>
+
+            <div class="login">
+                <a href="#" class="signUp_btn">criar conta</a>
+                <a href="#" class="sign_btn">Entrar</a>
+            </div>
             <span class="toggle_btn material-symbols-outlined">
                 menu
             </span>
@@ -28,6 +32,10 @@
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Quem Somos</a></li>
             </ul>
+            <div class="login">
+                <a href="#" class="signUp_btn">criar conta</a>
+                <a href="#" class="sign_btn">Entrar</a>
+            </div>
         </div>
 
     </header>

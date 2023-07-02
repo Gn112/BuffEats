@@ -24,7 +24,7 @@ body {
 header {
   box-shadow: 0rem 0.3125rem 0.625rem 0.125rem rgba(0, 0, 0, 0.2);
   position: relative;
-  padding: 1rem;
+  padding: 16px;
 }
 
 .navbar {
@@ -41,7 +41,7 @@ header {
   align-items: center;
   flex-wrap: nowrap;
   flex-direction: row;
-  gap: 2rem;
+  gap: 32px;
 }
 .navbar .links a {
   text-decoration: none;
@@ -53,6 +53,20 @@ header {
 .navbar .links a:hover {
   color: #000000;
   transition: 0.5s;
+}
+.navbar .login {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  gap: 10px;
+}
+.navbar .signUp_btn {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.125rem;
+  color: #BD2323;
 }
 .navbar .sign_btn {
   color: #ffffff;
@@ -96,6 +110,18 @@ header {
   color: #000000;
   transition: 0.5s;
 }
+.dropdown_menu.active {
+  display: block !important;
+}
+.dropdown_menu .login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0.625rem 0;
+}
 .dropdown_menu .sign_btn {
   display: flex;
   justify-content: center;
@@ -116,18 +142,26 @@ header {
   background-color: #be4d4d;
   transition: 0.4s;
 }
+.dropdown_menu .signUp_btn {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.125rem;
+  color: #BD2323;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  width: 100%;
+}
 
 @media (max-width: 800px) {
-  .navbar .links, .navbar .sign_btn {
+  .navbar .links,
+  .navbar .sign_btn,
+  .navbar .signUp_btn {
     display: none !important;
   }
-  .navbar .sign_btn {
-    display: block !important;
-  }
-  .dropdown_menu {
-    display: block !important;
-  }
   .toggle_btn {
-    display: flex;
+    display: block !important;
   }
 }/*# sourceMappingURL=header.css.map */
