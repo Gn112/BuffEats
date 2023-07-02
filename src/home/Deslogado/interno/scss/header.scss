@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+// Importa configurações reutilizáveis de css
+@import '../../../../globalAssets/scss/global';
+
+/* Variáveis */
+
+// $color-vermelho: #BD2323;
+// $color-hover-vermelho: #be4d4d;
+// $color-branco: #ffffff;
+// $color-fontecinza: #463B3B;
+// $color-hover-fontecinza: #000000;
+// $color-cinzaclaro: #F8F8F8;
+// $color-cinzafundo: #EEEEEE;
+// $shadow-caixagrande: 0px 5px 10px 2px rgba(0, 0, 0, 0.2);
+// $shadow-caixainput: 0px 4px 10px rgba(0, 0, 0, 0.15);
+
+/* --- */
+
+
+.container_header {
+    @include flexCenter(row, nowrap, space-around);
+    padding: 1rem;
+    box-shadow: $shadow-caixagrande;
+    
+    .buttons_header {
+        @include flexCenter(row, nowrap, space-around);
+        widows: 100%;
+        // gap: 3.625rem;
+
+        @media (max-width: $mobile) {
+            & {
+            flex-direction: column;
+            gap: 1.2rem;
+            }
+        }
+    }
+
+    .toggleBtn{
+        @include hamburgerBtn;
+    }
+}
+
+.menu_nav {
+    @include flexCenter(row, wrap, space-between);
+    gap: 1.5625rem;
+
+    .items_nav {
+        a {
+            @include label(400, $color-fontecinza);
+            text-decoration: none;
+
+            &:hover {
+                @include fontHover;
+            }
+        }
+        
+    }
+
+}
+
+.buttons_login {
+    @include flexCenter(row, nowrap, center);
+    gap: 1.3125rem;
+    .signUp {
+        @include label(400, $color-vermelho);
+
+        &:hover {
+        color: $color-hover-vermelho;
+        transition: 0.4s;
+        }
+    }
+
+    .signIn {
+        @include redBtn;
+
+    }
+}
+
+@media (max-width: $mobile) {
+    .toggleBtn {
+        display: block !important;
+    }
+
+    .menu_nav {
+        display: none;
+    
+    }
+
+    .menu_nav.active{
+        display: flex;
+        @include flexCenter(column, nowrap, center);
+    }
+
+
+    .items_nav{
+        width: 100%;
+        text-align: center;
+    }
+}
