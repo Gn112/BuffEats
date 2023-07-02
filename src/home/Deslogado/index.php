@@ -9,38 +9,29 @@
     <title>Document</title>
 </head>
 <body>
-        <div class="container_header">
 
-            
-            <nav class="buttons_header">
-            <img src="../../globalAssets/img/logo.png" alt="logo">
-                
-                <ul class="menu_nav">
-                    <li class="items_nav">
-                        <a href="#" class="">
-                            Home
-                        </a>
-                    </li>
-                    <li class="items_nav">
-                        <a href="#" class="">
-                            Quem Somos
-                        </a>
-                    </li>
-                </ul>
-                <div class="buttons_login">
-                    <a href="#" class="signUp">criar conta</a>
-                    <button class="signIn">Entrar</button>
-                </div>
-            </nav>
-            
-
-           <button class="toggleBtn">
-                <span class="material-symbols-outlined">
+    <header>
+        <div class="navbar">
+            <div class="logo"><img src="../../globalAssets/img/logo.png"></div>
+            <ul class="links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Quem Somos</a></li>
+            </ul>
+            <a href="#" class="sign_btn">Entrar</a>
+            <span class="toggle_btn material-symbols-outlined">
                 menu
-                </span>
-            </button>
-
+            </span>
         </div>
+
+        <div class="dropdown_menu">
+            <ul class="links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Quem Somos</a></li>
+            </ul>
+        </div>
+
+    </header>
+
     <script src="interno/js/navbar.js"></script>
 </body>
 </html>

@@ -18,83 +18,80 @@
 /* --- */
 
 
-.container_header {
-    @include flexCenter(row, nowrap, space-around);
-    padding: 1rem;
+header {
     box-shadow: $shadow-caixagrande;
-    
-    .buttons_header {
-        @include flexCenter(row, nowrap, space-around);
-        widows: 100%;
-        // gap: 3.625rem;
-
-        @media (max-width: $mobile) {
-            & {
-            flex-direction: column;
-            gap: 1.2rem;
-            }
-        }
-    }
-
-    .toggleBtn{
-        @include hamburgerBtn;
-    }
+    position: relative;
+    padding: 1rem;
 }
 
-.menu_nav {
-    @include flexCenter(row, wrap, space-between);
-    gap: 1.5625rem;
+.navbar {
+    @include flexCenter(row, nowrap, space-between);
+    width: 100%;
 
-    .items_nav {
-        a {
-            @include label(400, $color-fontecinza);
+    .links {
+        @include flexCenter(row, nowrap, center);
+        gap: 2rem;
+
+        a{
             text-decoration: none;
+            @include label(400, $color-fontecinza);
 
             &:hover {
                 @include fontHover;
             }
         }
-        
     }
 
+    .sign_btn {
+        @include redBtn
+    }
+
+    .toggle_btn {
+        color: $color-hover-vermelho;
+        cursor: pointer;
+        display: none;
+    }
+    
 }
 
-.buttons_login {
-    @include flexCenter(row, nowrap, center);
-    gap: 1.3125rem;
-    .signUp {
-        @include label(400, $color-vermelho);
+.dropdown_menu {
+    display: none;
+    text-align: center;
+    
+    .links {
+        @include flexCenter(column, nowrap, center);
+        a{
+            text-decoration: none;
+            @include label(400, $color-fontecinza);
 
-        &:hover {
-        color: $color-hover-vermelho;
-        transition: 0.4s;
+            &:hover {
+                @include fontHover;
+            }
         }
     }
 
-    .signIn {
+    .sign_btn {
+        @include flexCenter(column, nowrap, center);
         @include redBtn;
-
+        width: 100%;
     }
 }
 
-@media (max-width: $mobile) {
-    .toggleBtn {
+
+@media (max-width: 800px){
+    .navbar .links, .navbar .sign_btn {
+        display: none !important;
+    }
+
+    .navbar .sign_btn {
         display: block !important;
     }
 
-    .menu_nav {
-        display: none;
-    
+    .dropdown_menu{
+        display: block!important;
     }
 
-    .menu_nav.active{
+    .toggle_btn {
         display: flex;
-        @include flexCenter(column, nowrap, center);
-    }
-
-
-    .items_nav{
-        width: 100%;
-        text-align: center;
     }
 }
