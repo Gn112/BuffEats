@@ -16,7 +16,7 @@
     <main>
         <div class="container_cadastro">
             <div id="return">
-                <a href="../Login/index.php">
+                <a href="javascript:javascript:history.go(-1)">
                     <span class="material-symbols-outlined">
                         arrow_back
                     </span>

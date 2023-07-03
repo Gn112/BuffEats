@@ -19,8 +19,8 @@
             </ul>
 
             <div class="login">
-                <a href="#" class="signUp_btn">criar conta</a>
-                <a href="#" class="sign_btn">Entrar</a>
+                <a class="signUp_btn" id="criar">criar conta</a>
+                <a class="sign_btn" id="entrar">Entrar</a>
             </div>
             <span class="toggle_btn material-symbols-outlined">
                 menu
@@ -33,8 +33,8 @@
                 <li><a href="#">Quem Somos</a></li>
             </ul>
             <div class="login">
-                <a href="#" class="signUp_btn">criar conta</a>
-                <a href="#" class="sign_btn">Entrar</a>
+                <a class="signUp_btn" id="criar">criar conta</a>
+                <a class="sign_btn" id="entrar">Entrar</a>
             </div>
         </div>
 
