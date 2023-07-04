@@ -3,8 +3,8 @@ ini_set('default_charset', 'utf-8');
 ?>
 
 <?php
-$servername = "34.95.153.229";
-$database = "buffeat";
+$servername = "34.136.11.187";
+$database = "Buffeats";
 $username = "root";
 $password = "COTemig123";
 // Create connection
