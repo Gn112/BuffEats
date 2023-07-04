@@ -17,6 +17,16 @@ if (!$conn) {
 }
 echo "Connected successfully";
 
+// CRIPTOGRAFAR SENHA
+function Senha($psswd){
+    $algoritmo = "AES-256-CBC";
+    $chave = "_B_3Ats";
+    $iv = "wNYtCnelXfOa6uiJ";
+
+    $msg_criptografada = openssl_encrypt($psswd, $algoritmo, $chave, OPENSSL_RAW_DATA, $iv);
+    return base64_encode($msg_criptografada);
+}   
+
 // Página Cliente
 $full_name = $_POST["full_name"];
 $cpf = $_POST["cpf"];
@@ -25,7 +35,7 @@ $cep = $_POST["cep"];
 
 // Página Email
 $email = $_POST["email"];
-$senha = $_POST["senha"];
+$senha = Senha($_POST["senha"]);
 
 // Dado temporário até a implentação do sistema de pagamento
 $opcao = 1;
