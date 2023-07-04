@@ -16,7 +16,8 @@
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
-    font-family: 'Outfit'; 
+    font-family: 'Outfit';
+    text-decoration: none;
 }
 
 html,
@@ -93,6 +94,7 @@ main {
 
 @media screen and (max-width: 800px) {
 
+    
     body{
         background-image: none;
         background-color: var(--color-cinzafundo);

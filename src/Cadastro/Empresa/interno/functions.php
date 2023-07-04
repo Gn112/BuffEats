@@ -5,8 +5,8 @@
 ini_set('default_charset', 'utf-8');
 include('confirmacaoEmail.php');
 
-$servername = "34.95.153.229";
-$database = "buffeat";
+$servername = "34.136.11.187";
+$database = "Buffeats";
 $username = "root";
 $password = "COTemig123";
 // Create connection
@@ -17,6 +17,15 @@ if (!$conn) {
 }
 echo "Connected successfully";
 
+// CRIPTOGRAFAR SENHA
+function Senha($psswd){
+    $algoritmo = "AES-256-CBC";
+    $chave = "_B_3Ats";
+    $iv = "wNYtCnelXfOa6uiJ";
+
+    $msg_criptografada = openssl_encrypt($psswd, $algoritmo, $chave, OPENSSL_RAW_DATA, $iv);
+    return base64_encode($msg_criptografada);
+}   
 
 // Página Empresa
 $nome_empresa = $_POST["nome_empresa"];
@@ -26,7 +35,7 @@ $CEP = $_POST["CEP"];
 
 // Página Email
 $email = $_POST["email"];
-$senha = $_POST["senha"];
+$senha = Senha($_POST["senha"]);
 
 // Dado temporário
 $formas_recebimento = 1;
