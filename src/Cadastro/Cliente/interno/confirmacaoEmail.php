@@ -17,20 +17,11 @@ require 'SMTP.php';
 function confirmaEmail($confirmar, $usuario, $id_user) {
     $mail = new PHPMailer(true);
 
-    // Gera token
-    // function generateToken() {
-    //     // Generate a random token
-    //     $token = bin2hex(random_bytes(32));
-    //     return $token;
-    // }
-    
-    // $token = generateToken();
-    // $confirmacaoLink = 'https://example.com/confirmacaoEmail.php?token=' . $token;
     
     $emailMsg = 
     "Para confirmar seu email siga o <b>link abaixo</b>: <br><br>
     
-    <a href='http://localhost/BuffeEats/src/ConfirmEmail/emailEnviado.php?token=$id_user'>Clique Aqui</a><br><br>
+    <a href='http://localhost/BuffeEats/src/ConfirmEmail/emailConfirmadoCli.php?token=$id_user'>Clique Aqui</a><br><br>
     
     Esta mensagem foi enviada pela empresa BuffEats.<br>
     Você está recebendo esta mensagem pois foi cadastrado no banco de dados da empresa.";

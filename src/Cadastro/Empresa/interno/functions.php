@@ -40,6 +40,9 @@ $senha = Senha($_POST["senha"]);
 // Dado temporário
 $formas_recebimento = 1;
 
+// Email não confirmado
+$confirmadoEmail = 0;
+
 
 // FUNÇÃO VALIDAR NOME
 function validaEmpresa($empresa)
@@ -147,12 +150,12 @@ function validaSenhaEmpresa($senha)
 if (isset($_POST['cadastrarEmpresa'])) {
     if (validaEmpresa($nome_empresa) == true && validaCNPJ($CNPJ) == true && validaCelEmpresa($num_contato) == true && validaCepEmpresa($CEP) == true && validaEmailEmpresa($email) == true && validaSenhaEmpresa($senha) == true) {
         $sql = "INSERT INTO CADASTRO_EMPRESA 
-        (id_empresa, nome_empresa, CPF_CNPJ, num_contato, CEP, email, senha, formas_recebimento) 
-        VALUES (default,'$nome_empresa', '$CNPJ', '$num_contato', '$CEP', '$email', '$senha', '$formas_recebimento')";
+        (id_empresa, nome_empresa, CPF_CNPJ, num_contato, CEP, email, senha, formas_recebimento, EmailConfirma) 
+        VALUES (default,'$nome_empresa', '$CNPJ', '$num_contato', '$CEP', '$email', '$senha', '$formas_recebimento', '$confirmadoEmail')";
         echo ("TANANANAAN");
         if (mysqli_query($conn, $sql)) {
             echo "Dados inseridos com sucesso.";
-            confirmaEmail($email);
+            confirmaEmail($email, $nome_empresa, $CNPJ);
             $_POST["nome_empresa"] = "";
             $_POST["CNPJ"] = "";
             $_POST["num_contato"] = "";
@@ -160,6 +163,7 @@ if (isset($_POST['cadastrarEmpresa'])) {
             $_POST["email"] = "";
             $_POST["senha"] = "";
             $_POST["formas_recebimento"] = "";
+            $_POST["confirmadoEmail"] = 0;
 
             
         } else {
