@@ -1,11 +1,63 @@
+<?php
+// Agradecimentos: https://youtu.be/8uZYI-EjTTA
+
+session_start();
+
+$chave = filter_input(INPUT_GET, "token", FILTER_SANITIZE_STRING);
+
+if (!empty($chave)) {
+    echo $chave;
+
+    $servername = "34.136.11.187";
+    $database = "Buffeats";
+    $username = "root";
+    $password = "COTemig123";
+    // Create connection
+    $conn = mysqli_connect($servername, $username, $password, $database);
+
+    mysqli_query($conn, "SET SQL_SAFE_UPDATES=0;");
+
+    $sql = "SELECT * FROM CADASTRO_CLIENTE WHERE cpf = '$chave'";
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) > 0) {
+        
+
+
+        $sql = "UPDATE CADASTRO_CLIENTE SET EmailConfirma = 1 WHERE CPF = '$chave';";
+
+        $resultUpdate = mysqli_query($conn, $sql);
+
+        if (mysqli_affected_rows($conn) > 0) {
+            echo "EMAIL CONFIRMADO";
+        }
+
+        mysqli_query($conn, "SET SQL_SAFE_UPDATES=1;");
+
+
+
+    } else {
+        echo "CADASTRO NÃO EXISTENTE!!!";
+
+        mysqli_query($conn, "SET SQL_SAFE_UPDATES=1;");
+
+
+    }
+
+
+} else {
+    echo "Endereço Inválido.";
+    header("Location: ../../index.html");
+}
+mysqli_close($conn);
+?>
+
 <!DOCTYPE html>
 <html lang="PT-br">
 <script>
 
-    setTimeout(() => {
-        window.location.href = "../Login/index.php"
-    }, 3000);
 </script>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,7 +73,7 @@
     <main>
         <div id="container_rec">
 
-        <div class="row">
+            <div class="row">
                 <img src="img/icon_confirmacao.svg" alt="lock.png">
             </div>
 
@@ -32,13 +84,13 @@
                 </h2>
             </div>
 
-                <div class="row">
-                <a href="../Login/index.php"></a>
+            <div class="row">
+                <!-- <a href="../Login/index.php"></a>
                 <button onclick="" name="volta" id="buttonVoltar" class="small_button">
-                    CLIQUE AQUI PARA VOLTAR OU AGUARDE 3 SEGUNDOS
-                    </button>
-</a>
-                </div>
+                    CLIQUE AQUI PARA VOLTAR OU AGUARDE 5 SEGUNDOS
+                </button>
+                </a> -->
+            </div>
         </div>
     </main>
 </body>

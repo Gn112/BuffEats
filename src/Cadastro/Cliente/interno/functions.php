@@ -40,6 +40,9 @@ $senha = Senha($_POST["senha"]);
 // Dado temporário até a implentação do sistema de pagamento
 $opcao = 1;
 
+// Email não confirmado
+$confirmadoEmail = 0;
+
 
 
 // FUNÇÃO VALIDAR NOME
@@ -129,12 +132,12 @@ function validaSenha($senha)
 // TESTE
 if (isset($_POST['cadastrar'])) {
     if (validaNome($full_name) == true && validaCPF($cpf) == true && validaCel($numero_cel) == true && validaCep($cep) == true && validaEmail($email) == true && validaSenha($senha) == true) {
-        $sql = "INSERT INTO CADASTRO_CLIENTE (id_cliente, nome_completo, CPF, celular, CEP, email, senha, opcao_pagamento) 
-        VALUES (default,'$full_name', '$cpf', '$numero_cel', '$cep', '$email', '$senha', '$opcao')";
+        $sql = "INSERT INTO CADASTRO_CLIENTE (id_cliente, nome_completo, CPF, celular, CEP, email, senha, opcao_pagamento, EmailConfirma) 
+        VALUES (default,'$full_name', '$cpf', '$numero_cel', '$cep', '$email', '$senha', '$opcao', '$confirmadoEmail')";
         echo ("TANANANAAN");
         if (mysqli_query($conn, $sql)) {
             echo "Dados inseridos com sucesso.";
-            confirmaEmail($email);
+            confirmaEmail($email, $full_name, $cpf);
             $_POST["full_name"] = "";
             $_POST["cpf"] = "";
             $_POST["numero_cel"] = "";
@@ -142,6 +145,7 @@ if (isset($_POST['cadastrar'])) {
             $_POST["email"] = "" ;
             $_POST["senha"] = "";
             $_POST["opcao"] = 0;
+            $_POST["confirmadoEmail"] = 0;
         } else {
             echo "<br>Ei... Tu colocou dados errados aí guria/piá. Verifica esse BO aí :/ <br> Erro ao inserir os dados: " . mysqli_error($conn);
         }

@@ -1,6 +1,8 @@
 <?php
 
 // Consulta: https://mailtrap.io/blog/phpmailer-gmail/
+// Agradecimentos: https://youtu.be/8uZYI-EjTTA
+
 
 // Importa classes do PHPMailer 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -12,23 +14,30 @@ require 'PHPMailer.php';
 require 'SMTP.php';
 
 
-function confirmaEmail($confirmar) {
+function confirmaEmail($confirmar, $usuario, $id_user) {
     $mail = new PHPMailer(true);
 
     // Gera token
-    function generateToken() {
-        // Generate a random token
-        $token = bin2hex(random_bytes(32));
-        return $token;
-    }
+    // function generateToken() {
+    //     // Generate a random token
+    //     $token = bin2hex(random_bytes(32));
+    //     return $token;
+    // }
     
-    $token = generateToken();
-    $confirmacaoLink = 'https://example.com/confirmacaoEmail.php?token=' . $token;
+    // $token = generateToken();
+    // $confirmacaoLink = 'https://example.com/confirmacaoEmail.php?token=' . $token;
     
-    $emailMsg = 'Para confirmar seu email siga o <b>link abaixo</b>: <br> <a href="$confirmacaoLink">$confirmacaoLink</a>';
+    $emailMsg = 
+    "Para confirmar seu email siga o <b>link abaixo</b>: <br><br>
+    
+    <a href='http://localhost/BuffeEats/src/ConfirmEmail/emailEnviado.php?token=$id_user'>Clique Aqui</a><br><br>
+    
+    Esta mensagem foi enviada pela empresa BuffEats.<br>
+    Você está recebendo esta mensagem pois foi cadastrado no banco de dados da empresa.";
 
     // Configurações do servidor
-    $mail->SMTPDebug = 1;
+    $mail->CharSet = "UTF-8";
+    $mail->SMTPDebug = 0;
     $mail->isSMTP(); //Devine o uso de SMTP no envio
     $mail->SMTPAuth = true; //Habilita a autenticação SMTP
     $mail->Username = 'buffeats@outlook.com';
@@ -45,10 +54,10 @@ function confirmaEmail($confirmar) {
 
 
     // Define o destinatário
-    $mail->addAddress($confirmar, 'Usuário BuffEats');
+    $mail->addAddress($confirmar, $usuario);
     // Conteúdo da mensagem
     $mail->isHTML(true); // Seta o formato do e-mail para aceitar conteúdo HTML
-    $mail->Subject = 'Confirmação de Email CLIENTE';
+    $mail->Subject = 'Olá ' . $usuario . ' por favor confirme o seu Email na BuffEats';
 
     $mail->Body = $emailMsg;
 
