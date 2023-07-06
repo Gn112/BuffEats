@@ -15,7 +15,7 @@ $conn = mysqli_connect($servername, $username, $password, $database);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-echo "<br> Connected successfully <br>";
+echo "Connected successfully";
 
 // CRIPTOGRAFAR SENHA
 function Senha($psswd){
@@ -136,7 +136,7 @@ if (isset($_POST['cadastrar'])) {
         VALUES (default,'$full_name', '$cpf', '$numero_cel', '$cep', '$email', '$senha', '$opcao', '$confirmadoEmail')";
         echo ("TANANANAAN");
         if (mysqli_query($conn, $sql)) {
-            echo "<br>Dados inseridos com sucesso. Redirecionando.......<br>";
+            echo "Dados inseridos com sucesso.";
             confirmaEmail($email, $full_name, $cpf);
             $_POST["full_name"] = "";
             $_POST["cpf"] = "";
@@ -146,25 +146,13 @@ if (isset($_POST['cadastrar'])) {
             $_POST["senha"] = "";
             $_POST["opcao"] = 0;
             $_POST["confirmadoEmail"] = 0;
-
-
-
         } else {
-            echo "<br>Ei... Tu colocou dados errados aí guria/piá. Verifica esse BO aí :/ <br> Erro ao inserir os dados: " . mysqli_error($conn) . "Redirecionando.......";
+            echo "<br>Ei... Tu colocou dados errados aí guria/piá. Verifica esse BO aí :/ <br> Erro ao inserir os dados: " . mysqli_error($conn);
         }
     } else {
-        echo "<br>Ei... Tu colocou dados errados aí guria/piá. Verifica esse BO aí :/ <br> Erro ao inserir os dados: " . mysqli_error($conn) . "Redirecionando.......";
+        echo "<br>Ei... Tu colocou dados errados aí guria/piá. Verifica esse BO aí :/ <br> Erro ao inserir os dados: " . mysqli_error($conn);
     }
 
 }
 
-
-sleep(3);
-echo '<script>
-setTimeout(() => {
-    window.location.href = "../../../home/Deslogado/index.php"
-}, 3000);
-</script>';
-
-die();
 ?>
