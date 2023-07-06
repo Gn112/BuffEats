@@ -96,3 +96,30 @@ body {
          transition: 0.4s;
     }
 }
+
+@mixin whiteBtn {
+    color: $color-fontecinza;
+    background-color: $color-branco;
+    border: none;
+    border-radius: .4375rem;
+    font-size: .9375rem;
+    cursor: pointer;
+    box-shadow: $shadow-caixainput;
+    padding: 10px 25px;
+    &:hover {
+        background-color: $color-hover-vermelho;
+         transition: 0.4s;
+    }
+}
+
+@mixin inputBox {
+    width: 100%;
+    box-shadow: $shadow-caixainput;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.0625rem;
+    font-style: normal;
+    font-weight: 300;
+    margin-top: 2%;
+    padding: .625rem .9375rem;
+}
