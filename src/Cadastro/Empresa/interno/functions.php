@@ -154,7 +154,7 @@ if (isset($_POST['cadastrarEmpresa'])) {
         VALUES (default,'$nome_empresa', '$CNPJ', '$num_contato', '$CEP', '$email', '$senha', '$formas_recebimento', '$confirmadoEmail')";
         echo ("TANANANAAN");
         if (mysqli_query($conn, $sql)) {
-            echo "Dados inseridos com sucesso.";
+            echo "<br>Dados inseridos com sucesso. Redirecionando.......<br>";
             confirmaEmail($email, $nome_empresa, $CNPJ);
             $_POST["nome_empresa"] = "";
             $_POST["CNPJ"] = "";
@@ -167,13 +167,20 @@ if (isset($_POST['cadastrarEmpresa'])) {
 
             
         } else {
-            echo "<BR>Ei... Tu colocou dados errados aí guria/piá. Verifica esse BO aí :/ <br> Erro ao inserir os dados: " . mysqli_error($conn);
+            echo "<br>Ei... Tu colocou dados errados aí guria/piá. Verifica esse BO aí :/ <br> Erro ao inserir os dados: " . mysqli_error($conn) . "Redirecionando.......";
         }
     } else {
-        echo "<br>Ei... Tu colocou dados errados aí guria/piá. Verifica esse BO aí :/ <br> Erro ao inserir os dados: " . mysqli_error($conn);
+        echo "<br>Ei... Tu colocou dados errados aí guria/piá. Verifica esse BO aí :/ <br> Erro ao inserir os dados: " . mysqli_error($conn) . "Redirecionando.......";
     }
 
 }
 
+sleep(3);
+echo '<script>
+setTimeout(() => {
+    window.location.href = "../../../home/Deslogado/index.php"
+}, 3000);
+</script>';
 
+die();
 ?>
