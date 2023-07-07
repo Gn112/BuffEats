@@ -134,9 +134,9 @@ if (isset($_POST['cadastrar'])) {
     if (validaNome($full_name) == true && validaCPF($cpf) == true && validaCel($numero_cel) == true && validaCep($cep) == true && validaEmail($email) == true && validaSenha($senha) == true) {
         $sql = "INSERT INTO CADASTRO_CLIENTE (id_cliente, nome_completo, CPF, celular, CEP, email, senha, opcao_pagamento, EmailConfirma) 
         VALUES (default,'$full_name', '$cpf', '$numero_cel', '$cep', '$email', '$senha', '$opcao', '$confirmadoEmail')";
-        echo ("TANANANAAN");
+        echo ("<br>TANANANAAN<br>");
         if (mysqli_query($conn, $sql)) {
-            echo "Dados inseridos com sucesso.";
+            echo "<br>Dados inseridos com sucesso.<br>";
             confirmaEmail($email, $full_name, $cpf);
             $_POST["full_name"] = "";
             $_POST["cpf"] = "";

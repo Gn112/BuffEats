@@ -28,7 +28,7 @@ function confirmaEmail($confirmar, $usuario, $id_user) {
 
     // Configurações do servidor
     $mail->CharSet = "UTF-8";
-    $mail->SMTPDebug = 0;
+    $mail->SMTPDebug = 1;
     $mail->isSMTP(); //Devine o uso de SMTP no envio
     $mail->SMTPAuth = true; //Habilita a autenticação SMTP
     $mail->Username = 'buffeats@outlook.com';
