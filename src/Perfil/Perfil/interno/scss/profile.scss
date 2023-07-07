@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+// Importa configurações reutilizáveis de css
+@import '../../../globalAssets/scss/global';
+
+/* Variáveis */
+
+// $color-vermelho: #BD2323;
+// $color-hover-vermelho: #be4d4d;
+// $color-branco: #ffffff;
+// $color-fontecinza: #463B3B;
+// $color-hover-fontecinza: #000000;
+// $color-cinzaclaro: #F8F8F8;
+// $color-cinzafundo: #EEEEEE;
+// $shadow-caixagrande: 0rem .3125rem .625rem .125rem rgba(0, 0, 0, 0.2);
+// $shadow-caixainput: 0rem .25rem .625rem rgba(0, 0, 0, 0.15);
+
+/* --- */
+
+main {
+    @include flexCenter(column, inherit, center);
+    height: 100vh;
+}
+
+.main_container {
+    width: 80%;
+    background-color: $color-cinzaclaro;
+    border-radius: .9375rem;
+    box-shadow: $shadow-caixagrande;
+    padding: 1.875rem;
+    text-align: center;
+
+    & .profileInfo_container {
+        @include flexCenter(column, inherit, center);
+        margin: 1.3rem;
+
+        & img {
+            width: 200px;
+        }
+
+        & .cliente_titulo {
+            @include h1(500, $color-fontecinza);
+        }
+
+        & .label {
+            @include label(300, $color-fontecinza);
+            font-size: 17px;
+        }
+    }
+
+    & .row {
+        @include flexCenter(row, wrap, center);
+        gap: 3.125rem;
+        margin: 2rem;
+
+        & .grid_space {
+            @include flexCenter(column, nowrap, flex-start);
+            align-items: flex-start;
+
+            & .label {
+                @include label(400, $color-fontecinza);
+                font-size: 17px;
+            }
+
+            & .input_box {
+                @include inputBox;
+            }
+        }
+    }
+
+    & #top {
+        @include flexCenter(row, wrap, flex-start);
+        align-items: center;
+
+        & a {
+            display: flex;
+            color: $color-vermelho;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    & #bottom {
+        @include flexCenter(row, wrap, flex-end);
+        margin-right: 2rem;
+        gap: 10px;
+    }
+
+    & #alterar {
+        @include redBtn;
+    }
+
+    & #sair {
+        @include whiteBtn;
+    }
+
+
+}
+
+@media (max-width: 800px){
+
+    .logo {
+        width: 10px;
+    }
+
+    .cliente_titulo {
+        font-size: 22px!important;
+    }
+}
