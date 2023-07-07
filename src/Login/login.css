@@ -252,4 +252,13 @@ a.none_inscrever:hover{
 }
 
 
+@media screen and (max-width: 800px) {
+
+    
+    body{
+        background-image: none;
+        background-color: var(--color-cinzafundo);
+    }
+  }
+
 
