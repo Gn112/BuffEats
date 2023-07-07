@@ -251,5 +251,14 @@ a.none_inscrever:hover{
     transition: 0.4s;
 }
 
+@media screen and (max-width: 800px) {
+
+    
+    body{
+        background-image: none;
+        background-color: var(--color-cinzafundo);
+    }
+  }
+
 
 
