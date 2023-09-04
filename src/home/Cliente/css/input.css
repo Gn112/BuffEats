@@ -1,7 +1,0 @@
-/* 
-Exportamos para este arquivo as classes padrões do Tailwind
-Criaremos aqui também nossas classes personalizadas
-*/
-@tailwind base;
-@tailwind components;
-@tailwind utilities;

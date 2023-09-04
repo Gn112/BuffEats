@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* Fontes */
+
+
+/* Classes Personalizadas */
+
+.redBtn {
+    color: #ffffff;
+    background-color: #BD2323;
+    border: none;
+    border-radius: .4375rem;
+    font-size: .9375rem;
+    cursor: pointer;
+    box-shadow: 0rem .25rem .625rem rgba(0, 0, 0, 0.15);
+    padding: 10px 25px;
+}
+
+.redBtn:hover {
+    background-color: #be4d4d;
+    transition: 0.4s;
+}
+
+.signIn {
+    font-weight: 400;
+    font-size: 1.125rem;
+    color: #BD2323;
+    cursor: pointer;
+}
+
+.signIn:hover {
+    opacity: 70%;
+    transition: 0.4s;
+}
