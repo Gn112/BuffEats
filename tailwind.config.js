@@ -1,7 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 
 module.exports = {
-  content: ["./src/home/Cliente/**.{html,js,php}"],
+  content: [
+    "./src/home/Cliente/**.{html,js,php}",
+    "/src/globalAssets/js/*.js"
+  ],
   theme: {
     extend: {
       colors: {
@@ -15,8 +18,22 @@ module.exports = {
         shadowcaixagrande: "0rem .3125rem .625rem .125rem rgba(0, 0, 0, 0.2)",
         shadowcaixainput: "0rem .25rem .625rem rgba(0, 0, 0, 0.15)",
       },
+      screens: {
+        'widescreen': { 'raw': '(min-aspect-ratio: 3/2)' },
+        'tallscreen': { 'raw': '(max-aspect-ratio: 13/20)' },
+      },
       fontFamily: {
-        outfit: ['Outfit','Arial'],
+        outfit: ['Outfit'],
+      },
+      keyframes: {
+        'open-menu': {
+          '0%': { transform: 'scaleY(0)'},
+          '80%': { transform: 'scaleY(1.2)'},
+          '100%': { transform: 'scaleY(1)'},
+        },
+      },
+      animation: {
+        'open-menu': 'open-menu 0.5s ease-in-out forwards',
       }
     },
   },
