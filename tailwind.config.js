@@ -3,7 +3,7 @@
 module.exports = {
   content: [
     "./src/home/Cliente/**.{html,js,php}",
-    "/src/globalAssets/js/*.js"
+    "/src/globalAssets/**.js"
   ],
   theme: {
     extend: {

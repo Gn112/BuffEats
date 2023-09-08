@@ -1,12 +1,11 @@
-<!-- CLIENTE
-
-<input type="submit" name="logoff" value="Deslogar">
 <?php
-if (isset($_POST['logoff'])) {
-    session_destroy();
-    header('Location: ../../Login/index.php');
-}
-?> -->
+session_start();
+
+// if (isset($_POST['logoff'])) {
+//     session_destroy();
+//     header('Location: ../../Login/index.php');
+// }
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br" class="sm:scroll-smooth">
@@ -31,11 +30,14 @@ if (isset($_POST['logoff'])) {
                 <button id="hamburger-button" class="text-3xl md:hidden cursor-pointer">
                     &#9776;
                 </button>
-                <nav class="hidden md:block space-x-3" aria-label="main">
+                <nav class="hidden md:flex items-center space-x-3" aria-label="main">
                     <a href="#" class="text-lg font-medium">Home</a>
+                    <a href="#" class="text-lg font-medium">Pedidos</a>
                     <a href="#" class="text-lg font-medium">Quem Somos</a>
-                    <!-- <a class="signIn" id="criar">criar conta</a> -->
-                    <a href="../../Login/index.php" class="redBtn" id="entrar">Entrar</a>
+                    <a href="#" id="cliente">
+                        <img class="d" src="../../globalAssets/img/cliente_p.png" alt="">
+                    </a>
+                    <a href="#" class="text-lg text-vermelho font-medium">Sair</a>
                 </nav>
             </div>
         </section>
@@ -46,8 +48,12 @@ if (isset($_POST['logoff'])) {
             </button>
             <nav class="flex flex-col min-h-screen items-center py-8" aria-label="mobile">
                 <a href="#" class="w-full text-center p-6 hover:opacity-90">Home</a>
+                <a href="#" class="w-full text-center p-6 hover:opacity-90">Pedidos</a>
                 <a href="#" class="w-full text-center p-6 hover:opacity-90">Quem Somos</a>
-                <a href="../../Login/index.php" class="w-full text-center p-6 hover:opacity-90" id="entrar">Entrar</a>
+                <a href="#" class="w-full text-center p-6 hover:opacity-90" id="cliente">
+                    Perfil
+                </a>
+                <a href="#" class="w-full text-center p-6 hover:opacity-90">Sair</a>
             </nav>
         </section>
     </header>
