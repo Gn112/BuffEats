@@ -6,9 +6,14 @@ ini_set('default_charset', 'utf-8');
 session_start();
 
 // Conectar ao banco de dados
-$servername = "34.136.11.187";
+// $servername = "34.136.11.187";
+// $usernam = "root";
+// $passwor = "COTemig123";
+// $dbname = "Buffeats";
+
+$servername = "localhost";
 $usernam = "root";
-$passwor = "COTemig123";
+$passwor = "";
 $dbname = "Buffeats";
 
 $conn = new mysqli($servername, $usernam, $passwor, $dbname);

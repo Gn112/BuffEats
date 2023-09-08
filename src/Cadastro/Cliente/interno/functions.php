@@ -5,10 +5,16 @@
 ini_set('default_charset', 'utf-8');
 include('confirmacaoEmail.php');
 
-$servername = "34.136.11.187";
+// $servername = "34.136.11.187";
+// $database = "Buffeats";
+// $username = "root";
+// $password = "COTemig123";
+
+$servername = "localhost";
 $database = "Buffeats";
 $username = "root";
-$password = "COTemig123";
+$password = "";
+
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $database);
 // Check connection
@@ -137,7 +143,7 @@ if (isset($_POST['cadastrar'])) {
         echo ("<br>TANANANAAN<br>");
         if (mysqli_query($conn, $sql)) {
             echo "<br>Dados inseridos com sucesso.<br>";
-            confirmaEmail($email, $full_name, $cpf);
+            // confirmaEmail($email, $full_name, $cpf);
             $_POST["full_name"] = "";
             $_POST["cpf"] = "";
             $_POST["numero_cel"] = "";
