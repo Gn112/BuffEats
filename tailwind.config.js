@@ -3,6 +3,7 @@
 module.exports = {
   content: [
     "./src/home/Cliente/**.{html,js,php}",
+    "./src/Perfil/**.{html,js,php}",
     "/src/globalAssets/**.js"
   ],
   theme: {
@@ -23,7 +24,7 @@ module.exports = {
         'tallscreen': { 'raw': '(max-aspect-ratio: 13/20)' },
       },
       fontFamily: {
-        outfit: ['Outfit'],
+        custom: ['Outfit', 'sans'],
       },
       keyframes: {
         'open-menu': {
