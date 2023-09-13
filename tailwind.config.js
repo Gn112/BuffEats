@@ -4,7 +4,8 @@ module.exports = {
   content: [
     "./src/home/Cliente/**.{html,js,php}",
     "./src/Perfil/**.{html,js,php}",
-    "/src/globalAssets/**.js"
+    "./src/Perfil/**/**.{html,js,php}",
+    "./src/globalAssets/**.js"
   ],
   theme: {
     extend: {
@@ -23,9 +24,6 @@ module.exports = {
         'widescreen': { 'raw': '(min-aspect-ratio: 3/2)' },
         'tallscreen': { 'raw': '(max-aspect-ratio: 13/20)' },
       },
-      fontFamily: {
-        custom: ['Outfit', 'sans'],
-      },
       keyframes: {
         'open-menu': {
           '0%': { transform: 'scaleY(0)'},
@@ -36,6 +34,9 @@ module.exports = {
       animation: {
         'open-menu': 'open-menu 0.5s ease-in-out forwards',
       }
+    },
+    fontFamily: {
+      'main': ['Outfit', 'sans'],
     },
   },
   plugins: [],
