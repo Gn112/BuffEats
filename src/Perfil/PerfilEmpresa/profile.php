@@ -53,7 +53,7 @@ $senhaSem = DescriptografaSenha($senha);
                     <span>Retornar para Página Anterior</span>
                 </a>
             </div>
-            <form method="post" action="edit_usuario.php">
+            <form method="post" onsubmit="return validateForm()"  action="edit_usuario.php">
             <div class="profileInfo_container">
                 <div>
                     <img class="logo" src="../../globalAssets/img/empresa_g.png" alt="" srcset="">
@@ -65,18 +65,18 @@ $senhaSem = DescriptografaSenha($senha);
                 <div class="grid_space"> 
                 <input type="hidden" name="id_cliente" value="<?php echo $id  ?>">
                     <label class="label">Nome:</label>
-                   <input type="text" name="nome" id="usuario" class="input_box" value="<?php echo $nome ?>" >
+                   <input type="text" name="nome" onkeypress="return /^[A-Z/a-z]*$/.test(event.key)" id="usuario" class="input_box" value="<?php echo $nome ?>" >
                 </div>
                 <div class="grid_space">
                     <label class="label">Número de Contato:</label>
-                    <input type="text" name="contato" id="num_celular" class="input_box" value="<?php echo $numero ?>" >
+                    <input maxlength="15" onkeyup="handlePhone(event)" type="text" name="contato" onkeypress="return /^[0-9]*$/.test(event.key)" id="num_celular" class="input_box" value="<?php echo $numero ?>" >
                 </div>
             </div>
 
             <div class="row">
                 <div class="grid_space">
                     <label class="label">Email:</label>
-                     <input type="text" name="email" id="num_celular" class="input_box" value="<?php echo $email ?>"> 
+                     <input type="text" name="email" id="email" class="input_box" value="<?php echo $email ?>"> 
                 </div>
 
                 <div class="grid_space">
@@ -87,9 +87,53 @@ $senhaSem = DescriptografaSenha($senha);
 
             <div id="bottom">
                 <buttom id="sair">SAIR</buttom>
-                <input  name="altera"type="submit" id="alterar"></input>
+                <input  name="altera" type="submit" onclick="validateForm()" id="alterar"></input>
             </div>
         </div>
+        <script>
+             function validateForm() {
+                        var Nome = document.getElementById('usuario').value;
+                        var Numero = document.getElementById('num_celular').value;
+                        var Email = document.getElementById('email').value;
+                        var Senha = document.getElementById('senha').value;
+
+                        if (Nome.trim() === '') {
+                            alert('Por favor, preencha o campo Nome.');
+                            return false;
+                        }
+
+                        if (Numero.trim() === ''){
+                            alert('Por favor, preencha o campo Número de Contato.');
+                            return false;
+                        }
+
+                        if (Email.trim() === '') {
+                            alert('Por favor, preencha o campo Email.');
+                            return false;
+                        }
+
+                        if (Senha.trim() === '') {
+                            alert('Por favor, preencha o campo Senha.');
+                            return false;
+                        }
+
+                        return true;
+                    }
+
+                    const handlePhone = (event) => {
+                    let input = event.target
+                    input.value = phoneMask(input.value)
+                    }
+
+                    const phoneMask = (value) => {
+                    if (!value) return ""
+                    value = value.replace(/\D/g,'')
+                    value = value.replace(/(\d{2})(\d)/,"($1) $2")
+                    value = value.replace(/(\d)(\d{4})$/,"$1-$2")
+                    return value
+                    }
+
+        </script>
 </form>
     </main>
 </body>

@@ -82,7 +82,7 @@ session_start();
                 <div class="my-4 sm:mx-4">
                     <label for="nome" class="text-lg font-medium text-fontecinza">Nome do Produto</label>
                     <input type="text" id="nome_produto" onkeypress="return /^[A-Z/a-z]*$/.test(event.key)" name="nome" class="w-full border border-gray-300 rounded px-3 py-2"
-                        placeholder="Coxinha de frango:" required>
+                        placeholder="Coxinha de frango" required>
                 </div>
 
                 <!-- Imagem do Produto (100x100) -->

@@ -62,16 +62,16 @@ $senhaSem = DescriptografaSenha($senha);
                 <span class="cliente_titulo">Bem-vindo(a), <?php echo $nome ?></span>
                 <span class="label">Gerencie suas informações e segurança.</span>
             </div>
-            <form method="post" action="edit_usuario.php">
+            <form method="post" onsubmit="return validateForm()" action="edit_usuario.php">
             <div class="row">
                 <div class="grid_space"> 
                 <input type="hidden" name="id_cliente" value="<?php echo $id ?>">
                     <label class="label">Usuário:</label>
-                   <input type="text" name="nome_completo" id="usuario" class="input_box" value="<?php echo $nome ?>">
+                   <input type="text" name="nome_completo"onkeypress="return /^[A-Z/a-z]*$/.test(event.key)" id="usuario" class="input_box" value="<?php echo $nome ?>">
                 </div>
                 <div class="grid_space">
-                    <label class="label">Número Celular:</label>
-                    <input type="text" name="celular" id="num_celular" class="input_box" value="<?php echo $celular ?>" >-
+                    <label class="label">Número de Celular:</label>
+                    <input type="text" maxlength="15" onkeyup="handlePhone(event)" name="celular" id="num_celular" class="input_box" value="<?php echo $celular ?>" >-
                 </div>
             </div>
 
@@ -90,8 +90,52 @@ $senhaSem = DescriptografaSenha($senha);
             <div id="bottom">
                 <buttom id="sair">SAIR</buttom>
                 
-                <input  name="altera"type="submit" id="alterar"></input>
-</form>
+                <input  name="altera"type="submit"type="submit" onclick="validateForm()" id="alterar"></input>
+        </form>
+        <script>
+             function validateForm() {
+                        var Nome = document.getElementById('usuario').value;
+                        var Numero = document.getElementById('num_celular').value;
+                        var Email = document.getElementById('email').value;
+                        var Senha = document.getElementById('senha').value;
+
+                        if (Nome.trim() === '') {
+                            alert('Por favor, preencha o campo Usuário.');
+                            return false;
+                        }
+
+                        if (Numero.trim() === ''){
+                            alert('Por favor, preencha o campo Número de Celular.');
+                            return false;
+                        }
+
+                        if (Email.trim() === '') {
+                            alert('Por favor, preencha o campo Email.');
+                            return false;
+                        }
+
+                        if (Senha.trim() === '') {
+                            alert('Por favor, preencha o campo Senha.');
+                            return false;
+                        }
+
+                        return true;
+                    }
+
+                    const handlePhone = (event) => {
+                    let input = event.target
+                    input.value = phoneMask(input.value)
+                    }
+
+                    const phoneMask = (value) => {
+                    if (!value) return ""
+                    value = value.replace(/\D/g,'')
+                    value = value.replace(/(\d{2})(\d)/,"($1) $2")
+                    value = value.replace(/(\d)(\d{4})$/,"$1-$2")
+                    return value
+                    }
+
+        </script>
             </div>
         </div>
         

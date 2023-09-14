@@ -68,18 +68,18 @@ session_start();
                 <h2 class="text-3xl font-medium text-fontecinza text-center">Adicione seus Produtos</h2>
                 <p class="text-xl font-normal text-fontecinza text-center">Adicione os Produtos que serão expostos aos Clientes.</p>
             </div>
-            <form action="" id="adicionar" class="flex justify-start p-4 flex-col">
+            <form method="post" onsubmit="return validateForm()"  id="prod1" class="flex justify-start p-4 flex-col">
                 <!-- Preço Unitário -->
                 <div class="my-4 sm:mx-4">
                     <label for="preco" class="text-lg font-medium text-fontecinza">Preço Unitário:</label>
-                    <input type="number" id="preco" name="preco" class="w-full border border-gray-300 rounded px-3 py-2"
+                    <input id ="preco" onkeypress="return /^[0-9]*$/.test(event.key)" oninput="formatarMoeda(this)" type="text" name="preco" class="w-full border border-gray-300 rounded px-3 py-2"
                         placeholder="R$ 1,00" required>
                 </div>
                 <!-- Nome do Produto -->
                 <div class="my-4 sm:mx-4">
                     <label for="nome" class="text-lg font-medium text-fontecinza">Nome do Produto</label>
-                    <input type="text" id="nome" name="nome" class="w-full border border-gray-300 rounded px-3 py-2"
-                        placeholder="Coxinha de frango:" required>
+                    <input type="text" id="nome_produto" onkeypress="return /^[A-Z/a-z]*$/.test(event.key)" name="nome"  class="w-full border border-gray-300 rounded px-3 py-2"
+                        placeholder="Coxinha de frango" required>
                 </div>
 
                 <!-- Foto do Produto -->
@@ -90,8 +90,43 @@ session_start();
 
                 <!-- Botão de Envio -->
                 <div class="my-4 sm:mx-4 text-center pb-3">
-                    <button type="submit" class="redBtn">ADICIONAR</button>
+                    <button  type="submit" onclick="validateForm()" name="submit" class="redBtn">ADICIONAR</button>
                 </div>
+                <script>
+                        function validateForm() {
+                        var Preco = document.getElementById('preco').value;
+                        var Nome_Produto = document.getElementById('nome_produto').value;
+
+                        if (Preco.trim() === ''){
+                            alert('Por favor, preencha o campo Preço Unitário.');
+                            return false;
+                        }
+
+                        if (Preco <= "R$ 0,00"){
+                            alert('Por favor, preencha o campo com um valor válido.');
+                            return false;
+                        }
+
+                        if (Nome_Produto.trim() === '') {
+                            alert('Por favor, preencha o campo Nome do Produto.');
+                            return false;
+                        }
+                        
+                        return true;
+                        }
+
+                        function formatarMoeda(input) {
+                        var valor = input.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+                        valor = (parseInt(valor) / 100).toFixed(2); // Divide por 100 e fixa 2 casas decimais
+
+                        // Formata a representação de moeda
+                        var valorFormatado = 'R$ ' + valor.replace('.', ',');
+
+                        // Atualiza o campo de entrada com o valor formatado
+                        input.value = valorFormatado;
+                        }
+
+                </script>
             </form>
 
         </section>
