@@ -68,20 +68,20 @@ session_start();
                 <p class="text-xl font-normal text-fontecinza text-center">Gerencie os Produtos que serão expostos aos
                     Clientes.</p>
             </div>
-            <form action="" id="prod1" class="flex justify-start p-4 flex-col">
+            <form method="post" onsubmit="return validateForm()" id="prod1" class="flex justify-start p-4 flex-col">
                 <div class="my-4 sm:mx-4 pt-3">
                     <h2 class="text-2xl border-b-2 font-medium text-fontecinza">Produto 1:</h2>
                 </div>
                 <!-- Preço Unitário -->
                 <div class="my-4 sm:mx-4">
-                    <label for="preco" class="text-lg font-medium text-fontecinza">Preço Unitário:</label>
-                    <input type="number" id="preco" name="preco" class="w-full border border-gray-300 rounded px-3 py-2"
+                    <label for="preco" name="Preco" class="text-lg font-medium text-fontecinza">Preço Unitário:</label>
+                    <input id ="preco" onkeypress="return /^[0-9]*$/.test(event.key)" oninput="formatarMoeda(this)" type="text" name="preco" class="w-full border border-gray-300 rounded px-3 py-2"
                         placeholder="R$ 1,00" required>
                 </div>
                 <!-- Nome do Produto -->
                 <div class="my-4 sm:mx-4">
                     <label for="nome" class="text-lg font-medium text-fontecinza">Nome do Produto</label>
-                    <input type="text" id="nome" name="nome" class="w-full border border-gray-300 rounded px-3 py-2"
+                    <input type="text" id="nome_produto" onkeypress="return /^[A-Z/a-z]*$/.test(event.key)" name="nome" class="w-full border border-gray-300 rounded px-3 py-2"
                         placeholder="Coxinha de frango:" required>
                 </div>
 
@@ -100,25 +100,25 @@ session_start();
 
                 <!-- Botão de Envio -->
                 <div class="my-4 sm:mx-4 text-center border-b-2 pb-3">
-                    <button type="submit" class="redBtn">ALTERAR</button>
+                    <button type="submit" onclick="validateForm()" name="submit" class="redBtn">ALTERAR</button>
                 </div>
             </form>
 
             <!-- Form Produto 2 -->
-            <form action="" id="prod2" class="flex justify-start p-4 flex-col">
+            <form  method="post" onsubmit="return validateFormDois()" id="formGerencia" class="flex justify-start p-4 flex-col">
                 <div class="my-4 sm:mx-4 pt-3">
                     <h2 class="text-2xl border-b-2 font-medium text-fontecinza">Produto 2:</h2>
                 </div>
                 <!-- Preço Unitário -->
                 <div class="my-4 sm:mx-4">
                     <label for="preco" class="text-lg font-medium text-fontecinza">Preço Unitário:</label>
-                    <input type="number" id="preco" name="preco" class="w-full border border-gray-300 rounded px-3 py-2"
+                    <input id="preco_dois" name="preco_dois" onkeypress="return /^[0-9]*$/.test(event.key)" oninput="formatarMoeda_Dois(this)" type="text" class="w-full border border-gray-300 rounded px-3 py-2"
                         placeholder="R$ 1,00" required>
                 </div>
                 <!-- Nome do Produto -->
                 <div class="my-4 sm:mx-4">
                     <label for="nome" class="text-lg font-medium text-fontecinza">Nome do Produto</label>
-                    <input type="text" id="nome" name="nome" class="w-full border border-gray-300 rounded px-3 py-2"
+                    <input type="text" id="nome_produto_dois"onkeypress="return /^[A-Z/a-z]*$/.test(event.key)" name="nome" class="w-full border border-gray-300 rounded px-3 py-2"
                         placeholder="Empada" required>
                 </div>
 
@@ -137,8 +137,77 @@ session_start();
 
                 <!-- Botão de Envio -->
                 <div class="my-4 sm:mx-4 text-center border-b-2 pb-3">
-                    <button type="submit" class="redBtn">ALTERAR</button>
+                    <button type="submit" onclick="validateFormDois()" name="submit" class="redBtn">ALTERAR</button>
                 </div>
+                    <script>
+                        function validateForm() {
+                        var Preco = document.getElementById('preco').value;
+                        var Nome_Produto = document.getElementById('nome_produto').value;
+
+                        if (Preco.trim() === ''){
+                            alert('Por favor, preencha o campo Preço Unitário.');
+                            return false;
+                        }
+
+                        if (Preco <= "R$ 0,00"){
+                            alert('Por favor, preencha o campo com um valor válido.');
+                            return false;
+                        }
+
+                        if (Nome_Produto.trim() === '') {
+                            alert('Por favor, preencha o campo Nome do Produto.');
+                            return false;
+                        }
+
+                        return true;
+                        }
+
+                        function validateFormDois() {
+                        var Preco_Dois = document.getElementById('preco_dois').value;
+                        var Nome_Produto_Dois = document.getElementById('nome_produto_dois').value;
+
+                        if (Preco_Dois.trim() === '') {
+                            alert('Por favor, preencha o campo Preço Unitário.');
+                            return false;
+                        }
+
+                        if (Preco_Dois <= "R$ 0,00"){
+                            alert('Por favor, preencha o campo com um valor válido.');
+                            return false;
+                        }
+
+                        if (Nome_Produto_Dois.trim() === '') {
+                            alert('Por favor, preencha o campo Nome do Produto.');
+                            return false;
+                        }
+
+                        return true;
+                        }
+
+                        function formatarMoeda(input) {
+                        var valor = input.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+                        valor = (parseInt(valor) / 100).toFixed(2); // Divide por 100 e fixa 2 casas decimais
+
+                        // Formata a representação de moeda
+                        var valorFormatado = 'R$ ' + valor.replace('.', ',');
+
+                        // Atualiza o campo de entrada com o valor formatado
+                        input.value = valorFormatado;
+                        }
+
+                        function formatarMoeda_Dois(input) {
+                        var valor = input.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+                        valor = (parseInt(valor) / 100).toFixed(2); // Divide por 100 e fixa 2 casas decimais
+
+                        // Formata a representação de moeda
+                        var valorFormatado = 'R$ ' + valor.replace('.', ',');
+
+                        // Atualiza o campo de entrada com o valor formatado
+                        input.value = valorFormatado;
+                        }
+
+
+                    </script>
             </form>
 
         </section>
