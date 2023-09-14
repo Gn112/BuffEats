@@ -152,10 +152,10 @@ if (isset($_POST['cadastrarEmpresa'])) {
         $sql = "INSERT INTO CADASTRO_EMPRESA 
         (id_empresa, nome_empresa, CPF_CNPJ, num_contato, CEP, email, senha, formas_recebimento, EmailConfirma) 
         VALUES (default,'$nome_empresa', '$CNPJ', '$num_contato', '$CEP', '$email', '$senha', '$formas_recebimento', '$confirmadoEmail')";
-        echo ("<br>Cadastro Concluido<br>");
+        echo ("<br>TANANANAAN<br>");
         if (mysqli_query($conn, $sql)) {
             echo "<br>Dados inseridos com sucesso.<br>";
-         confirmaEmail($email, $nome_empresa, $CNPJ);
+            // confirmaEmail($email, $nome_empresa, $CNPJ);
             $_POST["nome_empresa"] = "";
             $_POST["CNPJ"] = "";
             $_POST["num_contato"] = "";

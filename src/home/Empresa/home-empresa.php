@@ -34,9 +34,9 @@ session_start();
                     <a href="#" class="text-lg font-medium">Home</a>
                     <a href="#" class="text-lg font-medium">Pedidos</a>
                     <a href="#" class="text-lg font-medium">Gerencie sua Empresa</a>
-                    <a href="#" class="text-lg font-medium">Gerencie seus Produtos</a>
+                    <a href="../../Perfil/PerfilEmpresa/AdicionarProdutos/adicionarProdutos.php" class="text-lg font-medium">Gerencie seus Produtos</a>
                     <a href="#" class="text-lg font-medium">Quem Somos</a>
-                    <a href="#" id="empresa">
+                    <a href="../../Perfil/PerfilEmpresa/profile.php" id="empresa">
                         <img class="d" src="../../globalAssets/img/empresa_p.png" alt="">
                     </a>
                     <a href="#" class="text-lg text-vermelho font-medium">Sair</a>
@@ -52,12 +52,12 @@ session_start();
                 <a href="#" class="w-full text-center p-6 hover:opacity-90">Home</a>
                 <a href="#" class="w-full text-center p-6 hover:opacity-90">Pedidos</a>
                 <a href="#" class="w-full text-center p-6 hover:opacity-90">Gerencie sua Empresa</a>
-                <a href="#" class="w-full text-center p-6 hover:opacity-90">Gerencie seus Produtos</a>
+                <a href="../../Perfil/PerfilEmpresa/AdicionarProdutos/adicionarProdutos.php" class="w-full text-center p-6 hover:opacity-90">Gerencie seus Produtos</a>
                 <a href="#" class="w-full text-center p-6 hover:opacity-90">Quem Somos</a>
-                <a href="#" class="w-full text-center p-6 hover:opacity-90" id="empresa">
+                <a href="../../Perfil/PerfilEmpresa/profile.php" class="w-full text-center p-6 hover:opacity-90" id="empresa">
                     Perfil
                 </a>
-                <a href="../logout_session.php" class="w-full text-center p-6 hover:opacity-90">Sair</a>
+                <a href="#" class="w-full text-center p-6 hover:opacity-90">Sair</a>
             </nav>
         </section>
     </header>
