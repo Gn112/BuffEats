@@ -61,7 +61,7 @@ session_start();
         </section>
     </header>
 
-    <main class="mx-auto max-w-4xl flex justify-center items-center">
+    <main class="mx-auto max-w-4xl flex justify-center items-center" >
         <section class="backgroundContainer flex flex-col justify-center items-center">
             <div>
                 <h2 class="text-3xl font-medium text-fontecinza text-center">Gerencie sua Empresa</h2>
@@ -71,10 +71,10 @@ session_start();
             <div>
                 <img class="logo" src="../../../globalAssets/img/empresa_g.png" alt="" srcset="">
             </div>
-            <form action="" id="formGerencia" class="flex flex-col justify-start">
+            <form method="post" onsubmit="return validateForm()" id="formGerencia" class="flex flex-col justify-start" class="formulario">
                 <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 px-4 py-2">
-                    <label for="nome" class="block text-lg font-medium text-fontecinza ">Nome:</label>
-                    <input type="text" id="nome" name="nome" rows="4"
+                    <label for="nome"   class="block text-lg font-medium text-fontecinza ">Nome:</label>
+                    <input type="text" id="full_name"  name="full_name" rows="4"
                         class="mt-1 block w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                 </div>
                 <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 px-4 py-2">
@@ -83,8 +83,31 @@ session_start();
                         class="mt-1 block w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
                 </div>
                 <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 px-4 py-6 text-center">
-                    <input type="button" class="redBtn" value="ALTERAR">
+                    <input type="submit" class="redBtn" class="button_submit" value="ALTERAR" onclick="validateForm()" name="submit">
+                    
                 </div>
+                <script>
+                    function validateForm() {
+                        var fullName = document.getElementById('full_name').value;
+                        // Validação dos campos
+                           // Validação dos campos
+                           if (fullName.trim() === '') {
+                            alert('Por favor, preencha o campo Nome.');
+                            return false;
+                        }
+
+                        if (!validateName(fullName)) {
+                            alert('O campo Nome deve conter apenas letras.');
+                            return false;
+                        }
+                        return true;
+                    }
+
+                    function validateName(fullName) {
+                        var lettersRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/;
+                        return lettersRegex.test(fullName);
+                    }
+                    </script>
             </form>
         </section>
     </main>
