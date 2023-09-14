@@ -89,9 +89,15 @@ session_start();
                     <script>
                         function validateForm() {
                             var fullName = document.getElementById('full_name').value;
+                            var Biografia = document.getElementById('biografia').value;
                             // Validação dos campos
                             if (fullName.trim() === '') {
                             alert('Por favor, preencha o campo Nome.');
+                            return false;
+                            }
+
+                            if (Biografia.trim() === '') {
+                            alert('Por favor, preencha o campo Biografia.');
                             return false;
                             }
 
