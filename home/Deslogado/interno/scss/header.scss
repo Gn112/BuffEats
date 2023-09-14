@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+// Importa configurações reutilizáveis de css
+@import '../../../../globalAssets/scss/global';
+
+/* Variáveis */
+
+// $color-vermelho: #BD2323;
+// $color-hover-vermelho: #be4d4d;
+// $color-branco: #ffffff;
+// $color-fontecinza: #463B3B;
+// $color-hover-fontecinza: #000000;
+// $color-cinzaclaro: #F8F8F8;
+// $color-cinzafundo: #EEEEEE;
+// $shadow-caixagrande: 0rem .3125rem .625rem .125rem rgba(0, 0, 0, 0.2);
+// $shadow-caixainput: 0rem .25rem .625rem rgba(0, 0, 0, 0.15);
+
+/* --- */
+
+
+header {
+    box-shadow: $shadow-caixagrande;
+    position: relative;
+    padding: 16px;
+}
+
+.navbar {
+    @include flexCenter(row, nowrap, space-between);
+    width: 100%;
+
+    .links {
+        @include flexCenter(row, nowrap, center);
+        gap: 32px;
+
+        a{
+            text-decoration: none;
+            @include label(400, $color-fontecinza);
+
+            &:hover {
+                @include fontHover;
+            }
+        }
+    }
+
+    .login {
+        @include flexCenter(row, nowrap, space-between);
+        gap: 10px;
+    }
+
+    .signUp_btn {
+        @include label(400, $color-vermelho)
+    }
+
+    .sign_btn {
+        @include redBtn
+    }
+
+    .toggle_btn {
+        color: $color-hover-vermelho;
+        cursor: pointer;
+        display: none;
+    }
+    
+}
+
+.dropdown_menu {
+    display: none;
+    text-align: center;
+    
+    .links {
+        @include flexCenter(column, nowrap, center);
+
+        a{
+            text-decoration: none;
+            @include label(400, $color-fontecinza);
+
+            &:hover {
+                @include fontHover;
+            }
+        }
+
+    }
+
+    &.active {
+        display: block!important;
+    }
+
+    .login {
+        @include flexCenter(column, nowrap, center);
+        gap: 8px;
+        padding: .625rem 0;
+    }
+
+    .sign_btn {
+        @include flexCenter(column, nowrap, center);
+        @include redBtn;
+        width: 100%;
+    }
+
+    .signUp_btn {
+        @include label(400, $color-vermelho);
+        @include flexCenter(column, nowrap, center);
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 800px){
+    .navbar .links,
+    .navbar .sign_btn,
+    .navbar .signUp_btn {
+        display: none !important;
+    }
+
+    .toggle_btn {
+        display: block!important;
+    }
+}
