@@ -30,10 +30,10 @@ session_start();
                     &#9776;
                 </button>
                 <nav class="hidden md:flex items-center space-x-3" aria-label="main">
-                    <a href="#" class="text-lg font-medium">Home</a>
+                    <a href="../../../home/Empresa/home-empresa.php" class="text-lg font-medium">Home</a>
                     <a href="#" class="text-lg font-medium">Pedidos</a>
                     <a href="#" class="text-lg font-medium">Gerencie sua Empresa</a>
-                    <a href="#" class="text-lg font-medium">Gerencie seus Produtos</a>
+                    <a href="../AdicionarProdutos/adicionarProdutos.php" class="text-lg font-medium">Gerencie seus Produtos</a>
                     <a href="#" class="text-lg font-medium">Quem Somos</a>
                     <a href="#" id="empresa">
                         <img class="d" src="../../../globalAssets/img/empresa_p.png" alt="">
@@ -48,10 +48,9 @@ session_start();
                 &times;
             </button>
             <nav class="flex flex-col min-h-screen items-center py-8" aria-label="mobile">
-                <a href="#" class="w-full text-center p-6 hover:opacity-90">Home</a>
-                <a href="#" class="w-full text-center p-6 hover:opacity-90">Pedidos</a>
-                <a href="#" class="w-full text-center p-6 hover:opacity-90">Gerencie sua Empresa</a>
-                <a href="#" class="w-full text-center p-6 hover:opacity-90">Gerencie seus Produtos</a>
+                <a href="../../../home/Empresa/home-empresa.php" class="w-full text-center p-6 hover:opacity-90">Home</a>
+                <a href="#">Pedidos</a>
+                <a href="../AdicionarProdutos/adicionarProdutos.php" class="w-full text-center p-6 hover:opacity-90">Gerencie seus Produtos</a>
                 <a href="#" class="w-full text-center p-6 hover:opacity-90">Quem Somos</a>
                 <a href="#" class="w-full text-center p-6 hover:opacity-90" id="empresa">
                     Perfil

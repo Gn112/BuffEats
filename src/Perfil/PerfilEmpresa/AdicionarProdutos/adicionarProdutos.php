@@ -30,9 +30,9 @@ session_start();
                     &#9776;
                 </button>
                 <nav class="hidden md:flex items-center space-x-3" aria-label="main">
-                    <a href="#" class="text-lg font-medium">Home</a>
+                    <a href="../../../home/Empresa/home-empresa.php" class="text-lg font-medium">Home</a>
                     <a href="#" class="text-lg font-medium">Pedidos</a>
-                    <a href="#" class="text-lg font-medium">Gerencie sua Empresa</a>
+                    <a href="../GerenciaEmpresa/gerenciaEmpresa.php" class="text-lg font-medium">Gerencie sua Empresa</a>
                     <a href="#" class="text-lg font-medium">Gerencie seus Produtos</a>
                     <a href="#" class="text-lg font-medium">Quem Somos</a>
                     <a href="#" id="empresa">
@@ -48,8 +48,8 @@ session_start();
                 &times;
             </button>
             <nav class="flex flex-col min-h-screen items-center py-8" aria-label="mobile">
-                <a href="#" class="w-full text-center p-6 hover:opacity-90">Home</a>
-                <a href="#" class="w-full text-center p-6 hover:opacity-90">Pedidos</a>
+                <a href="../../../home/Empresa/home-empresa.php" class="w-full text-center p-6 hover:opacity-90">Home</a>
+                <a href="../GerenciaEmpresa/gerenciaEmpresa.php" class="w-full text-center p-6 hover:opacity-90">Pedidos</a>
                 <a href="#" class="w-full text-center p-6 hover:opacity-90">Gerencie sua Empresa</a>
                 <a href="#" class="w-full text-center p-6 hover:opacity-90">Gerencie seus Produtos</a>
                 <a href="#" class="w-full text-center p-6 hover:opacity-90">Quem Somos</a>
@@ -68,11 +68,11 @@ session_start();
                 <h2 class="text-3xl font-medium text-fontecinza text-center">Adicione seus Produtos</h2>
                 <p class="text-xl font-normal text-fontecinza text-center">Adicione os Produtos que serão expostos aos Clientes.</p>
             </div>
-            <form method="post" onsubmit="return validateForm()"  id="prod1" class="flex justify-start p-4 flex-col">
+            <form method="post" onsubmit="return validateForm()"  id="prod1" class="flex justify-start p-4 flex-col" action= "produtoadd.php" enctype="Multipart/form-data">
                 <!-- Preço Unitário -->
                 <div class="my-4 sm:mx-4">
                     <label for="preco" class="text-lg font-medium text-fontecinza">Preço Unitário:</label>
-                    <input id ="preco" onkeypress="return /^[0-9]*$/.test(event.key)" oninput="formatarMoeda(this)" type="text" name="preco" class="w-full border border-gray-300 rounded px-3 py-2"
+                    <input maxlength="6" id ="preco" onkeypress="return /^[0-9]*$/.test(event.key)" oninput="formatarMoeda(this)" type="text" name="preco" class="w-full border border-gray-300 rounded px-3 py-2"
                         placeholder="R$ 1,00" required>
                 </div>
                 <!-- Nome do Produto -->
@@ -84,7 +84,7 @@ session_start();
 
                 <!-- Foto do Produto -->
                 <div class="my-4 sm:mx-4">
-                    <label for="foto" class="text-lg font-medium text-fontecinza">Adicionar Foto:</label>
+                    <label for="foto" class="text-lg" font-medium text-fontecinza>Adicionar Foto:</label>
                     <input type="file" id="foto" name="foto" accept="image/*" class="w-full" required>
                 </div>
 
@@ -102,7 +102,7 @@ session_start();
                             return false;
                         }
 
-                        if (Preco <= "R$ 0,00"){
+                        if (Preco <= "0.00"){
                             alert('Por favor, preencha o campo com um valor válido.');
                             return false;
                         }
@@ -120,7 +120,7 @@ session_start();
                         valor = (parseInt(valor) / 100).toFixed(2); // Divide por 100 e fixa 2 casas decimais
 
                         // Formata a representação de moeda
-                        var valorFormatado = 'R$ ' + valor.replace('.', ',');
+                        var valorFormatado =  valor.replace('.', '.');
 
                         // Atualiza o campo de entrada com o valor formatado
                         input.value = valorFormatado;

@@ -33,7 +33,7 @@ session_start();
                 <nav class="hidden md:flex items-center space-x-3" aria-label="main">
                     <a href="#" class="text-lg font-medium">Home</a>
                     <a href="#" class="text-lg font-medium">Pedidos</a>
-                    <a href="#" class="text-lg font-medium">Gerencie sua Empresa</a>
+                    <a href="../../Perfil/PerfilEmpresa/GerenciaEmpresa/gerenciaEmpresa.php" class="text-lg font-medium">Gerencie sua Empresa</a>
                     <a href="../../Perfil/PerfilEmpresa/AdicionarProdutos/adicionarProdutos.php" class="text-lg font-medium">Gerencie seus Produtos</a>
                     <a href="#" class="text-lg font-medium">Quem Somos</a>
                     <a href="../../Perfil/PerfilEmpresa/profile.php" id="empresa">
