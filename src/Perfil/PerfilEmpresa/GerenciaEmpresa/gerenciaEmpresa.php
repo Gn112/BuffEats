@@ -70,7 +70,7 @@ session_start();
             <div>
                 <img class="logo" src="../../../globalAssets/img/empresa_g.png" alt="" srcset="">
             </div>
-            <form method="post" onsubmit="return validateForm()" id="formGerencia" class="flex flex-col justify-start" class="formulario">
+            <form method="post" onsubmit="return validateForm()" id="formGerencia" class="flex flex-col justify-start" class="formulario" action="insert_bio.php">
                 <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 px-4 py-2">
                     <label for="nome"   class="block text-lg font-medium text-fontecinza ">Nome:</label>
                     <input type="text" onkeypress="return /^[A-Z/a-z]*$/.test(event.key)" id="full_name"  name="full_name" rows="4"
