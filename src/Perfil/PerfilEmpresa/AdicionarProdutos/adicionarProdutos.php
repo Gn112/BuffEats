@@ -72,7 +72,7 @@ session_start();
                 <!-- Preço Unitário -->
                 <div class="my-4 sm:mx-4">
                     <label for="preco" class="text-lg font-medium text-fontecinza">Preço Unitário:</label>
-                    <input maxlength="6" id ="preco" onkeypress="return /^[0-9]*$/.test(event.key)" oninput="formatarMoeda(this)" type="text" name="preco" class="w-full border border-gray-300 rounded px-3 py-2"
+                    <input maxlength="6" id="preco" onkeypress="return /^[0-9]*$/.test(event.key)" oninput="formatarMoeda(this)" type="text" name="preco" class="w-full border border-gray-300 rounded px-3 py-2"
                         placeholder="R$ 1,00" required>
                 </div>
                 <!-- Nome do Produto -->

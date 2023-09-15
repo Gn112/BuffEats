@@ -39,7 +39,7 @@ session_start();
                     <a href="../../Perfil/PerfilEmpresa/profile.php" id="empresa">
                         <img class="d" src="../../globalAssets/img/empresa_p.png" alt="">
                     </a>
-                    <a href="#" class="text-lg text-vermelho font-medium">Sair</a>
+                    <a href="../logout_session.php" class="text-lg text-vermelho font-medium">Sair</a>
                 </nav>
             </div>
         </section>
@@ -57,7 +57,7 @@ session_start();
                 <a href="../../Perfil/PerfilEmpresa/profile.php" class="w-full text-center p-6 hover:opacity-90" id="empresa">
                     Perfil
                 </a>
-                <a href="#" class="w-full text-center p-6 hover:opacity-90">Sair</a>
+                <a href="../logout_session.php" class="w-full text-center p-6 hover:opacity-90">Sair</a>
             </nav>
         </section>
     </header>

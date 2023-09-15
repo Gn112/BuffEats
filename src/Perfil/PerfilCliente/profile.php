@@ -67,7 +67,7 @@ $senhaSem = DescriptografaSenha($senha);
                 <div class="grid_space"> 
                 <input type="hidden" name="id_cliente" value="<?php echo $id ?>">
                     <label class="label">Usuário:</label>
-                   <input type="text" name="nome_completo"onkeypress="return /^[A-Z/a-z]*$/.test(event.key)" id="usuario" class="input_box" value="<?php echo $nome ?>">
+                   <input type="text" name="nome_completo" onkeypress="return /^[A-Z/a-z]*$/.test(event.key)" id="usuario" class="input_box" value="<?php echo $nome ?>">
                 </div>
                 <div class="grid_space">
                     <label class="label">Número de Celular:</label>
@@ -88,9 +88,8 @@ $senhaSem = DescriptografaSenha($senha);
             </div>
 
             <div id="bottom">
-                <buttom id="sair">SAIR</buttom>
-                
-                <input  name="altera"type="submit"type="submit" onclick="validateForm()" id="alterar"></input>
+               <a href="../logout_session.php" id="sair">SAIR</a>
+                <input name="altera" type="submit" onclick="validateForm()" id="alterar"></input>
         </form>
         <script>
              function validateForm() {
