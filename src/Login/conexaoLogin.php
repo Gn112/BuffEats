@@ -6,7 +6,7 @@ ini_set('default_charset', 'utf-8');
 session_start();
 
 // Conectar ao banco de dados
-$servername = "34.136.11.187";
+$servername = "35.225.119.62";
 $usernam = "root";
 $passwor = "COTemig123";
 $dbname = "Buffeats";
@@ -43,10 +43,21 @@ if (isset($_POST['submit']) && isset($_POST['email']) && isset($_POST['password'
             $row = mysqli_fetch_assoc($result);
 
             if ($row['email'] === $email && $row['senha'] == $password) {
+
                 echo "Logado com sucesso!";
+                
+                 $_SESSION['id_cliente'] = $row["id_cliente"];
+                 $id = $_SESSION['id_cliente'];
+
                 $_SESSION["email"] = $email;
                 $_SESSION["password"] = $password;
-                header("Location: ../home/Cliente/perfil-cliente.php");
+
+                $celular = $row["celular"];
+                $nomecompleto = $row["nome_completo"];
+                     $_SESSION["celular"] = $celular;
+                     $_SESSION["nome_completo"] = $nomecompleto;
+
+                header("Location: ../home/Cliente/home-cliente.php");
             }
         } else {
             $sql = "SELECT * FROM CADASTRO_EMPRESA WHERE email = '$email' AND senha = '$password'";
@@ -59,7 +70,17 @@ if (isset($_POST['submit']) && isset($_POST['email']) && isset($_POST['password'
                 echo "Logado com sucesso!";
                 $_SESSION["email"] = $email;
                 $_SESSION["password"] = $password;
-                header("Location: ../home/Empresa/perfil-empresa.php");
+
+                $_SESSION['id_empresa'] = $row["id_empresa"];
+                 $id_empresa = $_SESSION['id_empresa'];
+
+                
+                $numero = $row["num_contato"];
+                $nomeempresa = $row["nome_empresa"];
+                     $_SESSION["numero"] = $numero;
+                     $_SESSION["nomeempresa"] = $nomeempresa;
+
+                header("Location: ../home/Empresa/home-empresa.php");
             } else {
                 echo "Nada!";
             }
