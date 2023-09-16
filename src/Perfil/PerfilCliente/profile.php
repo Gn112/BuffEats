@@ -88,7 +88,7 @@ $senhaSem = DescriptografaSenha($senha);
             </div>
 
             <div id="bottom">
-               <a href="../logout_session.php" id="sair">SAIR</a>
+               <!-- <a href="../logout_session.php" id="sair">SAIR</a> -->
                 <input name="altera" type="submit" onclick="validateForm()" id="alterar"></input>
         </form>
         <script>

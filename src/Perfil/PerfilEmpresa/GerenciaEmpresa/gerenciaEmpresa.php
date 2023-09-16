@@ -35,10 +35,10 @@ session_start();
                     <a href="#" class="text-lg font-medium">Gerencie sua Empresa</a>
                     <a href="../AdicionarProdutos/adicionarProdutos.php" class="text-lg font-medium">Gerencie seus Produtos</a>
                     <a href="#" class="text-lg font-medium">Quem Somos</a>
-                    <a href="#" id="empresa">
+                    <a href="../profile.php" id="empresa">
                         <img class="d" src="../../../globalAssets/img/empresa_p.png" alt="">
                     </a>
-                    <a href="#" class="text-lg text-vermelho font-medium">Sair</a>
+                    <a href="../../logout_session.php" class="text-lg text-vermelho font-medium">Sair</a>
                 </nav>
             </div>
         </section>
@@ -52,10 +52,10 @@ session_start();
                 <a href="#">Pedidos</a>
                 <a href="../AdicionarProdutos/adicionarProdutos.php" class="w-full text-center p-6 hover:opacity-90">Gerencie seus Produtos</a>
                 <a href="#" class="w-full text-center p-6 hover:opacity-90">Quem Somos</a>
-                <a href="#" class="w-full text-center p-6 hover:opacity-90" id="empresa">
+                <a href="../profile.php" class="w-full text-center p-6 hover:opacity-90" id="empresa">
                     Perfil
                 </a>
-                <a href="#" class="w-full text-center p-6 hover:opacity-90">Sair</a>
+                <a href="../../logout_session.php" class="w-full text-center p-6 hover:opacity-90">Sair</a>
             </nav>
         </section>
     </header>
@@ -71,11 +71,11 @@ session_start();
                 <img class="logo" src="../../../globalAssets/img/empresa_g.png" alt="" srcset="">
             </div>
             <form method="post" onsubmit="return validateForm()" id="formGerencia" class="flex flex-col justify-start" class="formulario" action="insert_bio.php">
-                <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 px-4 py-2">
+                <!-- <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 px-4 py-2">
                     <label for="nome"   class="block text-lg font-medium text-fontecinza ">Nome:</label>
                     <input type="text" onkeypress="return /^[A-Z/a-z]*$/.test(event.key)" id="full_name"  name="full_name" rows="4"
                         class="mt-1 block w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                </div>
+                </div> -->
                 <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 px-4 py-2">
                     <label for="biografia" class="block text-lg font-medium text-fontecinza ">Biografia:</label>
                     <textarea id="biografia" name="biografia" rows="4"
@@ -87,13 +87,13 @@ session_start();
                 </div>
                     <script>
                         function validateForm() {
-                            var fullName = document.getElementById('full_name').value;
+                            // var fullName = document.getElementById('full_name').value;
                             var Biografia = document.getElementById('biografia').value;
                             // Validação dos campos
-                            if (fullName.trim() === '') {
-                            alert('Por favor, preencha o campo Nome.');
-                            return false;
-                            }
+                            // if (fullName.trim() === '') {
+                            // alert('Por favor, preencha o campo Nome.');
+                            // return false;
+                            // }
 
                             if (Biografia.trim() === '') {
                             alert('Por favor, preencha o campo Biografia.');

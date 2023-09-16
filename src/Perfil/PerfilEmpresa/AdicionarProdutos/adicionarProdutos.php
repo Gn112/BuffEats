@@ -33,12 +33,12 @@ session_start();
                     <a href="../../../home/Empresa/home-empresa.php" class="text-lg font-medium">Home</a>
                     <a href="#" class="text-lg font-medium">Pedidos</a>
                     <a href="../GerenciaEmpresa/gerenciaEmpresa.php" class="text-lg font-medium">Gerencie sua Empresa</a>
-                    <a href="#" class="text-lg font-medium">Gerencie seus Produtos</a>
+                    <a href="#" class="text-lg font-medium">Adicionar Produtos</a>
                     <a href="#" class="text-lg font-medium">Quem Somos</a>
-                    <a href="#" id="empresa">
+                    <a href="../profile.php" id="empresa">
                         <img class="d" src="../../../globalAssets/img/empresa_p.png" alt="">
                     </a>
-                    <a href="#" class="text-lg text-vermelho font-medium">Sair</a>
+                    <a href="../../logout_session.php" class="text-lg text-vermelho font-medium">Sair</a>
                 </nav>
             </div>
         </section>
@@ -51,12 +51,12 @@ session_start();
                 <a href="../../../home/Empresa/home-empresa.php" class="w-full text-center p-6 hover:opacity-90">Home</a>
                 <a href="../GerenciaEmpresa/gerenciaEmpresa.php" class="w-full text-center p-6 hover:opacity-90">Pedidos</a>
                 <a href="#" class="w-full text-center p-6 hover:opacity-90">Gerencie sua Empresa</a>
-                <a href="#" class="w-full text-center p-6 hover:opacity-90">Gerencie seus Produtos</a>
+                <a href="#" class="w-full text-center p-6 hover:opacity-90">Adicionar Produtos</a>
                 <a href="#" class="w-full text-center p-6 hover:opacity-90">Quem Somos</a>
-                <a href="#" class="w-full text-center p-6 hover:opacity-90" id="empresa">
+                <a href="../profile.php" class="w-full text-center p-6 hover:opacity-90" id="empresa">
                     Perfil
                 </a>
-                <a href="#" class="w-full text-center p-6 hover:opacity-90">Sair</a>
+                <a href="../../logout_session.php" class="w-full text-center p-6 hover:opacity-90">Sair</a>
             </nav>
         </section>
     </header>
@@ -78,7 +78,7 @@ session_start();
                 <!-- Nome do Produto -->
                 <div class="my-4 sm:mx-4">
                     <label for="nome" class="text-lg font-medium text-fontecinza">Nome do Produto</label>
-                    <input type="text" id="nome_produto" onkeypress="return /^[A-Z/a-z]*$/.test(event.key)" name="nome"  class="w-full border border-gray-300 rounded px-3 py-2"
+                    <input type="text" id="nome_produto" onkeypress="return /^[A-Z a-z]*$/.test(event.key)" name="nome"  class="w-full border border-gray-300 rounded px-3 py-2" maxlength="100"
                         placeholder="Coxinha de frango" required>
                 </div>
 

@@ -3,7 +3,7 @@
 // Página Pessoa
 
 ini_set('default_charset', 'utf-8');
-include('confirmacaoEmail.php');
+// include('confirmacaoEmail.php');
 
 $servername = "35.225.119.62";
 $database = "Buffeats";
@@ -150,8 +150,8 @@ function validaSenhaEmpresa($senha)
 if (isset($_POST['cadastrarEmpresa'])) {
     if (validaEmpresa($nome_empresa) == true && validaCNPJ($CNPJ) == true && validaCelEmpresa($num_contato) == true && validaCepEmpresa($CEP) == true && validaEmailEmpresa($email) == true && validaSenhaEmpresa($senha) == true) {
         $sql = "INSERT INTO CADASTRO_EMPRESA 
-        (id_empresa, nome_empresa, CPF_CNPJ, num_contato, CEP, email, senha, formas_recebimento, EmailConfirma) 
-        VALUES (default,'$nome_empresa', '$CNPJ', '$num_contato', '$CEP', '$email', '$senha', '$formas_recebimento', '$confirmadoEmail')";
+        (id_empresa, nome_empresa, CPF_CNPJ, num_contato, CEP, email, senha, formas_recebimento, EmailConfirma, biografia) 
+        VALUES (default,'$nome_empresa', '$CNPJ', '$num_contato', '$CEP', '$email', '$senha', '$formas_recebimento', '$confirmadoEmail', 'Não informado')";
         echo ("<br>TANANANAAN<br>");
         if (mysqli_query($conn, $sql)) {
             echo "<br>Dados inseridos com sucesso.<br>";

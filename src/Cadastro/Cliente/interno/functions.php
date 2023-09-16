@@ -3,7 +3,7 @@
 // Página Pessoa
 
 ini_set('default_charset', 'utf-8');
-//include('confirmacaoEmail.php');
+// include('confirmacaoEmail.php');
 
 $servername = "35.225.119.62";
 $database = "Buffeats";
@@ -132,6 +132,7 @@ function validaSenha($senha)
 
 
 // TESTE
+
 if (isset($_POST['cadastrar'])) {
     if (validaNome($full_name) == true && validaCPF($cpf) == true && validaCel($numero_cel) == true && validaCep($cep) == true && validaEmail($email) == true && validaSenha($senha) == true) {
         $sql = "INSERT INTO CADASTRO_CLIENTE (id_cliente, nome_completo, CPF, celular, CEP, email, senha, opcao_pagamento, EmailConfirma) 
@@ -139,7 +140,7 @@ if (isset($_POST['cadastrar'])) {
         echo ("<br>Cadastro Concluido<br>");
         if (mysqli_query($conn, $sql)) {
             echo "<br>Dados inseridos com sucesso.<br>";
-            confirmaEmail($email, $full_name, $cpf);
+            // confirmaEmail($email, $full_name, $cpf);
             $_POST["full_name"] = "";
             $_POST["cpf"] = "";
             $_POST["numero_cel"] = "";

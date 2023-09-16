@@ -12,40 +12,20 @@ if ($conn->connect_error) {
     die("Erro na conexão: " . $conn->connect_error);
 }
 
-$nome = $_POST['full_name'];
 $descricao = $_POST['biografia'];
 $fk_id_empresa = $_SESSION['id_empresa'];
 
-$sql = "    INSERT INTO DESCRICAO_EMPRESA(descricao, fk_id_empresa)
-            VALUES(?, ?);
-            
-            UPDATE CADASTRO_EMPRESA
-            SET nome_empresa = '?'
-            WHERE id_empresa = ?;
-            ";
- $stmt = $conn->prepare($sql);
-  // Verifique se a preparação da consulta foi bem-sucedida
-  if ($stmt === false) {
-    die("Erro na preparação da consulta: " . $conn->error);
-}
-
- // Verifique se a preparação da consulta foi bem-sucedida
- if ($stmt === false) {
-    die("Erro na preparação da consulta: " . $conn->error);
-}
-
-// Vincule os parâmetros corretamente
-$stmt->bind_param("sdbi", $descricao, $fk_id_empresa, $nome, $fk_id_empresa);
-
-// Verifique se a vinculação foi bem-sucedida
+$sql = "UPDATE CADASTRO_EMPRESA SET biografia = ? WHERE id_empresa = ?";
+$stmt = $conn->prepare($sql);
 if ($stmt === false) {
-    die("Erro na vinculação dos parâmetros: " . $stmt->error);
+    die("Erro na preparação da consulta: " . $conn->error);
 }
+$stmt->bind_param("si", $descricao, $fk_id_empresa);
 
 if ($stmt->execute()) {
-    echo "Biografia e nome adicionados com sucesso!";
+    echo "Biografia inserida com sucesso!";
 } else {
-    echo "Erro ao inserir biografia e/ou nome: " . $stmt->error;
+    echo "Erro ao inserir a biografia: " . $stmt->error;
 }
 
 $stmt->close();

@@ -33,7 +33,7 @@ session_start();
                 <nav class="hidden md:flex items-center space-x-3" aria-label="main">
                     <a href="#" class="text-lg font-medium">Home</a>
                     <a href="#" class="text-lg font-medium">Pedidos</a>
-                    <a href="#" class="text-lg font-medium">Quem Somos</a>
+                    <!-- <a href="#" class="text-lg font-medium">Quem Somos</a> -->
                     <a href="../../Perfil/PerfilCliente/profile.php" id="cliente">
                         <img class="d" src="../../globalAssets/img/cliente_p.png" alt="">
                     </a>

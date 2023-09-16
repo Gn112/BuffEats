@@ -24,7 +24,7 @@ $email = $_SESSION["email"];
 $senha = $_SESSION["password"];
 $numero = $_SESSION["numero"];
 $nome = $_SESSION["nomeempresa"];
-$id = $_SESSION['id_cliente'];
+$id = $_SESSION['id_empresa'];
 $senhaSem = DescriptografaSenha($senha);
 
 ?>
@@ -86,7 +86,7 @@ $senhaSem = DescriptografaSenha($senha);
             </div>
 
             <div id="bottom">
-                <a href="../logout_session.php" id="sair">SAIR</a>
+                <!-- <a href="../logout_session.php" id="sair">DESLOGAR</a> -->
                 <input  name="altera" type="submit" onclick="validateForm()" id="alterar"></input>
             </div>
         </div>
