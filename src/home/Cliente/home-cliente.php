@@ -21,8 +21,7 @@ session_start();
 
 <body class="min-h-screen bg-cinzafundo">
     <header class="drop-shadow-xl text-fontecinza bg-branco sticky top-0 z-10">
-        <section
-            class="max-w-full mx-auto p-6 flex justify-between itens-center md:flex md:items-center md:justify-between">
+        <section class="max-w-full mx-auto p-6 flex justify-between itens-center md:flex md:items-center md:justify-between">
             <a href="#">
                 <img src="../../globalAssets/img/logo.png">
             </a>
@@ -41,8 +40,7 @@ session_start();
                 </nav>
             </div>
         </section>
-        <section id="mobile-menu"
-            class="absolute top-0 bg-branco w-full text-3xl flex-col justify-content-center origin-top animate-open-menu hidden">
+        <section id="mobile-menu" class="absolute top-0 bg-branco w-full text-3xl flex-col justify-content-center origin-top animate-open-menu hidden">
             <button class="text-8xl self-end px-6">
                 &times;
             </button>
@@ -53,11 +51,38 @@ session_start();
                 <a href="../../Perfil/PerfilCliente/profile.php" class="w-full text-center p-6 hover:opacity-90" id="cliente">
                     Perfil
                 </a>
-                
+
                 <a href="../logout_session.php" class="w-full text-center p-6 hover:opacity-90">Sair</a>
             </nav>
         </section>
     </header>
+
+    <main>
+        <form method="POST">
+            <input type="text" placeholder="pesquisar" name="pesquisa">
+            <input type="submit" name="search">
+        </form>
+
+        <?php require("../resultados-busca.php") ?>
+        <?php foreach ($resultados as $resultado) : ?>
+            <tr>
+                <th><?php echo $resultado['PRODUTO']; ?></th>
+
+                <td><?php echo $resultado["VALOR UNITÁRIO"]; ?></td>
+                <td><?php echo $resultado['IMAGEM'] ?></td>
+                <td><?php echo $resultado['EMPRESA'] ?></td>
+                <td><?php echo $resultado['CONTATO'] ?></td>
+                <td><?php echo $resultado['CEP'] ?></td>
+                <td><?php echo $resultado['EMAIL'] ?></td>
+                <td><?php echo $resultado['BIOGRAFIA'] ?></td>
+
+            </tr>
+        <?php endforeach ?>
+
+
+    </main>
+
+
 </body>
 
 </html>
