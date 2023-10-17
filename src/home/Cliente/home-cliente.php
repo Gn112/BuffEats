@@ -62,8 +62,12 @@ session_start();
             <input type="text" placeholder="pesquisar" name="pesquisa">
             <input type="submit" name="search">
         </form>
+        <?php
+        if(isset($_POST['search'])){
+            require("../resultados-busca.php");
+        }
+        ?>
 
-        <?php require("../resultados-busca.php") ?>
         <?php foreach ($resultados as $resultado) : ?>
             <tr>
                 <th><?php echo $resultado['PRODUTO']; ?></th>
@@ -74,7 +78,7 @@ session_start();
                 <td><?php echo $resultado['CONTATO'] ?></td>
                 <td><?php echo $resultado['CEP'] ?></td>
                 <td><?php echo $resultado['EMAIL'] ?></td>
-                <td><?php echo $resultado['BIOGRAFIA'] ?></td>
+                <td><?php echo $resultado['BIOGRAFIA'] ?></td> <br>
 
             </tr>
         <?php endforeach ?>
