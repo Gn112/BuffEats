@@ -26,7 +26,7 @@ function listarRegistros($conn, $palavra)
     // Verifique se a preparação da consulta foi bem-sucedida
     if ($resultados === false) {
         $conn->close();
-        die("Erro na preparação da consulta: " . $conn->error);
+        die("Erro na vinculação dos parâmetros: " . mysqli_error($conn));
     }
 
     // Verifique se a vinculação foi bem-sucedida
@@ -50,7 +50,7 @@ function listarRegistrosFiltro($conn, $filtro)
     // Verifique se a preparação da consulta foi bem-sucedida
     if ($resultados === false) {
         $conn->close();
-        die("Erro na preparação da consulta: " . $conn->error);
+        die("Erro na vinculação dos parâmetros: " . mysqli_error($conn));
     }
 
     // Verifique se a vinculação foi bem-sucedida
