@@ -15,6 +15,11 @@ ini_set('default_charset', 'utf-8');
     <link rel="stylesheet" href="mainCad.css">
 </head>
 
+
+
+<?php
+print_r($_POST); ?>
+
 <body>
     <main>
         <div class="formulario">

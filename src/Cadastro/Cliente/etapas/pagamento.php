@@ -30,6 +30,8 @@ $senha = $_POST["senha"];
 // Dado temporário até a implentação do sistema de pagamento
 $opcao = 1;
 
+print_r($_POST);
+
 ?>
 
 <body>

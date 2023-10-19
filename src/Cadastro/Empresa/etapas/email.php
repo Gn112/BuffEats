@@ -30,12 +30,13 @@ $nome_empresa = $_POST["nome_empresa"];
 $CNPJ = $_POST["CNPJ"];
 $num_contato = $_POST["num_contato"];
 $CEP = $_POST["CEP"];
+print_r($_POST);
 ?>
 
 <body>
     <main>
         <div class="formulario">
-            <form action="pagamento.php" method="post" onsubmit="return validateForm()">
+            <form action="pagamento.php" method="post">
 
                 <div class="page_counter"></div>
 

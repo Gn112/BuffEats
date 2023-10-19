@@ -1,7 +1,7 @@
 function mascara_nomeEmpresa(){
     var empresa = document.getElementById("nome_empresa").value
     console.log(empresa)
-    empresa = empresa.slice(0, 80) //(pode limitar a quantidade de char na entrada pelo java script)
+    empresa = empresa.slice(0, 18) //(pode limitar a quantidade de char na entrada pelo java script)
     console.log(empresa)
     document.getElementById("nome_empresa").value = empresa
     empresa = document.getElementById("nome_empresa").value.slice(0, 14)
