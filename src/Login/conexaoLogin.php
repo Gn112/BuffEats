@@ -82,7 +82,7 @@ if (isset($_POST['submit']) && isset($_POST['email']) && isset($_POST['password'
 
                 header("Location: ../home/Empresa/home-empresa.php");
             } else {
-                echo "Nada!";
+                header("Location: confirmalogin.php");
             }
         }
     }
