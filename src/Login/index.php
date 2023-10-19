@@ -37,11 +37,13 @@ ini_set('default_charset', 'utf-8');
                 <label class="login_subtitle">Senha:</label>
                 <input type="password" name="password" id="password" class="input_box">
                 <div id="container_login">
-                    <label class="container_conectado">Mantenha-me conectado
+                    <!-- Removido temporariamente para futura implementação
+                        Autor: Gabriel Siriani -->
+                    <!-- <label class="container_conectado">Mantenha-me conectado
                         <input type="checkbox">
                         <span class="checkmark"></span>
                     </label>
-                    <label class="login_senha"><a href="../RecSenha/recsenha.php" class="none_senha"><B>Esqueceu a senha?</B></a></label>
+                    <label class="login_senha"><a href="../RecSenha/recsenha.php" class="none_senha"><B>Esqueceu a senha?</B></a></label> -->
                 </div>
                 <button type="submit" name="submit" class="button_submit">ENTRAR</button>
                 <label class="login_inscrever"><a href="../Decisao/decisao.php" class="none_inscrever">Não tem uma conta? <B>Inscreva-se!</B></a></label>
