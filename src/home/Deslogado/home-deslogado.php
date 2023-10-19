@@ -138,7 +138,7 @@ header('Content-Type: text/html; charset=UTF-8');
         <table class="table table-light table-striped mt-5">
             <thead>
                 <tr>
-                    <th scope="col">IMAGEM</th>
+                    <!-- <th scope="col">IMAGEM</th> -->
                     <th scope="col">PRODUTO</th>
                     <th scope="col">VALOR UNITÁRIO</th>
                     <th scope="col">EMPRESA</th>
@@ -153,9 +153,11 @@ header('Content-Type: text/html; charset=UTF-8');
                 require("../resultados-busca.php");
                 foreach ($resultados as $resultado): ?>
                     <tr>
-                        <td>
-                            <?php echo $resultado['IMAGEM'] ?>
-                        </td>
+                        <!-- <td>
+                            <?php
+                            // echo $resultado['IMAGEM'] 
+                            ?>
+                        </td> -->
                         <td>
                             <?php echo $resultado['PRODUTO']; ?>
                         </td>
