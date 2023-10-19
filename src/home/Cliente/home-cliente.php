@@ -85,8 +85,8 @@ header('Content-Type: text/html; charset=UTF-8');
             <button type="button" name="6" class="btn btn-light bg-white shadow p-2 ps-4 pe-4 text-danger-emphasis">Aniversário</button>
         </div>
         <!-- Empresas sugeridas -->
-        <div class="container-lg d-flex justify-content-between">
-            <div class="container d-flex bg-white p-3 rounded shadow" style="width: 18rem;">
+        <div class="container-lg d-flex justify-content-between p-0">
+            <div class="container d-flex bg-white p-3 rounded shadow ms-0" style="width: 18rem;">
                 <img src="img/logo_empresa.svg" alt="" width="80px">
                 <div class="container d-flex flex-column">
                     <span>Nome da empresa</span>
@@ -107,7 +107,7 @@ header('Content-Type: text/html; charset=UTF-8');
                     <span>Buffet</span>
                 </div>
             </div>
-            <div class="container d-flex bg-white p-3 rounded shadow" style="width: 18rem;">
+            <div class="container d-flex bg-white p-3 rounded shadow me-0" style="width: 18rem;">
                 <img src="img/logo_empresa.svg" alt="" width="80px">
                 <div class="container d-flex flex-column">
                     <span>Nome da empresa</span>
