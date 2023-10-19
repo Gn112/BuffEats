@@ -50,7 +50,7 @@ $stmt3->bind_param("ss", $celular, $id);
 $stmt4->bind_param("ss", $senha, $id);
 // Executar a declaração preparada
 if ($stmt1->execute()) {
-    echo "Dados atualizados com sucesso!";
+    header('Location: confirmacliente.php');
 } else {
     echo "Erro ao atualizar dados: " . $stmt1->error;
 }

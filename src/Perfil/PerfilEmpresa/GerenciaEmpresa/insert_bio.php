@@ -23,7 +23,7 @@ if ($stmt === false) {
 $stmt->bind_param("si", $descricao, $fk_id_empresa);
 
 if ($stmt->execute()) {
-    echo "Biografia inserida com sucesso!";
+    header('Location: confirmabiografia.php');
 } else {
     echo "Erro ao inserir a biografia: " . $stmt->error;
 }

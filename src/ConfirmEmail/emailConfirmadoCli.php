@@ -8,7 +8,7 @@ $chave = filter_input(INPUT_GET, "token", FILTER_SANITIZE_STRING);
 if (!empty($chave)) {
     echo $chave;
 
-    $servername = "34.136.11.187";
+    $servername = "35.225.119.62";
     $database = "Buffeats";
     $username = "root";
     $password = "COTemig123";

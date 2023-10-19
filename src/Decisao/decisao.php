@@ -1,3 +1,5 @@
+<?php header('Content-Type: text/html; charset=UTF-8'); ?>
+
 <!DOCTYPE html>
 <html lang="PT-br">
 
@@ -16,7 +18,7 @@
     <main>
         <div class="container_cadastro">
             <div id="return">
-                <a href="javascript:javascript:history.go(-1)">
+                <a href="../Login/index.php">
                     <span class="material-symbols-outlined">
                         arrow_back
                     </span>

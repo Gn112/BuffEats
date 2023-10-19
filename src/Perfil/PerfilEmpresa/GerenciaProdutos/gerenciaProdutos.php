@@ -1,5 +1,6 @@
 <?php
 session_start();
+header('Content-Type: text/html; charset=UTF-8');
 ?>
 
 <!DOCTYPE html>
@@ -30,11 +31,12 @@ session_start();
                     &#9776;
                 </button>
                 <nav class="hidden md:flex items-center space-x-3" aria-label="main">
-                    <a href="#" class="text-lg font-medium">Home</a>
-                    <a href="#" class="text-lg font-medium">Pedidos</a>
-                    <a href="#" class="text-lg font-medium">Gerencie sua Empresa</a>
-                    <a href="#" class="text-lg font-medium">Gerencie seus Produtos</a>
-                    <a href="#" class="text-lg font-medium">Quem Somos</a>
+                    <a href="../../../home/Empresa/home-empresa.php" class="text-lg font-medium">Home</a>
+                    <!-- <a href="#" class="text-lg font-medium">Pedidos</a> -->
+                    <a href="../../PerfilEmpresa/GerenciaEmpresa/gerenciaEmpresa.php" class="text-lg font-medium">Gerencie sua empresa</a>
+                    <a href="../../PerfilEmpresa/AdicionarProdutos/adicionarProdutos.php" class="text-lg font-medium">Adicionar produtos</a>
+                    <a href="#" class="text-lg font-medium">Gerenciar produtos</a>
+                    <!-- <a href="#" class="text-lg font-medium">Quem somos</a> -->
                     <a href="#" id="empresa">
                         <img class="d" src="../../../globalAssets/img/empresa_p.png" alt="">
                     </a>
@@ -48,11 +50,13 @@ session_start();
                 &times;
             </button>
             <nav class="flex flex-col min-h-screen items-center py-8" aria-label="mobile">
-                <a href="#" class="w-full text-center p-6 hover:opacity-90">Home</a>
-                <a href="#" class="w-full text-center p-6 hover:opacity-90">Pedidos</a>
-                <a href="#" class="w-full text-center p-6 hover:opacity-90">Gerencie sua Empresa</a>
-                <a href="#" class="w-full text-center p-6 hover:opacity-90">Gerencie seus Produtos</a>
-                <a href="#" class="w-full text-center p-6 hover:opacity-90">Quem Somos</a>
+                <a href="../../../home/Empresa/home-empresa.php" class="w-full text-center p-6 hover:opacity-90">Home</a>
+                <!-- <a href="#" class="w-full text-center p-6 hover:opacity-90">Pedidos</a> -->
+                <a href="../../PerfilEmpresa/GerenciaEmpresa/gerenciaEmpresa.php" class="w-full text-center p-6 hover:opacity-90">Gerencie sua empresa</a>
+                <a href="../../PerfilEmpresa/AdicionarProdutos/adicionarProdutos.php" class="w-full text-center p-6 hover:opacity-90">Adicionar produtos</a>
+                <a href="#" class="w-full text-center p-6 hover:opacity-90">Gerenciar produtos</a>
+                <!-- <a href="#" class="w-full text-center p-6 hover:opacity-90">Q
+                uem somos</a> -->
                 <a href="#" class="w-full text-center p-6 hover:opacity-90" id="empresa">
                     Perfil
                 </a>
