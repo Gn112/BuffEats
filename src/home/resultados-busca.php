@@ -20,22 +20,19 @@ function listarRegistros($conn, $palavra)
 {
     $sql = mysqli_query($conn, "SELECT * FROM resultados_busca WHERE PRODUTO LIKE '%$palavra%';");
 
-    $resultados = mysqli_fetch_all($sql, MYSQLI_ASSOC);
+    return $resultados = mysqli_fetch_all($sql, MYSQLI_ASSOC);
 
 
     // Verifique se a preparação da consulta foi bem-sucedida
     if ($resultados === false) {
-        $conn->close();
         die("Erro na preparação da consulta: " . $conn->error);
     }
 
     // Verifique se a vinculação foi bem-sucedida
     if ($resultados === false) {
-        $conn->close();
-        die("Erro na vinculação dos parâmetros: " . mysqli_error($conn));
+        die("Erro na vinculação dos parâmetros: " . $resultados->error);
     }
-    
-    return $resultados;
+    $conn->close();
 }
 
 
@@ -44,22 +41,19 @@ function listarRegistrosFiltro($conn, $filtro)
 {
     $sql = mysqli_query($conn, "SELECT * FROM resultados_busca WHERE CATEGORIA = $filtro;");
 
-    $resultados = mysqli_fetch_all($sql, MYSQLI_ASSOC);
+    return $resultados = mysqli_fetch_all($sql, MYSQLI_ASSOC);
 
 
     // Verifique se a preparação da consulta foi bem-sucedida
     if ($resultados === false) {
-        $conn->close();
         die("Erro na preparação da consulta: " . $conn->error);
     }
 
     // Verifique se a vinculação foi bem-sucedida
     if ($resultados === false) {
-        $conn->close();
-        die("Erro na vinculação dos parâmetros: " . mysqli_error($conn));
+        die("Erro na vinculação dos parâmetros: " . $resultados->error);
     }
-   
-    return $resultados;
+    $conn->close();
 }
 
 $codfiltro=0;

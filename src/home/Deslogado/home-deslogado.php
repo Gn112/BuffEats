@@ -78,7 +78,7 @@ header('Content-Type: text/html; charset=UTF-8');
         </div>
         <!-- Filtros -->
 
-        <form class="mt-4 mb-4 d-flex justify-content-between" method="POST">
+        <form class="mt-4 mb-4 d-flex justify-content-between" method="POST ">
             <button type="button"
                 class="btn btn-light bg-white shadow p-2 ps-4 pe-4 text-danger-emphasis d-flex align-items-center">Filtros
                 &nbsp <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
