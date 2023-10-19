@@ -47,7 +47,7 @@ $confirmadoEmail = 0;
 // FUNÇÃO VALIDAR NOME
 function validaEmpresa($empresa)
 {
-    if (strlen($empresa) > 18) {
+    if (strlen($empresa) > 80) {
         return false;
     }
     if (!preg_match('/^[a-zA-Z ]+$/', $empresa)) {
