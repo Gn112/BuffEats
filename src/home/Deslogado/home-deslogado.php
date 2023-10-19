@@ -53,7 +53,7 @@ header('Content-Type: text/html; charset=UTF-8');
     </header>
 
     <!-- Corpo -->
-    <main class="container-md">
+    <main class="container-md  ">
         <!-- Introdução -->
         <div class="d-flex flex-column align-items-center w-100 h-100 pt-4 pb-4 text-center mt-5 mb-5">
             <span class="fs-1 lh-lg">Uma experiência para cada festa!</span>
@@ -78,9 +78,9 @@ header('Content-Type: text/html; charset=UTF-8');
         </div>
         <!-- Filtros -->
 
-        <form class="mt-4 mb-4 d-flex justify-content-start gap-3" method="POST">
+        <form class="mt-4 mb-4 d-flex justify-content-between" method="POST">
             <button type="button"
-                class="rounded shadow p-2 ps-4 pe-4 text-danger-emphasis d-flex align-items-center">Filtros
+                class="btn btn-light bg-white shadow p-2 ps-4 pe-4 text-danger-emphasis d-flex align-items-center">Filtros
                 &nbsp <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
                     <path
                         d="M1.94043 13.2027V11.8338H6.52381V13.2027H1.94043ZM1.94043 9.04011V7.67119H10.7965V9.04011H1.94043ZM1.94043 4.85979V3.48662H15.0735V4.85979H1.94043Z"
