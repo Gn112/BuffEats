@@ -42,7 +42,7 @@ if ($conn->connect_error) {
     }
 
     if ($stmt->execute()) {
-        echo "Produto inserido com sucesso!";
+        header('Location: confirmaproduto.php');
     } else {
         echo "Erro ao inserir produto: " . $stmt->error;
     }

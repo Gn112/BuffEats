@@ -154,6 +154,7 @@ if (isset($_POST['cadastrarEmpresa'])) {
         VALUES (default,'$nome_empresa', '$CNPJ', '$num_contato', '$CEP', '$email', '$senha', '$formas_recebimento', '$confirmadoEmail', 'Não informado', 0)";
        
         if (mysqli_query($conn, $sql)) {
+            header('Location: confirmaempresa.php');
             confirmaEmail($email, $nome_empresa, $CNPJ);
             $_POST["nome_empresa"] = "";
             $_POST["CNPJ"] = "";

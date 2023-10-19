@@ -3,7 +3,7 @@
 // Página Pessoa
 
 ini_set('default_charset', 'utf-8');
-// include('confirmacaoEmail.php');
+include('confirmacaoEmail.php');
 
 $servername = "35.225.119.62";
 $database = "Buffeats";
@@ -139,6 +139,7 @@ if (isset($_POST['cadastrar'])) {
         VALUES (default,'$full_name', '$cpf', '$numero_cel', '$cep', '$email', '$senha', '$opcao', '$confirmadoEmail')";
         echo ("<br>Cadastro Concluido<br>");
         if (mysqli_query($conn, $sql)) {
+            header('Location: confirmacliente.php');
             confirmaEmail($email, $full_name, $cpf);
             $_POST["full_name"] = "";
             $_POST["cpf"] = "";
@@ -148,7 +149,6 @@ if (isset($_POST['cadastrar'])) {
             $_POST["senha"] = "";
             $_POST["opcao"] = 0;
             $_POST["confirmadoEmail"] = 0;
-            header('Location: confirmacliente.php');
             exit;
         } else {
             echo "<br>Ei... Tu colocou dados errados aí guria/piá. Verifica esse BO aí :/ <br> Erro ao inserir os dados: " . mysqli_error($conn);
