@@ -3,12 +3,12 @@
 // Página Pessoa
 
 ini_set('default_charset', 'utf-8');
-// include('confirmacaoEmail.php');
+include('confirmacaoEmail.php');
 
 $servername = "35.225.119.62";
-$database = "Buffeats";
-$username = "root";
-$password = "COTemig123";
+    $database = "Buffeats";
+    $username = "root";
+    $password = "COTemig123";
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $database);
 // Check connection
@@ -47,7 +47,7 @@ $confirmadoEmail = 0;
 // FUNÇÃO VALIDAR NOME
 function validaEmpresa($empresa)
 {
-    if (strlen($empresa) > 18) {
+    if (strlen($empresa) > 80) {
         return false;
     }
     if (!preg_match('/^[a-zA-Z ]+$/', $empresa)) {
@@ -150,12 +150,12 @@ function validaSenhaEmpresa($senha)
 if (isset($_POST['cadastrarEmpresa'])) {
     if (validaEmpresa($nome_empresa) == true && validaCNPJ($CNPJ) == true && validaCelEmpresa($num_contato) == true && validaCepEmpresa($CEP) == true && validaEmailEmpresa($email) == true && validaSenhaEmpresa($senha) == true) {
         $sql = "INSERT INTO CADASTRO_EMPRESA 
-        (id_empresa, nome_empresa, CPF_CNPJ, num_contato, CEP, email, senha, formas_recebimento, EmailConfirma, biografia) 
-        VALUES (default,'$nome_empresa', '$CNPJ', '$num_contato', '$CEP', '$email', '$senha', '$formas_recebimento', '$confirmadoEmail', 'Não informado')";
-        echo ("<br>TANANANAAN<br>");
+        (id_empresa, nome_empresa, CPF_CNPJ, num_contato, CEP, email, senha, formas_recebimento, EmailConfirma, biografia, id_categoria_fk) 
+        VALUES (default,'$nome_empresa', '$CNPJ', '$num_contato', '$CEP', '$email', '$senha', '$formas_recebimento', '$confirmadoEmail', 'Não informado', 0)";
+       
         if (mysqli_query($conn, $sql)) {
-            echo "<br>Dados inseridos com sucesso.<br>";
-            // confirmaEmail($email, $nome_empresa, $CNPJ);
+            header('Location: confirmaempresa.php');
+            confirmaEmail($email, $nome_empresa, $CNPJ);
             $_POST["nome_empresa"] = "";
             $_POST["CNPJ"] = "";
             $_POST["num_contato"] = "";
@@ -164,16 +164,15 @@ if (isset($_POST['cadastrarEmpresa'])) {
             $_POST["senha"] = "";
             $_POST["formas_recebimento"] = "";
             $_POST["confirmadoEmail"] = 0;
-
+            header('Location: confirmaempresa.php');
+            exit;
             
         } else {
-            echo "<BR>Ei... Tu colocou dados errados aí guria/piá. Verifica esse BO aí :/ <br> Erro ao inserir os dados: " . mysqli_error($conn);
+            header('Location: erroempresa.php') . mysqli_error($conn);
         }
     } else {
-        echo "<br>Ei... Tu colocou dados errados aí guria/piá. Verifica esse BO aí :/ <br> Erro ao inserir os dados: " . mysqli_error($conn);
+        header('Location:erroempresa.php'). mysqli_error($conn);
     }
 
 }
-
-
 ?>
