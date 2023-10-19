@@ -6,9 +6,9 @@ ini_set('default_charset', 'utf-8');
 // include('confirmacaoEmail.php');
 
 $servername = "35.225.119.62";
-$database = "Buffeats";
-$username = "root";
-$password = "COTemig123";
+    $database = "Buffeats";
+    $username = "root";
+    $password = "COTemig123";
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $database);
 // Check connection
@@ -152,9 +152,10 @@ if (isset($_POST['cadastrarEmpresa'])) {
         $sql = "INSERT INTO CADASTRO_EMPRESA 
         (id_empresa, nome_empresa, CPF_CNPJ, num_contato, CEP, email, senha, formas_recebimento, EmailConfirma, biografia) 
         VALUES (default,'$nome_empresa', '$CNPJ', '$num_contato', '$CEP', '$email', '$senha', '$formas_recebimento', '$confirmadoEmail', 'Não informado')";
-        echo ("<br>TANANANAAN<br>");
+       
         if (mysqli_query($conn, $sql)) {
-            echo "<br>Dados inseridos com sucesso.<br>";
+            header('Location: confirmaempresa.php');
+            exit;
             // confirmaEmail($email, $nome_empresa, $CNPJ);
             $_POST["nome_empresa"] = "";
             $_POST["CNPJ"] = "";
@@ -164,7 +165,6 @@ if (isset($_POST['cadastrarEmpresa'])) {
             $_POST["senha"] = "";
             $_POST["formas_recebimento"] = "";
             $_POST["confirmadoEmail"] = 0;
-
             
         } else {
             echo "<BR>Ei... Tu colocou dados errados aí guria/piá. Verifica esse BO aí :/ <br> Erro ao inserir os dados: " . mysqli_error($conn);
@@ -174,6 +174,4 @@ if (isset($_POST['cadastrarEmpresa'])) {
     }
 
 }
-
-
 ?>
