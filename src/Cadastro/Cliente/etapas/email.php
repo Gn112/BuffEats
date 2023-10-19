@@ -41,7 +41,6 @@ $full_name = $_POST["full_name"];
 $cpf = $_POST["cpf"];
 $numero_cel = $_POST["numero_cel"];
 $cep = $_POST["cep"];
-print_r($_POST);
 ?>
 
 <body>

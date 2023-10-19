@@ -139,7 +139,8 @@ if (isset($_POST['cadastrar'])) {
         VALUES (default,'$full_name', '$cpf', '$numero_cel', '$cep', '$email', '$senha', '$opcao', '$confirmadoEmail')";
         echo ("<br>Cadastro Concluido<br>");
         if (mysqli_query($conn, $sql)) {
-            echo "<br>Dados inseridos com sucesso.<br>";
+            header('Location: confirmacliente.php');
+            exit;
             // confirmaEmail($email, $full_name, $cpf);
             $_POST["full_name"] = "";
             $_POST["cpf"] = "";

@@ -12,8 +12,10 @@ ini_set('default_charset', 'utf-8');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BuffEats | Login</title>
-    <link rel="icon" type="image/x-icon">
+    <link rel="icon" type="image/x-icon" href="../BuffeEats/interno_landing/img/icon.png">
     <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
@@ -22,6 +24,13 @@ ini_set('default_charset', 'utf-8');
     <main>
         <div id="div_form_login">
             <form method="post" id="formulario" action="conexaoLogin.php">
+            <div id="return">
+                <a href="../home/Deslogado/home-deslogado.php">
+                    <span class="material-symbols-outlined">
+                        arrow_back
+                    </span>
+                </a>
+            </div>
                 <h1 class="login_title">Login</h1>
                 <label class="login_subtitle">Email:</label>
                 <input type="text" name="email" id="username" class="input_box">

@@ -22,7 +22,7 @@
         <div id="container_rec">
 
             <div class="row">
-                <h1 class="title">Email Encviado</h1>
+                <h1 class="title">Email Enviado</h1>
                 <h2 class="subtitle">
                     Siga as instruções enviadas no seu email para seguir com a recuperação
                 </h2>

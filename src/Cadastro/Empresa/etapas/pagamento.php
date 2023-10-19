@@ -29,8 +29,6 @@ $senha = $_POST["senha"];
 // Dado temporário
 $formas_recebimento = 1;
 
-print_r($_POST);
-
 ?>
 
 <body>

@@ -37,10 +37,6 @@ if (isset($_POST['submit'])) {
     <link rel="stylesheet" href="mainCad.css">
 </head>
 
-<?php
-print_r($_POST);
-?>
-
 <body>
     <main>
         <div class="formulario">
