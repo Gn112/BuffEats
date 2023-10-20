@@ -33,13 +33,13 @@ header('Content-Type: text/html; charset=UTF-8');
                     &#9776;
                 </button>
                 <nav class="hidden md:flex items-center space-x-3" aria-label="main">
-                    <a href="#" class="text-lg font-medium">Home</a>
-                    <a href="#" class="text-lg font-medium">Pedidos</a>
-                    <!-- <a href="#" class="text-lg font-medium">Quem Somos</a> -->
+                    <a href="#" class="text-lg font-medium text-decoration-none text-body-secondary">Home</a>
+                    <!-- <a href="#" class="text-lg font-medium text-decoration-none text-body-secondary">Pedidos</a> -->
+                    <!-- <a href="#" class="text-lg font-medium text-decoration-none text-body-secondary">Quem Somos</a> -->
                     <a href="../../Perfil/PerfilCliente/profile.php" id="cliente">
                         <img class="d" src="../../globalAssets/img/cliente_p.png" alt="">
                     </a>
-                    <a href="../logout_session.php" class="text-lg text-vermelho font-medium">Sair</a>
+                    <a href="../logout_session.php" class="text-lg text-vermelho font-medium text-decoration-none text-body-danger">Sair</a>
                 </nav>
             </div>
         </section>
@@ -49,7 +49,7 @@ header('Content-Type: text/html; charset=UTF-8');
             </button>
             <nav class="flex flex-col min-h-screen items-center py-8" aria-label="mobile">
                 <a href="#" class="w-full text-center p-6 hover:opacity-90">Home</a>
-                <a href="#" class="w-full text-center p-6 hover:opacity-90">Pedidos</a>
+                <!-- <a href="#" class="w-full text-center p-6 hover:opacity-90">Pedidos</a> -->
                 <a href="#" class="w-full text-center p-6 hover:opacity-90">Quem Somos</a>
                 <a href="../../Perfil/PerfilCliente/profile.php" class="w-full text-center p-6 hover:opacity-90" id="cliente">
                     Perfil
@@ -73,17 +73,28 @@ header('Content-Type: text/html; charset=UTF-8');
             </form>
         </div>
         <!-- Filtros -->
-        <div class="mt-4 mb-4 d-flex justify-content-between">
-            <button type="button" class="btn btn-light bg-white shadow p-2 ps-4 pe-4 text-danger-emphasis d-flex align-items-center">Filtros &nbsp <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
-                    <path d="M1.94043 13.2027V11.8338H6.52381V13.2027H1.94043ZM1.94043 9.04011V7.67119H10.7965V9.04011H1.94043ZM1.94043 4.85979V3.48662H15.0735V4.85979H1.94043Z" fill="#9A8282" />
+        <form class="mt-4 mb-4 d-flex justify-content-between" method="POST">
+            <button type="button"
+                class="btn btn-light bg-white shadow p-2 ps-4 pe-4 text-danger-emphasis d-flex align-items-center">Filtros
+                &nbsp <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                    <path
+                        d="M1.94043 13.2027V11.8338H6.52381V13.2027H1.94043ZM1.94043 9.04011V7.67119H10.7965V9.04011H1.94043ZM1.94043 4.85979V3.48662H15.0735V4.85979H1.94043Z"
+                        fill="#9A8282" />
                 </svg></button>
-            <button type="button" name="1" class="btn btn-light bg-white shadow p-2 ps-4 pe-4 text-danger-emphasis">Festa infantil</button>
-            <button type="button" name="2" class="btn btn-light bg-white shadow p-2 ps-4 pe-4 text-danger-emphasis">Chá revelação</button>
-            <button type="button" name="3" class="btn btn-light bg-white shadow p-2 ps-4 pe-4 text-danger-emphasis">Empresarial</button>
-            <button type="button" name="4" class="btn btn-light bg-white shadow p-2 ps-4 pe-4 text-danger-emphasis">Festa familiar</button>
-            <button type="button" name="5" class="btn btn-light bg-white shadow p-2 ps-4 pe-4 text-danger-emphasis">Bodas</button>
-            <button type="button" name="6" class="btn btn-light bg-white shadow p-2 ps-4 pe-4 text-danger-emphasis">Aniversário</button>
-        </div>
+            <!-- atribuir à uma variável o valor do botão cliacado -->
+            <button type="submit" name="flt1"
+                class="btn btn-light bg-white shadow p-2 ps-4 pe-4 text-danger-emphasis">Festa infantil</button>
+            <button type="submit" name="flt2"
+                class="btn btn-light bg-white shadow p-2 ps-4 pe-4 text-danger-emphasis">Chá revelação</button>
+            <button type="submit" name="flt3"
+                class="btn btn-light bg-white shadow p-2 ps-4 pe-4 text-danger-emphasis">Empresarial</button>
+            <button type="submit" name="flt4"
+                class="btn btn-light bg-white shadow p-2 ps-4 pe-4 text-danger-emphasis">Festa familiar</button>
+            <button type="submit" name="flt5"
+                class="btn btn-light bg-white shadow p-2 ps-4 pe-4 text-danger-emphasis">Bodas</button>
+            <button type="submit" name="flt6"
+                class="btn btn-light bg-white shadow p-2 ps-4 pe-4 text-danger-emphasis">Aniversário</button>
+        </form>
         <!-- Empresas sugeridas -->
         <div class="container-lg d-flex justify-content-between p-0">
             <div class="container d-flex bg-white p-3 rounded shadow ms-0" style="width: 18rem;">

@@ -33,9 +33,9 @@ header('Content-Type: text/html; charset=UTF-8');
                     &#9776;
                 </button>
                 <nav class="hidden md:block space-x-3" aria-label="main">
-                    <a href="#" class="text-lg font-medium">Home</a>
-                    <a href="#" class="text-lg font-medium">Quem Somos</a>
-                    <a href="../../Login/index.php" class="redBtn" id="entrar">Entrar</a>
+                    <a href="#" class="text-lg font-medium text-decoration-none text-body-secondary">Home</a>
+                    <a href="#" class="text-lg font-medium text-decoration-none text-body-secondary">Quem Somos</a>
+                    <a href="../../Login/index.php" class="redBtn text-decoration-none" id="entrar">Entrar</a>
                 </nav>
             </div>
         </section>

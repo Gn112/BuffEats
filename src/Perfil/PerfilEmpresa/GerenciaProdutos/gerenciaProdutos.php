@@ -37,7 +37,7 @@ header('Content-Type: text/html; charset=UTF-8');
                     <a href="../../PerfilEmpresa/AdicionarProdutos/adicionarProdutos.php" class="text-lg font-medium">Adicionar produtos</a>
                     <a href="#" class="text-lg font-medium">Gerenciar produtos</a>
                     <!-- <a href="#" class="text-lg font-medium">Quem somos</a> -->
-                    <a href="#" id="empresa">
+                    <a href="../profile.php" id="empresa">
                         <img class="d" src="../../../globalAssets/img/empresa_p.png" alt="">
                     </a>
                     <a href="../../logout_session.php" class="text-lg text-vermelho font-medium">Sair</a>

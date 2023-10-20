@@ -71,5 +71,4 @@ if ($codfiltro != 0) {
     $resultados = listarRegistros($conn, $pesquisa);
 }
 
-
 ?>

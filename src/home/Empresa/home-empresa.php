@@ -17,6 +17,9 @@ header('Content-Type: text/html; charset=UTF-8');
     <title>Home Empresa | BuffEats</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="../../globalAssets/js/animations.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
 </head>
 
 <body class="min-h-screen bg-cinzafundo">
@@ -31,16 +34,16 @@ header('Content-Type: text/html; charset=UTF-8');
                     &#9776;
                 </button>
                 <nav class="hidden md:flex items-center space-x-3" aria-label="main">
-                    <a href="#" class="text-lg font-medium">Home</a>
-                    <!-- <a href="#" class="text-lg font-medium">Pedidos</a> -->
-                    <a href="../../Perfil/PerfilEmpresa/GerenciaEmpresa/gerenciaEmpresa.php" class="text-lg font-medium">Gerencie sua empresa</a>
-                    <a href="../../Perfil/PerfilEmpresa/AdicionarProdutos/adicionarProdutos.php" class="text-lg font-medium">Adicionar produtos</a>
-                    <a href="../../Perfil/PerfilEmpresa/GerenciaProdutos/gerenciaProdutos.php" class="text-lg font-medium">Gerenciar produtos</a>
-                    <!-- <a href="#" class="text-lg font-medium">Quem somos</a> -->
+                    <a href="#" class="text-lg font-medium text-decoration-none text-body-secondary">Home</a>
+                    <!-- <a href="#" class="text-lg font-medium text-decoration-none text-body-secondary">Pedidos</a> -->
+                    <a href="../../Perfil/PerfilEmpresa/GerenciaEmpresa/gerenciaEmpresa.php" class="text-lg font-medium text-decoration-none text-body-secondary">Gerencie sua empresa</a>
+                    <a href="../../Perfil/PerfilEmpresa/AdicionarProdutos/adicionarProdutos.php" class="text-lg font-medium text-decoration-none text-body-secondary">Adicionar produtos</a>
+                    <a href="../../Perfil/PerfilEmpresa/GerenciaProdutos/gerenciaProdutos.php" class="text-lg font-medium text-decoration-none text-body-secondary">Gerenciar produtos</a>
+                    <!-- <a href="#" class="text-lg font-medium text-decoration-none text-body-secondary">Quem somos</a> -->
                     <a href="../../Perfil/PerfilEmpresa/profile.php" id="empresa">
                         <img class="d" src="../../globalAssets/img/empresa_p.png" alt="">
                     </a>
-                    <a href="../logout_session.php" class="text-lg text-vermelho font-medium">Sair</a>
+                    <a href="../logout_session.php" class="text-lg text-vermelho font-medium text-decoration-none text-body-danger">Sair</a>
                 </nav>
             </div>
         </section>
@@ -63,6 +66,8 @@ header('Content-Type: text/html; charset=UTF-8');
             </nav>
         </section>
     </header>
+
+    
 </body>
 
 </html>
