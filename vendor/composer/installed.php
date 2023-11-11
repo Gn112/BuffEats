@@ -1,33 +1,23 @@
-<?php return array (
-  'root' => 
-  array (
-    'pretty_version' => 'dev-feat-sass',
-    'version' => 'dev-feat-sass',
-    'aliases' => 
-    array (
+<?php return array(
+    'root' => array(
+        'name' => '__root__',
+        'pretty_version' => '1.0.0+no-version-set',
+        'version' => '1.0.0.0',
+        'reference' => NULL,
+        'type' => 'library',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => true,
     ),
-    'reference' => '89fc90855276258af9792046cf0126ecf459a0a1',
-    'name' => '__root__',
-  ),
-  'versions' => 
-  array (
-    '__root__' => 
-    array (
-      'pretty_version' => 'dev-feat-sass',
-      'version' => 'dev-feat-sass',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '89fc90855276258af9792046cf0126ecf459a0a1',
+    'versions' => array(
+        '__root__' => array(
+            'pretty_version' => '1.0.0+no-version-set',
+            'version' => '1.0.0.0',
+            'reference' => NULL,
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
     ),
-    'phpmailer/phpmailer' => 
-    array (
-      'pretty_version' => 'v6.8.0',
-      'version' => '6.8.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'df16b615e371d81fb79e506277faea67a1be18f1',
-    ),
-  ),
 );

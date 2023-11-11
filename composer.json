@@ -1,5 +1,23 @@
 {
-    "require": {
-        "phpmailer/phpmailer": "^6.8"
+    "require":
+    {
+        "php": ">= 7.0"
+    },
+    "authors": [
+        {
+            "name": "Gabriel Siriani",
+            "email": "gabrielsiriani19@gmail.com"
+        },
+        
+        {
+            "name": "Brenda Evers"
+        }
+    ],
+
+    "autoload": {
+        "psr-4": {
+            "src\\": "src/",
+            "GHOST\\": "vendor/GHOST/"
+        }
     }
 }

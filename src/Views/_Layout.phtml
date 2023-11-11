@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="./js/animations.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="./img/favicon.png">
+    <title>BuffEats - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.4/dist/full.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-cinzafundo">
+    <!-- **HEADER** -->
+    <header class="drop-shadow-xl text-fontecinza bg-branco sticky top-0 z-10">
+        <section
+            class="max-w-full mx-auto p-8 flex justify-between itens-center md:flex md:items-center md:justify-between">
+            <a href="#">
+                <img src="./img/logo.png">
+            </a>
+            <div>
+                <button id="hamburger-button" class="text-3xl md:hidden cursor-pointer">
+                    &#9776;
+                </button>
+                <nav class="hidden md:block space-x-3" aria-label="main">
+                    <a href="#" class="text-lg font-medium text-decoration-none text-body-secondary">Home</a>
+                    <a href="#" class="text-lg font-medium text-decoration-none text-body-secondary">Quem Somos</a>
+                    <a href="../../Login/index.php" class="redBtn text-decoration-none" id="entrar">Entrar</a>
+                </nav>
+            </div>
+        </section>
+        <section id="mobile-menu"
+            class="absolute top-0 bg-branco w-full text-3xl flex-col justify-content-center origin-top animate-open-menu hidden">
+            <button class="text-8xl self-end px-6">
+                &times;
+            </button>
+            <nav class="flex flex-col min-h-screen items-center py-8" aria-label="mobile">
+                <a href="#" class="w-full text-center p-6 hover:opacity-90">Home</a>
+                <a href="#" class="w-full text-center p-6 hover:opacity-90">Quem Somos</a>
+                <a href="../../Login/index.php" class="w-full text-center p-6 hover:opacity-90" id="entrar">Entrar</a>
+            </nav>
+        </section>
+    </header>
+    <!-- **** -->
+    <?= $this->content() ?>
+</body>
+
+</html>

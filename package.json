@@ -1,18 +1,16 @@
 {
-  "name": "buffeeats",
-  "version": "1.0.0",
-  "description": "A BuffeEat. é uma plataforma de intermediação inovadora que conecta buffets e clientes em busca de serviços de buffet. Através dessa plataforma, os clientes podem encontrar facilmente buffets disponíveis para eventos, como casamentos, festas de aniversário, eventos corporativos e outras ocasiões especiais.",
-  "main": "tailwind.config.js",
+  "name": "buffeats",
+  "version": "2.0.0",
+  "description": "Miniframework MVC feito em PHP",
+  "main": "index.js",
   "scripts": {
-    "prettier": "npx prettier --write '**/*.html' '**/*.php'"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "Gabriel Siriani, Brenda Evers, Raissa Barbieri, Eduardo Torres, Maria Eduarda",
+  "author": "Gabriel Siriani, Brenda Evers, Raissa Barbieri, Maria Eduarda, Eduardo Torres",
   "license": "ISC",
   "devDependencies": {
-    "autoprefixer": "^10.4.15",
-    "postcss": "^8.4.29",
-    "prettier-plugin-tailwindcss": "^0.5.4",
-    "tailwindcss": "^3.3.3"
+    "prettier-plugin-tailwindcss": "^0.5.7",
+    "tailwind": "^4.0.0",
+    "tailwindcss": "^3.3.5"
   }
 }

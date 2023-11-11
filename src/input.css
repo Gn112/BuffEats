@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fontes */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;00&display=swap');
+
+/* Variáveis CSS (presentes no arquivo 'tailwind.config.js') */
+:root {
+    --color-vermelho: #BD2323;
+    --color-hover-vermelho: #be4d4d;
+    --color-branco: #ffffff;
+    --color-fontecinza: #463B3B;
+    --color-fontemarrom:#3D1E1E;
+    --color-cinzaclaro: #F8F8F8;
+    --color-cinzafundo: #EEEEEE;
+    --shadow-caixagrande: 0px 5px 10px 2px rgba(0, 0, 0, 0.2);
+    --shadow-caixainput: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+
+/* Classes Personalizadas */
+
+/* Valores padrões */
+@layer base {
+    html {
+        font-family: 'Outfit', sans-serif;
+    }
+}
+
+@layer components
+{
+    .btn-red
+    {
+        @apply text-branco text-base font-normal cursor-pointer shadow-caixainput bg-vermelho border-0 rounded-lg px-6 py-2.5 antialiased
+    }
+}
+
+.redBtn {
+    color: #ffffff;
+    background-color: #BD2323;
+    border: none;
+    border-radius: .4375rem;
+    font-size: .9375rem;
+    font-weight: 400;
+    cursor: pointer;
+    box-shadow: 0rem .25rem .625rem rgba(0, 0, 0, 0.15);
+    padding: 10px 25px;
+}
+
+.redBtn:hover {
+    background-color: #be4d4d;
+    transition: 0.4s;
+}
+
+.signIn {
+    font-weight: 400;
+    font-size: 1.125rem;
+    color: #BD2323;
+    cursor: pointer;
+}
+
+.signIn:hover {
+    opacity: 70%;
+    transition: 0.4s;
+}
+
+.backgroundContainer {
+  width: 80%;
+  margin: 30px auto; 
+  background-color: #F8F8F8;
+  border-radius: 15px;
+  box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+}
+
+
+/* Títulos */
+.landing_title {
+    text-align: center;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 2rem;
+    color: var(--color-fontemarrom);
+    line-height: 1.4;
+}
+
+
+.landing_title a {
+    color: var(--color-vermelho);
+}
+
+.landing_subtitle {
+    text-align: center;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--color-fontemarrom);
+    line-height: 1.3;
+}
