@@ -35,17 +35,17 @@ module.exports = {
       },
     },
     fontFamily: {
-      main: ["Outfit", "sans"],
+      sans: ['Outfit', 'sans'],
     },
   },
-  plugins: [],
   daisyui: {
     themes: [
       {
         mytheme: {
+          fontFamily: "Outfit",
           primary: "#BD2323",
           secondary: "#fecdd3",
-          accent: "#be4d4d",
+          accent: "#FFFFFF",
           neutral: "#F7F7F7",
           "base-100": "#EEEEEE",
           info: "#24BD4F",
@@ -56,4 +56,5 @@ module.exports = {
       },
     ],
   },
+  plugins: [require("daisyui")],
 };

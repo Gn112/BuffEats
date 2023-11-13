@@ -11,8 +11,12 @@ class IndexController extends Action
 {
     public function index()
     {
-
         $this->render('index', '_Layout');
+    }
+
+    public function login()
+    {
+        $this->render('login', '_Layout');
     }
 }
 

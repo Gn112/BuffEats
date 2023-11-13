@@ -15,6 +15,13 @@ class Route extends Bootstrap {
             'action' => 'index'
         );
 
+        $routes['login'] = array
+        (
+            'route' => '/login',
+            'controller' => 'indexController',
+            'action' => 'login'
+        );
+
         $this->setRoutes($routes);
     }
 
