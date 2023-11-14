@@ -10,8 +10,8 @@ header('Content-Type: text/html; charset=UTF-8');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil | BuffEats</title>
-    <link rel="icon" type="image/x-icon" href="img/icon.png">
+    <title>BuffEats | Home</title>
+    <link rel="icon" type="image/x-icon" href="./img/icon.png">
     <link rel="stylesheet" href="css/homeDeslogado.css">
     <script src="js/animations.js" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -61,7 +61,7 @@ header('Content-Type: text/html; charset=UTF-8');
             <span class="fs-5 lh-lg">Encontre seu bufê ideal hoje mesmo!</span>
         </div>
         <!-- Pesquisa -->
-        <div class="d-inline-flex justify-content-center w-100">
+        <div class="d-none justify-content-center w-100">
             <form method="POST" class="d-inline-flex w-100 input-group input-group-lg shadow">
                 <button type="submit" name="search"
                     class="input-group-text rounded-end rounded-start-3 rounded-end-0 shadow-sm" id="basic-addon1"
