@@ -79,8 +79,8 @@ $opcao = 1;
                 
                 <div class="row" id="container_terms">
                     <span class="terms_text">Ao clicar em "Finalizar" você concorda com os 
-                        <a href="../../../Termos/index.php">Termos de Uso</a>
-                    e as <a href="../../../Privacidade/index.php">Políticas de Privacidade</a></span>
+                        <a href="termos.php">Termos de Uso</a>
+                    e as <a href="privacidade.php">Políticas de Privacidade</a></span>
                 </div>
 
                 <div class="row">
