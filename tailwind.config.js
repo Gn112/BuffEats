@@ -2,11 +2,8 @@
 
 module.exports = {
   content: [
-    "./src/*/.{html,js,php}",
-    "./src/home/Cliente/**.{html,js,php}",
-    "./src/Perfil/**.{html,js,php}",
-    "./src/Perfil/**/**.{html,js,php}",
-    "./src/globalAssets/**.js"
+    "./src/**/*.{html,js,php}",
+    "./.{html,js,php}",
   ],
   theme: {
     extend: {
