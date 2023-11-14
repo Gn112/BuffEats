@@ -10,7 +10,7 @@ require('../Backend/CadastroClienteBack.php'); // Conexão com o arquivo de envi
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BuffEats | Pagamento</title>
-    <link rel="icon" type="image/x-icon">
+    <link rel="icon" type="image/x-icon" href="img/icon.png">
     <link rel="stylesheet" href="css/mainCad.css">
     <link rel="stylesheet" href="css/pagamento.css">
 </head>
@@ -79,8 +79,8 @@ $opcao = 1;
                 
                 <div class="row" id="container_terms">
                     <span class="terms_text">Ao clicar em "Finalizar" você concorda com os 
-                        <a href="../../../Termos/index.php">Termos de Uso</a>
-                    e as <a href="../../../Privacidade/index.php">Políticas de Privacidade</a></span>
+                        <a href="termos.php">Termos de Uso</a>
+                    e as <a href="privacidade.php">Políticas de Privacidade</a></span>
                 </div>
 
                 <div class="row">
