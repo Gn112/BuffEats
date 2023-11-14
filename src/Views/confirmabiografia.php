@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="PT-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -8,8 +8,7 @@
     <title>BuffEats | Biografia</title>
     <link rel="icon" type="image/x-icon">
     <link rel="stylesheet" href="css/confirmabiografia.css">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
@@ -19,13 +18,12 @@
             <div class="row">
                 <h1 class="title">Biografia inserida com sucesso!</h1>
                 <h2 class="subtitle">
-                    Agora a biografia ficará visivel para os seus clientes 
+                    Agora a biografia ficará visivel para os seus clientes
                 </h2>
             </div>
 
             <div class="row">
-                <a href="../../../home/Empresa/home-empresa.php" <button onclick="" name="volta" id="buttonVoltar"
-                    class="small_button">
+                <a href="home-empresa.php" class="small_button">
                     CLIQUE AQUI PARA VOLTAR
                     </button>
                 </a>

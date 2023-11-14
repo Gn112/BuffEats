@@ -41,7 +41,7 @@ main {
     height: 100%;
 
     background-color: var(--color-cinzafundo);
-    background: url(img/onda_fundo.svg);
+    background: url(../img/onda_fundo.svg);
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: contain;

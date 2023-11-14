@@ -3,18 +3,8 @@
 // Página Pessoa
 
 ini_set('default_charset', 'utf-8');
-include('confirmacaoEmail.php');
-
-$servername = "35.225.119.62";
-    $database = "Buffeats";
-    $username = "root";
-    $password = "COTemig123";
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $database);
-// Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
+// include('confirmacaoEmail.php');
+require_once('conexao.php');
 
 // CRIPTOGRAFAR SENHA
 function Senha($psswd){
@@ -153,8 +143,8 @@ if (isset($_POST['cadastrarEmpresa'])) {
         VALUES (default,'$nome_empresa', '$CNPJ', '$num_contato', '$CEP', '$email', '$senha', '$formas_recebimento', '$confirmadoEmail', 'Não informado', 0)";
        
         if (mysqli_query($conn, $sql)) {
-            header('Location: confirmaempresa.php');
-            confirmaEmail($email, $nome_empresa, $CNPJ);
+            header('Location: ../Views/confirmaempresa.php');
+            // confirmaEmail($email, $nome_empresa, $CNPJ);
             $_POST["nome_empresa"] = "";
             $_POST["CNPJ"] = "";
             $_POST["num_contato"] = "";
@@ -163,7 +153,6 @@ if (isset($_POST['cadastrarEmpresa'])) {
             $_POST["senha"] = "";
             $_POST["formas_recebimento"] = "";
             $_POST["confirmadoEmail"] = 0;
-            header('Location: confirmaempresa.php');
             exit;
             
         } else {

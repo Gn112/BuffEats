@@ -1,7 +1,7 @@
 <?php header('Content-Type: text/html; charset=UTF-8'); ?>
 
 <!DOCTYPE html>
-<html lang="PT-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -26,7 +26,7 @@
             </div>
 
             <div class="row">
-                <a href="../../../Login/index.php"> <button onclick="" name="volta" id="buttonVoltar"
+                <a href="login.php"> <button onclick="" name="volta" id="buttonVoltar"
                     class="small_button">
                     CLIQUE AQUI PARA VOLTAR PARA O LOGIN
                     </button>

@@ -12,18 +12,8 @@ ini_set('default_charset', 'utf-8');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BuffEats | Email</title>
     <link rel="icon" type="image/x-icon">
-    <link rel="stylesheet" href="css/mainCad.css">
+    <link rel="stylesheet" href="css/mainCadEmpresa.css">
 </head>
-
-<style>
-    main {
-        background-color: var(--color-cinzafundo);
-        background: url(../img/onda_fundo.svg);
-        background-repeat: no-repeat;
-        background-position: bottom;
-        background-size: contain;
-    }
-</style>
 
 <?php
 $nome_empresa = $_POST["nome_empresa"];
@@ -35,7 +25,7 @@ $CEP = $_POST["CEP"];
 <body>
     <main>
         <div class="formulario">
-            <form action="pagamento.php" method="post" onsubmit="return validateForm()">
+            <form action="pagamentoEmpresa.php" method="post" onsubmit="return validateForm()">
 
                 <div class="page_counter"></div>
 
@@ -68,7 +58,7 @@ $CEP = $_POST["CEP"];
 
             </form>
 
-            <form method="post" action="../empresa.php" class="row">
+            <form method="post" action="empresa.php" class="row">
 
                 <!-- Inputs que retornam os dados para a página anterior -->
                 <input type="hidden" name="nome_empresa" value="<?php echo $nome_empresa; ?>">
@@ -81,60 +71,60 @@ $CEP = $_POST["CEP"];
             </form>
         </div>
         <script>
-    function validateForm() {
-        // Chamar as funções de validação e armazenar os resultados
-        var isEmailValid = validateEmail();
-        var arePasswordsValid = comparePasswords();
+            function validateForm() {
+                // Chamar as funções de validação e armazenar os resultados
+                var isEmailValid = validateEmail();
+                var arePasswordsValid = comparePasswords();
 
-        // Verificar se todas as validações foram bem-sucedidas
-        if (isEmailValid && arePasswordsValid) {
-            return true; // Permitir o envio do formulário
-        } else {
-            return false; // Impedir o envio do formulário
-        }
-    }
+                // Verificar se todas as validações foram bem-sucedidas
+                if (isEmailValid && arePasswordsValid) {
+                    return true; // Permitir o envio do formulário
+                } else {
+                    return false; // Impedir o envio do formulário
+                }
+            }
 
-    function validateEmail() {
-        var email = document.getElementById('email').value;
+            function validateEmail() {
+                var email = document.getElementById('email').value;
 
-        // Expressão regular para validação de email
-        var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                // Expressão regular para validação de email
+                var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-        if (!regex.test(email)) {
-            alert('Por favor, verifique o Email informado.');
-            return false;
-        }
+                if (!regex.test(email)) {
+                    alert('Por favor, verifique o Email informado.');
+                    return false;
+                }
 
-        return true;
-    }
+                return true;
+            }
 
-    function comparePasswords() {
-        var senha = document.getElementById('senha').value;
-        var confirmaSenha = document.getElementById('confirmaSenha').value;
+            function comparePasswords() {
+                var senha = document.getElementById('senha').value;
+                var confirmaSenha = document.getElementById('confirmaSenha').value;
 
-        if (senha.trim() === '') {
-            alert('Por favor, preencha o campo Senha.');
-            return false;
-        }
+                if (senha.trim() === '') {
+                    alert('Por favor, preencha o campo Senha.');
+                    return false;
+                }
 
-        if (confirmaSenha.trim() === '') {
-            alert('Por favor, preencha o campo Confirmação de Senha.');
-            return false;
-        }
+                if (confirmaSenha.trim() === '') {
+                    alert('Por favor, preencha o campo Confirmação de Senha.');
+                    return false;
+                }
 
-        if (senha !== confirmaSenha) {
-            alert('As senhas não coincidem. Por favor, verifique as senhas informadas.');
-            return false;
-        }
+                if (senha !== confirmaSenha) {
+                    alert('As senhas não coincidem. Por favor, verifique as senhas informadas.');
+                    return false;
+                }
 
-        return true;
-    }
-</script>
+                return true;
+            }
+        </script>
         </div>
         </form>
         </div>
     </main>
-    <script src="../interno/validacao.js"></script>
+    <script src="js/validacao.js"></script>
 </body>
 
 </html>

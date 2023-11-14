@@ -1,6 +1,6 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
-require('../interno/functions.php'); // Conexão com o arquivo de envia para o BD
+require('../Backend/CadastroEmpresaBack.php'); // Conexão com o arquivo de envia para o BD
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -11,7 +11,7 @@ require('../interno/functions.php'); // Conexão com o arquivo de envia para o B
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BuffEats | Pagamento</title>
     <link rel="icon" type="image/x-icon">
-    <link rel="stylesheet" href="css/mainCad.css">
+    <link rel="stylesheet" href="css/mainCadEmpresa.css">
     <link rel="stylesheet" href="css/pagamentoEmpresa.css">
 </head>
 
@@ -34,7 +34,7 @@ $formas_recebimento = 1;
 <body>
     <main>
         <div class="formulario">
-            <form action="../interno/functions.php" method="post">
+            <form action="../Backend/CadastroEmpresaBack.php" method="post">
 
                 <h1 class="smaller_text">Verifique suas Informações</h1>
 
@@ -88,10 +88,9 @@ $formas_recebimento = 1;
 
                 <div class="row" id="container_terms">
                     <span class="terms_text">Ao clicar em "Finalizar" você concorda com os 
-                        <a href="../../../Termos/index.php">Termos de Uso</a>
-                    e as <a href="../../../Privacidade/index.php">Políticas de Privacidade</a></span>
+                        <a href="termos.php">Termos de Uso</a>
+                    e as <a href="privacidade.php">Políticas de Privacidade</a></span>
                 </div>
-
 
                 <div class="row">
                     <button type="submit" name="cadastrarEmpresa" class="button_submit">FINALIZAR</button>
@@ -100,7 +99,7 @@ $formas_recebimento = 1;
 
             </form>
 
-            <form method="post" action="email.php">
+            <form method="post" action="emailEmpresa.php">
 
                 <input type="hidden" name="nome_empresa" value="<?php echo $nome_empresa; ?>">
                 <input type="hidden" name="CNPJ" value="<?php echo $CNPJ; ?>">

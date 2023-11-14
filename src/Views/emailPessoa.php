@@ -15,7 +15,7 @@ if (isset($_POST["submitEmail"])) {
 
 ?>
 <!DOCTYPE html>
-<html lang="PT-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">

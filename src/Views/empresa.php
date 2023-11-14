@@ -4,7 +4,7 @@ ini_set('default_charset', 'utf-8');
 
 ?>
 <!DOCTYPE html>
-<html lang="PT-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -18,7 +18,7 @@ ini_set('default_charset', 'utf-8');
 <body>
     <main>
         <div class="formulario">
-            <form action="etapas/email.php" method="post" onsubmit="return validateForm()">
+            <form action="emailEmpresa.php" method="post" onsubmit="return validateForm()">
 
                 <h1 class="main_title">Cadastro</h1>
 
@@ -57,7 +57,7 @@ ini_set('default_charset', 'utf-8');
                 </div>
 
                 <div class="row return_button">
-                    <a href="../../Decisao/decisao.php">VOLTAR</a>
+                    <a href="decisao.php">VOLTAR</a>
                 </div>
             </form>
         </div>
