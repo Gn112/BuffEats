@@ -22,9 +22,16 @@
 /* Classes Personalizadas */
 
 /* Valores padrões */
-@layer base {
-    html {
-        font-family: 'Outfit', sans-serif;
+@layer components
+{
+    .btn-red
+    {
+        @apply text-branco text-base font-normal cursor-pointer shadow-caixainput bg-vermelho border-0 rounded-lg px-6 py-2.5 antialiased
+    }
+
+    .cardContainer
+    {
+        @apply w-4/5 my-8 mx-auto bg-cinzaclaro rounded-2xl shadow-xl p-8
     }
 }
 
@@ -39,6 +46,28 @@
     box-shadow: 0rem .25rem .625rem rgba(0, 0, 0, 0.15);
     padding: 10px 25px;
 }
+
+.whiteBtn {
+    color: var(--color-fontecinza);
+    background-color: #ffffff;
+    border: none;
+    border-radius: .4375rem;
+    font-size: .9375rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0rem .25rem .625rem rgba(0, 0, 0, 0.15);
+    padding: 10px 25px;
+}
+
+.feather {
+    /* width: 20px;
+    height: 20px; */
+    /* stroke: var(--color-fontecinza); */
+    /* stroke-width: 2; */
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+  }
 
 .redBtn:hover {
     background-color: #be4d4d;
