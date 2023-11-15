@@ -1,3 +1,5 @@
+<?php header("Content-Type: text/html; charset=tf-8") ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
