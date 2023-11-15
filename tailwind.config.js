@@ -12,6 +12,7 @@ module.exports = {
         hoverfontecinza: "#000000",
         cinzaclaro: "#F8F8F8",
         cinzafundo: "#EEEEEE",
+        amarelo: "#EFB520",
         shadowcaixagrande: "0rem .3125rem .625rem .125rem rgba(0, 0, 0, 0.2)",
         shadowcaixainput: "0rem .25rem .625rem rgba(0, 0, 0, 0.15)",
       },
