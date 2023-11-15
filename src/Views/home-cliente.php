@@ -19,8 +19,7 @@ header('Content-Type: text/html; charset=UTF-8');
     <link rel="stylesheet" href="css/homeCliente.css">
     <link rel="icon" type="image/x-icon" href="img/icon.png">
     <script src="js/animations.js" defer></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="../../node_modules/feather-icons/dist/feather.js"></script>
 </head>
 
 <body class="min-h-screen bg-cinzafundo">
@@ -61,111 +60,338 @@ header('Content-Type: text/html; charset=UTF-8');
         </section>
     </header>
 
-    <!-- Corpo -->
-    <main class="container-md  ">
-        <!-- Pesquisa -->
-        <div class="d-inline-flex justify-content-center w-100 mt-5">
-            <form method="POST" class="d-inline-flex w-100 input-group input-group-lg shadow">
-                <button type="submit" name="search" class="input-group-text rounded-end rounded-start-3 rounded-end-0 shadow-sm" id="basic-addon1" aria-describedby="inputGroup-sizing-lg"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
-                        <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                        <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" /></svg></button>
-                <input type="text" placeholder="Qual comida você precisa?" name="pesquisa" class="form-control w-75 rounded-end rounded-end-3 rounded-start-0" aria-describedby="inputGroup-sizing-lg">
+    <main class="min-h-screen">
 
-            </form>
+        <!-- Carrossel/Div de filtros -->
+        <div class="rounded-b-lg w-full bg-branco sm:shadow-2xl carousel z-[1] fixed md:flex md:justify-around md:bg-cinzafundo md:shadow-none md:relative md:m-0">
+            <div class="carousel-item p-1.5">
+                <button class="btn bg-branco text-cinzafonte" onclick="my_modal_5.showModal()">
+                    <i data-feather="map-pin" class="stroke-vermelho"></i>
+                    Localidades
+                    <i data-feather="chevron-down" class="stroke-2"></i>
+                </button>
+                <!-- HTML do modal das localidades -->
+                <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+                    <div class="modal-box">
+                        <h3 class="font-bold text-lg">
+                            <i data-feather="map-pin" class="stroke-vermelho"></i>
+                            Localidades
+                        </h3>
+
+                        <!-- Conteúdo do modal -->
+                        <p class="py-4">
+                            Aqui vão estar as coisas da localidade
+                        </p>
+
+                        <!-- Botão pra filtrar/fechar modal -->
+                        <div class="modal-action">
+                            <form method="dialog">
+                                <!-- if there is a button in form, it will close the modal -->
+                                <button class="btn">Filtrar</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </dialog>
+
+            </div>
+
+            <div class="carousel-item p-1.5">
+                <button class="btn whiteBtn">
+                    <i><img src="img/baby.svg" class="w-[20px] stroke-vermelho"></i>
+                    Chá de Bebê
+                </button>
+            </div>
+
+            <div class="carousel-item p-1.5">
+                <button class="btn whiteBtn">
+                    <i data-feather="briefcase" class="stroke-vermelho"></i>
+                    Empresarial
+                </button>
+            </div>
+
+            <div class="carousel-item p-1.5">
+                <button class="btn whiteBtn">
+                    <i><img src="img/birthday.svg" class="w-[20px] stroke-vermelho"></i>
+                    Aniversário
+                </button>
+            </div>
+
+            <div class="carousel-item p-1.5">
+                <button class="btn whiteBtn">
+                    <i><img src="img/casamento.svg" class="w-[20px] stroke-vermelho"></i>
+                    Casamento
+                </button>
+            </div>
+
+            <div class="carousel-item p-1.5">
+                <button class="btn whiteBtn">
+                    <i data-feather="home" class="stroke-vermelho"></i>
+                    Familiar
+                </button>
+            </div>
+
+            <div class="carousel-item p-1.5">
+                <button class="btn whiteBtn">
+                    <i><img src="img/crianca-boneco" class="w-[20px] stroke-vermelho"></i>
+                    Infantil
+                </button>
+            </div>
+
+            <div class="carousel-item p-1.5">
+                <button class="btn whiteBtn">
+                    <i><img src="img/formatura.svg" class="w-[20px] stroke-vermelho"></i>
+                    Formatura
+                </button>
+            </div>
         </div>
-        <!-- Filtros -->
-        <form class="mt-4 mb-4 d-flex justify-content-between" method="POST">
-            <button type="button"
-                class="btn btn-light bg-white shadow p-2 ps-4 pe-4 text-danger-emphasis d-flex align-items-center">Filtros
-                &nbsp <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
-                    <path
-                        d="M1.94043 13.2027V11.8338H6.52381V13.2027H1.94043ZM1.94043 9.04011V7.67119H10.7965V9.04011H1.94043ZM1.94043 4.85979V3.48662H15.0735V4.85979H1.94043Z"
-                        fill="#9A8282" />
-                </svg></button>
-            <!-- atribuir à uma variável o valor do botão cliacado -->
-            <button type="submit" name="flt1"
-                class="btn btn-light bg-white shadow p-2 ps-4 pe-4 text-danger-emphasis">Festa infantil</button>
-            <button type="submit" name="flt2"
-                class="btn btn-light bg-white shadow p-2 ps-4 pe-4 text-danger-emphasis">Chá revelação</button>
-            <button type="submit" name="flt3"
-                class="btn btn-light bg-white shadow p-2 ps-4 pe-4 text-danger-emphasis">Empresarial</button>
-            <button type="submit" name="flt4"
-                class="btn btn-light bg-white shadow p-2 ps-4 pe-4 text-danger-emphasis">Festa familiar</button>
-            <button type="submit" name="flt5"
-                class="btn btn-light bg-white shadow p-2 ps-4 pe-4 text-danger-emphasis">Bodas</button>
-            <button type="submit" name="flt6"
-                class="btn btn-light bg-white shadow p-2 ps-4 pe-4 text-danger-emphasis">Aniversário</button>
-        </form>
-        <!-- Empresas sugeridas -->
-        <div class="container-lg d-flex justify-content-between p-0">
-            <div class="container d-flex bg-white p-3 rounded shadow ms-0" style="width: 18rem;">
-                <img src="img/logo_empresa.svg" alt="" width="80px">
-                <div class="container d-flex flex-column">
-                    <span>Nome da empresa</span>
-                    <span>Buffet</span>
+
+        <div id="divider" class="relative p-10 bg-cinzafundo md:hidden"></div>
+
+        <!-- Empresas destaque -->
+        <div class="w-full bg-cinzafundo carousel z-[1]">
+            
+            <div class="carousel-item bg-cinzafundo p-2">
+                <div class="card w-80 bg-base-100 shadow-xl m-2">
+                    <div class="card-body p-6 flex flex-row gap-5">
+                        <figure><img src="img/empresa_g_q.png" class="w-[40px]" /></figure>
+                        <div class="flex flex-col justify-center">
+                            <h2>Lorem Ipsun Buffet</h2>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="container d-flex bg-white p-3 rounded shadow" style="width: 18rem;">
-                <img src="img/logo_empresa.svg" alt="" width="80px">
-                <div class="container d-flex flex-column">
-                    <span>Nome da empresa</span>
-                    <span>Buffet</span>
+            <div class="carousel-item bg-cinzafundo p-2">
+                <div class="card w-80 bg-base-100 shadow-xl m-2">
+                    <div class="card-body p-6 flex flex-row gap-5">
+                        <figure><img src="img/empresa_g_q.png" class="w-[40px]" /></figure>
+                        <div class="flex flex-col justify-center">
+                            <h2>Lorem Ipsun Buffet</h2>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="container d-flex bg-white p-3 rounded shadow" style="width: 18rem;">
-                <img src="img/logo_empresa.svg" alt="" width="80px">
-                <div class="container d-flex flex-column">
-                    <span>Nome da empresa</span>
-                    <span>Buffet</span>
+            <div class="carousel-item bg-cinzafundo p-2">
+                <div class="card w-80 bg-base-100 shadow-xl m-2">
+                    <div class="card-body p-6 flex flex-row gap-5">
+                        <figure><img src="img/empresa_g_q.png" class="w-[40px]" /></figure>
+                        <div class="flex flex-col justify-center">
+                            <h2>Lorem Ipsun Buffet</h2>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="container d-flex bg-white p-3 rounded shadow me-0" style="width: 18rem;">
-                <img src="img/logo_empresa.svg" alt="" width="80px">
-                <div class="container d-flex flex-column">
-                    <span>Nome da empresa</span>
-                    <span>Buffet</span>
+            <div class="carousel-item bg-cinzafundo p-2">
+                <div class="card w-80 bg-base-100 shadow-xl m-2">
+                    <div class="card-body p-6 flex flex-row gap-5">
+                        <figure><img src="img/empresa_g_q.png" class="w-[40px]" /></figure>
+                        <div class="flex flex-col justify-center">
+                            <h2>Lorem Ipsun Buffet</h2>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <div class="carousel-item bg-cinzafundo p-2">
+                <div class="card w-80 bg-base-100 shadow-xl m-2">
+                    <div class="card-body p-6 flex flex-row gap-5">
+                        <figure><img src="img/empresa_g_q.png" class="w-[40px]" /></figure>
+                        <div class="flex flex-col justify-center">
+                            <h2>Lorem Ipsun Buffet</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
         </div>
-        <!-- Resultados de busca -->
 
-        <?php
-        require("../Backend/resultados-busca.php");
-        ?>
-        <table class="table table-light table-striped mt-5">
-            <thead>
-                <tr>
-                    <th scope="col">IMAGEM</th>
-                    <th scope="col">PRODUTO</th>
-                    <th scope="col">VALOR UNITÁRIO</th>
-                    <th scope="col">EMPRESA</th>
-                    <th scope="col">CONTATO</th>
-                    <th scope="col">EMAIL</th>
-                    <th scope="col">CEP</th>
-                </tr>
-            </thead>
-            <tbody>
+        <!-- Grid das empresas -->
+        <div class="grid bg-cinzafundo sm:grid-cols-2 lg:grid-cols-4 justify-items-center gap-6 m-4 mx-20">
 
-                <?php
-                foreach ($resultados as $resultado) : ?>
-                    <tr>
-                        <td><?php echo $resultado['IMAGEM'] ?></td>
-                        <td><?php echo $resultado['PRODUTO']; ?></td>
-                        <td><?php echo $resultado["VALOR UNITÁRIO"]; ?></td>
-                        <td><?php echo $resultado['EMPRESA'] ?></td>
-                        <td><?php echo $resultado['CONTATO'] ?></td>
-                        <td><?php echo $resultado['EMAIL'] ?></td>
-                        <td><?php echo $resultado['CEP'] ?></td>
-                    </tr>
+            <div class="card bg-base-100 shadow-xl">
+                <figure><img
+                        src="https://www.folhavitoria.com.br/geral/blogs/portugues-em-dia/wp-content/uploads/2020/12/69.-Bufe.jpg"
+                        alt="Shoes" /></figure>
+                <div class="card-body">
+                    <div class="card-title text-fontecinza flex justify-between">
+                        Bufê Maravilha
+                        <div class="rating">
+                            <div class="flex gap-1.5">
+                                <p>5,0</p>
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-amarelo" checked />
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-fontecinza">*Descrição*</p>
+                    <div class="card-actions justify-end">
+                        <div class="badge badge-info">Infantil</div>
+                        <div class="badge badge-success">Chá de bebê</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card bg-base-100 shadow-xl">
+                <figure><img
+                        src="https://www.folhavitoria.com.br/geral/blogs/portugues-em-dia/wp-content/uploads/2020/12/69.-Bufe.jpg"
+                        alt="Shoes" /></figure>
+                <div class="card-body">
+                    <div class="card-title text-fontecinza flex justify-between">
+                        Bufê Maravilha
+                        <div class="rating">
+                            <div class="flex gap-1.5">
+                                <p>5,0</p>
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-amarelo" checked />
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-fontecinza">*Descrição*</p>
+                    <div class="card-actions justify-end">
+                        <div class="badge badge-info">Infantil</div>
+                        <div class="badge badge-success">Chá de bebê</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card bg-base-100 shadow-xl">
+                <figure><img
+                        src="https://www.folhavitoria.com.br/geral/blogs/portugues-em-dia/wp-content/uploads/2020/12/69.-Bufe.jpg"
+                        alt="Shoes" /></figure>
+                <div class="card-body">
+                    <div class="card-title text-fontecinza flex justify-between">
+                        Bufê Maravilha
+                        <div class="rating">
+                            <div class="flex gap-1.5">
+                                <p>5,0</p>
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-amarelo" checked />
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-fontecinza">*Descrição*</p>
+                    <div class="card-actions justify-end">
+                        <div class="badge badge-info">Infantil</div>
+                        <div class="badge badge-success">Chá de bebê</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card bg-base-100 shadow-xl">
+                <figure><img
+                        src="https://www.folhavitoria.com.br/geral/blogs/portugues-em-dia/wp-content/uploads/2020/12/69.-Bufe.jpg"
+                        alt="Shoes" /></figure>
+                <div class="card-body">
+                    <div class="card-title text-fontecinza flex justify-between">
+                        Bufê Maravilha
+                        <div class="rating">
+                            <div class="flex gap-1.5">
+                                <p>5,0</p>
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-amarelo" checked />
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-fontecinza">*Descrição*</p>
+                    <div class="card-actions justify-end">
+                        <div class="badge badge-info">Infantil</div>
+                        <div class="badge badge-success">Chá de bebê</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card bg-base-100 shadow-xl">
+                <figure><img
+                        src="https://www.folhavitoria.com.br/geral/blogs/portugues-em-dia/wp-content/uploads/2020/12/69.-Bufe.jpg"
+                        alt="Shoes" /></figure>
+                <div class="card-body">
+                    <div class="card-title text-fontecinza flex justify-between">
+                        Bufê Maravilha
+                        <div class="rating">
+                            <div class="flex gap-1.5">
+                                <p>5,0</p>
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-amarelo" checked />
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-fontecinza">*Descrição*</p>
+                    <div class="card-actions justify-end">
+                        <div class="badge badge-info">Infantil</div>
+                        <div class="badge badge-success">Chá de bebê</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card bg-base-100 shadow-xl">
+                <figure><img
+                        src="https://www.folhavitoria.com.br/geral/blogs/portugues-em-dia/wp-content/uploads/2020/12/69.-Bufe.jpg"
+                        alt="Shoes" /></figure>
+                <div class="card-body">
+                    <div class="card-title text-fontecinza flex justify-between">
+                        Bufê Maravilha
+                        <div class="rating">
+                            <div class="flex gap-1.5">
+                                <p>5,0</p>
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-amarelo" checked />
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-fontecinza">*Descrição*</p>
+                    <div class="card-actions justify-end">
+                        <div class="badge badge-info">Infantil</div>
+                        <div class="badge badge-success">Chá de bebê</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card bg-base-100 shadow-xl">
+                <figure><img
+                        src="https://www.folhavitoria.com.br/geral/blogs/portugues-em-dia/wp-content/uploads/2020/12/69.-Bufe.jpg"
+                        alt="Shoes" /></figure>
+                <div class="card-body">
+                    <div class="card-title text-fontecinza flex justify-between">
+                        Bufê Maravilha
+                        <div class="rating">
+                            <div class="flex gap-1.5">
+                                <p>5,0</p>
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-amarelo" checked />
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-fontecinza">*Descrição*</p>
+                    <div class="card-actions justify-end">
+                        <div class="badge badge-info">Infantil</div>
+                        <div class="badge badge-success">Chá de bebê</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card bg-base-100 shadow-xl">
+                <figure><img
+                        src="https://www.folhavitoria.com.br/geral/blogs/portugues-em-dia/wp-content/uploads/2020/12/69.-Bufe.jpg"
+                        alt="Shoes" /></figure>
+                <div class="card-body">
+                    <div class="card-title text-fontecinza flex justify-between">
+                        Bufê Maravilha
+                        <div class="rating">
+                            <div class="flex gap-1.5">
+                                <p>5,0</p>
+                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-amarelo" checked />
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-fontecinza">*Descrição*</p>
+                    <div class="card-actions justify-end">
+                        <div class="badge badge-info">Infantil</div>
+                        <div class="badge badge-success">Chá de bebê</div>
+                    </div>
+                </div>
+            </div>
 
 
-                <?php endforeach;
-                ?>
-            </tbody>
-        </table>
+        </div>
+
+
     </main>
-
-
+    <script>
+        feather.replace();
+    </script>
 </body>
 
 </html>

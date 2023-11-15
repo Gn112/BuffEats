@@ -26,7 +26,7 @@ header('Content-Type: text/html; charset=UTF-8');
     <main class="min-h-screen">
 
         <!-- Carrossel/Div de filtros -->
-        <div class="rounded-b-lg w-full bg-branco sm:shadow-2xl carousel z-[1] fixed lg:flex md:justify-between md:bg-cinzafundo md:shadow-none md:relative md:m-0">
+        <div class="rounded-b-lg w-full bg-branco sm:shadow-2xl carousel z-[1] fixed md:flex md:justify-around md:bg-cinzafundo md:shadow-none md:relative md:m-0">
             <div class="carousel-item p-1.5">
                 <button class="btn bg-branco text-cinzafonte" onclick="my_modal_5.showModal()">
                     <i data-feather="map-pin" class="stroke-vermelho"></i>
@@ -154,6 +154,17 @@ header('Content-Type: text/html; charset=UTF-8');
                     </div>
                 </div>
             </div>
+            <div class="carousel-item bg-cinzafundo p-2">
+                <div class="card w-80 bg-base-100 shadow-xl m-2">
+                    <div class="card-body p-6 flex flex-row gap-5">
+                        <figure><img src="img/empresa_g_q.png" class="w-[40px]" /></figure>
+                        <div class="flex flex-col justify-center">
+                            <h2>Lorem Ipsun Buffet</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
 
         </div>
 
