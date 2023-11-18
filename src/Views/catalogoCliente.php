@@ -42,7 +42,7 @@ header('Content-Type: text/html; charset=UTF-8');
                 <div
                     class="hero-content flex flex-col p-10 justify-center items-center text-center gap-3 md:flex-row md:justify-start md:items-start md:text-start">
                     <!-- Imagem -->
-                    <img class="object-cover rounded-2xl w-36 h-36 md:w-64 md:h-64" src="img/empresa_g_q.png" alt="">
+                    <img class="object-cover rounded-2xl w-36 h-36 md:w-64 md:h-64" src="https://s3-sa-east-1.amazonaws.com/projetos-artes/fullsize%2F2016%2F10%2F21%2F18%2FLogo-e-Cartao-de-Visita-196430_86148_184505793_1976399543.jpg" alt="">
 
                     <!-- Textos -->
                     <div class="flex flex-col gap-4">

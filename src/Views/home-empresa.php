@@ -18,57 +18,54 @@ header('Content-Type: text/html; charset=UTF-8');
     <link rel="icon" type="image/x-icon" href="img/icon.png">
     <link rel="stylesheet" href="css/homeEmpresa.css">
     <script src="js/animations.js" defer></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
 </head>
 
 <body class="min-h-screen bg-cinzafundo">
-    <header class="drop-shadow-xl text-fontecinza bg-branco sticky top-0 z-10">
-        <section
-            class="max-w-full mx-auto p-6 flex justify-between itens-center md:flex md:items-center md:justify-between">
-            <a href="home-empresa.php">
-                <img src="img/logo.png">
-            </a>
-            <div>
-                <button id="hamburger-button" class="text-3xl md:hidden cursor-pointer">
-                    &#9776;
-                </button>
-                <nav class="hidden md:flex items-center space-x-3" aria-label="main">
-                    <a href="" class="text-lg font-medium text-decoration-none text-body-secondary">Home</a>
-                    <!-- <a href="#" class="text-lg font-medium text-decoration-none text-body-secondary">Pedidos</a> -->
-                    <a href="gerenciaEmpresa.php" class="text-lg font-medium text-decoration-none text-body-secondary">Gerencie sua empresa</a>
-                    <a href="adicionarProdutos.php" class="text-lg font-medium text-decoration-none text-body-secondary">Adicionar produtos</a>
-                    <a href="gerenciaProdutos.php" class="text-lg font-medium text-decoration-none text-body-secondary">Gerenciar produtos</a>
-                    <!-- <a href="#" class="text-lg font-medium text-decoration-none text-body-secondary">Quem somos</a> -->
-                    <a href="gerenciaEmpresa.php" id="empresa">
-                        <img class="d" src="img/empresa_p.png" alt="">
-                    </a>
-                    <a href="../Backend/logout_session.php" class="text-lg text-vermelho font-medium text-decoration-none text-body-danger">Sair</a>
-                </nav>
-            </div>
-        </section>
-        <section id="mobile-menu"
-            class="absolute top-0 bg-branco w-full text-3xl flex-col justify-content-center origin-top animate-open-menu hidden">
-            <button class="text-8xl self-end px-6">
-                &times;
-            </button>
-            <nav class="flex flex-col min-h-screen items-center py-8" aria-label="mobile">
-                <a href="#" class="w-full text-center p-6 hover:opacity-90">Home</a>
-                <!-- <a href="#" class="w-full text-center p-6 hover:opacity-90">Pedidos</a> -->
-                <a href="#" class="w-full text-center p-6 hover:opacity-90">Gerencie sua empresa</a>
-                <a href="adicionarProdutos.php" class="w-full text-center p-6 hover:opacity-90">Adicionar produtos</a>
-                <a href="gerenciaProdutos.php" class="w-full text-center p-6 hover:opacity-90">Gerenciar produtos</a>
-                <!-- <a href="#" class="w-full text-center p-6 hover:opacity-90">Quem somos</a> -->
-                <a href="profile.php" class="w-full text-center p-6 hover:opacity-90" id="empresa">
-                    Perfil
-                </a>
-                <a href="../Backend/logout_session.php" class="w-full text-center p-6 hover:opacity-90">Sair</a>
-            </nav>
-        </section>
-    </header>
+    <?php require_once("headers/_headerEmpresa.php") ?>
 
-    
+    <main class="min-h-screen flex place-content-center">
+        <div class="backgroundContainer bg-cinzafundo flex flex-col gap-6">
+            <!-- Pedidos (todos) -->
+            <div>
+                <div class="md:flex flex-col gap-4 items-center">
+                    <div class="text-center">
+                        <h1 class="titulo m-3 sm:m-0 text-2xl md:text-4xl">Pedidos</h1>
+                    </div>
+                    <!-- Tabelo -->
+                    <div class="overflow-x-auto md:w-9/12">
+                        <table class="table bg-branco p-1 rounded-md shadow-xl">
+                            <!-- head -->
+                            <thead>
+                                <tr>
+                                    <th class="text-lg font-medium">Prazo</th>
+                                    <th class="text-lg font-medium">Código do pedido</th>
+                                    <th class="text-lg font-medium">Valor total</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <!-- Aqui vai ter o loop dos pedidos -->
+                                <tr>
+                                    <td class="text-lg">11/11/2011</td>
+                                    <td class="text-lg">00001</td>
+                                    <td class="text-center text-lg">30,00</td>
+                                    <td class="">
+                                        <button class="redBtn w-full h-full m-0 p-0">Detalhes</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        feather.replace();
+    </script>
 </body>
 
 </html>
