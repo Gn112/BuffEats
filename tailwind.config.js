@@ -9,6 +9,7 @@ module.exports = {
         hoververmelho: "#be4d4d",
         branco: "#ffffff",
         fontecinza: "#463B3B",
+        fonteclaro: "#9A8282",
         hoverfontecinza: "#000000",
         cinzaclaro: "#F8F8F8",
         cinzafundo: "#EEEEEE",

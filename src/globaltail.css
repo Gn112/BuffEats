@@ -33,6 +33,21 @@
     {
         @apply w-4/5 my-8 mx-auto bg-cinzaclaro rounded-2xl shadow-xl p-8
     }
+
+    .backgroundContainer 
+    {
+        @apply w-full m-0 md:w-4/5 md:m-7 my-auto md:bg-branco rounded-2xl shadow-2xl p-7
+    }
+
+    .titulo {
+        @apply font-normal text-4xl text-fontecinza;
+    }
+    
+    .subtitulo {
+        @apply font-normal text-base text-fonteclaro;
+    }
+    
+      
 }
 
 .redBtn {
@@ -86,11 +101,11 @@
     transition: 0.4s;
 }
 
-.backgroundContainer {
+/* .backgroundContainer {
   width: 80%;
   margin: 30px auto; 
   background-color: #F8F8F8;
   border-radius: 15px;
   box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.2);
   padding: 30px;
-}
+} */
