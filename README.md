@@ -28,7 +28,7 @@ Lembre-se de rodar esse comando sempre que der 'pull'.
 
 Com isso, o repositório na sua máquina deve estar pronto para ser desenvolvido
 
-Lembre sempre sempre de commitar em sua branch correta. Ex: ``` back-sprint5 ou front-sprint5 ```. A versão final só será convergida na ``` main ``` quando todas as partes estiverem finalizadas.
+Lembre sempre de commitar em sua branch correta. Ex: ``` back-sprint5 ou front-sprint5 ```. A versão final só será convergida na ``` main ``` quando todas as partes estiverem finalizadas.
 
 
 ## 🤝 Fundadores
