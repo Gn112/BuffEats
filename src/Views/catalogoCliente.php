@@ -20,7 +20,7 @@ header('Content-Type: text/html; charset=UTF-8');
     <script src="../../node_modules/feather-icons/dist/feather.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    
+
 </head>
 
 <!-- 
@@ -33,7 +33,7 @@ header('Content-Type: text/html; charset=UTF-8');
 
 <body class="min-h-screen bg-cinzafundo">
     <!-- Chama a header de um arquivo separado -->
-    <?php require_once('headers/_headerCliente.php'); ?>
+    <?php require_once('headers/_headerDeslogado.php'); ?>
 
     <main class="min-h-screen flex place-content-center">
         <div class="backgroundContainer flex flex-col gap-6">
@@ -42,26 +42,26 @@ header('Content-Type: text/html; charset=UTF-8');
                 <div
                     class="hero-content flex flex-col p-10 justify-center items-center text-center gap-3 md:flex-row md:justify-start md:items-start md:text-start">
                     <!-- Imagem -->
-                    <img class="object-cover rounded-2xl w-36 h-36 md:w-64 md:h-64" src="https://s3-sa-east-1.amazonaws.com/projetos-artes/fullsize%2F2016%2F10%2F21%2F18%2FLogo-e-Cartao-de-Visita-196430_86148_184505793_1976399543.jpg" alt="">
+                    <img class="object-cover rounded-2xl w-36 h-36 md:w-64 md:h-64" src="img/saulacakes.jpg" alt="">
 
                     <!-- Textos -->
                     <div class="flex flex-col gap-4">
                         <div>
-                            <h1 class="titulo text-2xl md:text-4xl">*Nome da Empresa*</h1>
+                            <h1 class="titulo text-2xl md:text-4xl">Saula Cakes</h1>
                         </div>
 
                         <div>
                             <span class="subtitulo md:text-2xl">
-                                Especialização:
-                                <div class="badge badge-info">Infantil</div>
+                                Especializações:
+                                <div class="badge font-semibold text-md badge-primary">Confeitaria</div>
+                                <div class="badge font-semibold text-md badge-info">Doces</div>
+                                <div class="badge font-semibold text-md badge-neutral">Bolos</div>
                             </span>
                         </div>
 
                         <div>
-                            <p class="subtitulo break-all md:text-2xl">*Biografia: Lorem orem Ipsum is simply dummy text
-                                of
-                                the printing
-                                and typesetting industry.*</p>
+                            <p class="subtitulo break-all md:text-2xl">Especialista em confeitaria em Belo Horizonte.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -88,13 +88,38 @@ header('Content-Type: text/html; charset=UTF-8');
 
                                 <!-- Aqui vai ter o loop dos produtos -->
                                 <tr>
-                                    <td class="text-lg">Produto Exemplo 1*</td>
-                                    <td class="text-center text-lg">0,10*</td>
+                                    <td class="text-lg">Bombom de brigadeiro</td>
+                                    <td class="text-center text-lg">R$ 3,50</td>
                                     <td class="flex flex-col items-center md:flex-row gap-3">
-                                        <button class="bg-vermelho text-white rounded-lg w-8 h-8">-</button>
-                                        <input class="text-center text-lg border rounded-md" type="number"
-                                            name="quantidade" value="1" min="1" max="999">
-                                        <button class="bg-green-500 text-white rounded-lg w-8 h-8">+</button>
+
+                                        <button id="min_1" onclick="decrementaValor(1)" class="bg-vermelho text-white rounded-lg w-8 h-8">-</button>
+                                        <input id="produto1" class="text-center text-lg border rounded-md"
+                                            type="number" name="quantidade" value="0" min="0" max="999">
+                                        <button id="plus_1" onclick="incrementaValor(1)" class="bg-green-500 text-white rounded-lg w-8 h-8">+</button>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-lg">Bombom Ninho com Frutas Vermelhas</td>
+                                    <td class="text-center text-lg">R$ 3,50</td>
+                                    <td class="flex flex-col items-center md:flex-row gap-3">
+                                        <button id="min_2" onclick="decrementaValor(2)" class="bg-vermelho text-white rounded-lg w-8 h-8">-</button>
+                                        <input id="produto2" class="text-center text-lg border rounded-md"
+                                            type="number" name="quantidade" value="0" min="0" max="999">
+                                        <button id="plus_2" onclick="incrementaValor(2)" class="bg-green-500 text-white rounded-lg w-8 h-8">+</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-lg">Bombom de Nozes</td>
+                                    <td class="text-center text-lg">R$ 3,50</td>
+                                    <td class="flex flex-col items-center md:flex-row gap-3">
+
+                                        <button id="min_3" onclick="decrementaValor(3)" class="bg-vermelho text-white rounded-lg w-8 h-8">-</button>
+                                        <input id="produto3" class="text-center text-lg border rounded-md"
+                                            type="number" name="quantidade" value="0" min="0" max="999" />
+                                        <button id="plus_3" onclick="incrementaValor(3)"
+                                            class="bg-green-500 text-white rounded-lg w-8 h-8">+</button>
+
                                     </td>
                                 </tr>
                             </tbody>
@@ -103,21 +128,12 @@ header('Content-Type: text/html; charset=UTF-8');
                 </div>
             </div>
 
-            <!-- Observações -->
-            <div class="flex flex-col text-center gap-3 items-center">
-                <div>
-                    <h2 class="titulo text-2xl md:text-4xl">Observações</h2>
-                    <h2 class="subtitulo md:text-xl">Descreva as possíveis observações</h2>
-                </div>
-                <input type="text" class="rounded-md p-2 shadow-md w-9/12" placeholder="Sem lactose, pouco açucar, etc">
-            </div>
-
             <hr class="bg-fontecinza">
             <!-- Finalização -->
             <div class="flex flex-col text-center gap-3 md:justify-between items-center">
                 <div>
                     <span class="text-fontecinza md:text-xl">Total:</span>
-                    <span class="text-fontecinza font-bold md:text-xl">R$10,00</span>
+                    <span id="totalPedido" class="text-fontecinza font-bold md:text-xl">R$0,00</span>
                 </div>
                 <button class="redBtn btn" onclick="confirmaPedido()">REALIZAR PEDIDO</button>
             </div>
@@ -125,8 +141,7 @@ header('Content-Type: text/html; charset=UTF-8');
     </main>
 
     <script>
-        // Script de ícones
-        feather.replace();
+
     </script>
 
     <!-- Script da biblioteca de modals -->

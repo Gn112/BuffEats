@@ -10,8 +10,8 @@
             </button>
             <nav class="hidden md:flex items-center space-x-3" aria-label="main">
                 <a href="#" class="text-lg font-medium text-decoration-none text-body-secondary">Home</a>
-                <!-- <a href="#" class="text-lg font-medium text-decoration-none text-body-secondary">Quem Somos</a> -->
-                <a href="login.php" class="redBtn" id="entrar">Entrar</a>
+                <a href="../../index.php" class="text-lg font-medium text-decoration-none text-body-secondary">Quem Somos</a>
+                <a href="#" class="redBtn" id="entrar">Entrar</a>
             </nav>
         </div>
     </section>
@@ -22,8 +22,8 @@
         </button>
         <nav class="flex flex-col min-h-screen items-center py-8" aria-label="mobile">
             <a href="#" class="w-full text-center p-6 hover:opacity-90">Home</a>
-            <!-- <a href="#" class="w-full text-center p-6 hover:opacity-90">Quem Somos</a> -->
-            <a href="login.php" class="w-full text-center p-6 hover:opacity-90" id="entrar">Entrar</a>
+            <a href="../../index.php#" class="w-full text-center p-6 hover:opacity-90">Quem Somos</a>
+            <a href="#" class="w-full text-center p-6 hover:opacity-90" id="entrar">Entrar</a>
         </nav>
     </section>
 </header>

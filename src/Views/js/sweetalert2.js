@@ -1,13 +1,14 @@
 
 function confirmaPedido() {
     Swal.fire({
-        title: 'Confirmar pedido?',
-        text: 'Clique no botão para confirmar o pedido ou voltar a tela anterior',
-        icon: 'question',
+        title: 'Pedido finalizado com sucesso!',
+        text: 'Obrigado por utilizar a BuffEats!',
+        width: 600,
+        color: "#463B3B",
+        iconHtml: '<img class="" src="./img/sucesso.png">',
         confirmButtonText: 'CONFIRMAR',
-        confirmButtonColor: "#79BD23",
-        showCancelButton: true,
-        allowOutsideClick: false,
+        confirmButtonColor: "#BD2323",
+        allowOutsideClick: true,
         allowEscapeKey: false,
 
     })
@@ -15,31 +16,38 @@ function confirmaPedido() {
     {
         if (result.isConfirmed)
         {
-            pedidoConfirmado();
+            window.location.href = "../../index.php";
         }
     });
 };
 
 
-function pedidoConfirmado() 
-{
-    setTimeout(function() {
-        location.reload();
-    }, 5000);
 
-    Swal.fire(
-        {
-            title: 'Pedido confirmado com sucesso!',
-            text: 'Clique no botão para voltar para a tela de pedidos ou espere 5 segundos.',
-            icon: 'success',
-            allowOutsideClick: false,
-            allowEscapeKey: false,
-        })
-        .then((result) => 
-        {
-            if(result.isConfirmed)
-            {
-                location.reload();
-            }
-        })
+function decrementaValor(inputid) {
+    var input = document.getElementById('produto' + inputid);
+    if(input.value != 0)
+    {
+        input.value = parseInt(input.value) - 1;
+    }
+    calcularTotal();
 };
+
+function incrementaValor(inputid) {
+    var input = document.getElementById('produto' + inputid);
+    if(input.value != 99)
+    {
+        input.value = parseInt(input.value) + 1;
+    }
+    calcularTotal();
+};
+
+
+function calcularTotal() {
+    var input1 = document.getElementById('produto1');
+    var input2 = document.getElementById('produto2');
+    var input3 = document.getElementById('produto3');
+    
+    var total = parseInt(input1.value) * 3.50 + parseInt(input2.value) * 3.50 + parseInt(input3.value) * 3.50;
+    
+    document.getElementById('totalPedido').textContent = 'R$ ' + total.toFixed(2);
+}

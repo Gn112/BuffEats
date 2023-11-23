@@ -20,7 +20,7 @@
             <span class="landing_subtitle">Com a BuffEats você pode escolher buffets<br>de qualidade e com preços
                 justos.</span>
 
-            <a href="src/Views/home-deslogado.php" id="recuperar" class="small_button">
+            <a href="src/Views/catalogoCliente.php" class="small_button">
                 Tenho interesse!
             </a>
         </div>
