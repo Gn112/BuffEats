@@ -7,7 +7,7 @@ function confirmaPedido() {
         color: "#463B3B",
         iconHtml: '<img class="" src="./img/sucesso.png">',
         confirmButtonText: 'CONFIRMAR',
-        confirmButtonColor: "#BD2323",
+        confirmButtonColor: '#BD2323',
         allowOutsideClick: true,
         allowEscapeKey: false,
 

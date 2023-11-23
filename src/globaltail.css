@@ -50,6 +50,20 @@
       
 }
 
+
+.swal2-confirm, .swal2-styled
+{
+    background-color: #BD2323 !important;
+    font-family: 'Outfit'!important;
+    font-weight: 300 !important;
+}
+
+.swal2-title, .swal2-html-container
+{
+    font-family: 'Outfit'!important;
+    font-weight: 400!important;
+}
+
 .redBtn {
     color: #ffffff;
     background-color: #BD2323;

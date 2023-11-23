@@ -938,38 +938,12 @@ html {
   color: var(--fallback-pc,oklch(var(--pc)/var(--tw-text-opacity)));
 }
 
-.badge-secondary {
-  --tw-border-opacity: 1;
-  border-color: var(--fallback-s,oklch(var(--s)/var(--tw-border-opacity)));
-  --tw-bg-opacity: 1;
-  background-color: var(--fallback-s,oklch(var(--s)/var(--tw-bg-opacity)));
-  --tw-text-opacity: 1;
-  color: var(--fallback-sc,oklch(var(--sc)/var(--tw-text-opacity)));
-}
-
-.badge-accent {
-  --tw-border-opacity: 1;
-  border-color: var(--fallback-a,oklch(var(--a)/var(--tw-border-opacity)));
-  --tw-bg-opacity: 1;
-  background-color: var(--fallback-a,oklch(var(--a)/var(--tw-bg-opacity)));
-  --tw-text-opacity: 1;
-  color: var(--fallback-ac,oklch(var(--ac)/var(--tw-text-opacity)));
-}
-
 .badge-info {
   border-color: transparent;
   --tw-bg-opacity: 1;
   background-color: var(--fallback-in,oklch(var(--in)/var(--tw-bg-opacity)));
   --tw-text-opacity: 1;
   color: var(--fallback-inc,oklch(var(--inc)/var(--tw-text-opacity)));
-}
-
-.badge-error {
-  border-color: transparent;
-  --tw-bg-opacity: 1;
-  background-color: var(--fallback-er,oklch(var(--er)/var(--tw-bg-opacity)));
-  --tw-text-opacity: 1;
-  color: var(--fallback-erc,oklch(var(--erc)/var(--tw-text-opacity)));
 }
 
 .badge-outline.badge-neutral {
@@ -982,24 +956,9 @@ html {
   color: var(--fallback-p,oklch(var(--p)/var(--tw-text-opacity)));
 }
 
-.badge-outline.badge-secondary {
-  --tw-text-opacity: 1;
-  color: var(--fallback-s,oklch(var(--s)/var(--tw-text-opacity)));
-}
-
-.badge-outline.badge-accent {
-  --tw-text-opacity: 1;
-  color: var(--fallback-a,oklch(var(--a)/var(--tw-text-opacity)));
-}
-
 .badge-outline.badge-info {
   --tw-text-opacity: 1;
   color: var(--fallback-in,oklch(var(--in)/var(--tw-text-opacity)));
-}
-
-.badge-outline.badge-error {
-  --tw-text-opacity: 1;
-  color: var(--fallback-er,oklch(var(--er)/var(--tw-text-opacity)));
 }
 
 .btn:active:hover,
@@ -1506,10 +1465,6 @@ html {
   align-self: flex-end;
 }
 
-.overflow-visible {
-  overflow: visible;
-}
-
 .overflow-x-auto {
   overflow-x: auto;
 }
@@ -1615,11 +1570,6 @@ html {
   line-height: 1.75rem;
 }
 
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
 .font-bold {
   font-weight: 700;
 }
@@ -1671,6 +1621,19 @@ html {
 /* Classes Personalizadas */
 
 /* Valores padrões */
+
+.swal2-confirm, .swal2-styled
+{
+  background-color: #BD2323 !important;
+  font-family: 'Outfit'!important;
+  font-weight: 300 !important;
+}
+
+.swal2-title, .swal2-html-container
+{
+  font-family: 'Outfit'!important;
+  font-weight: 400!important;
+}
 
 .redBtn {
   color: #ffffff;
