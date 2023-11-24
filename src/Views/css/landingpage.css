@@ -53,7 +53,7 @@ body{
     background: url(../img/fundo_landing.png);
     background-repeat: no-repeat;
     overflow: hidden;
-    /*background-size: cover;*/  
+    background-size: contain; 
     width: 100%;
     background-color: var(--color-cinzafundo);  
     font-family: 'Outfit'; 

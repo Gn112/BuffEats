@@ -88,7 +88,7 @@ header('Content-Type: text/html; charset=UTF-8');
 
                                 <!-- Aqui vai ter o loop dos produtos -->
                                 <tr>
-                                    <td class="text-lg">Bombom de brigadeiro</td>
+                                    <td class="text-lg">Bombom de Brigadeiro</td>
                                     <td class="text-center text-lg">R$ 3,50</td>
                                     <td class="flex flex-col items-center md:flex-row gap-3">
 
@@ -100,7 +100,7 @@ header('Content-Type: text/html; charset=UTF-8');
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="text-lg">Bombom Ninho com Frutas Vermelhas</td>
+                                    <td class="text-lg">Bombom de Ninho com Frutas Vermelhas</td>
                                     <td class="text-center text-lg">R$ 3,50</td>
                                     <td class="flex flex-col items-center md:flex-row gap-3">
                                         <button id="min_2" onclick="decrementaValor(2)" class="bg-vermelho text-white rounded-lg w-8 h-8">-</button>
