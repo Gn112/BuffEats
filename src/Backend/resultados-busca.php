@@ -58,7 +58,7 @@ function listarRegistrosFiltro($conn, $filtro)
 
 $codfiltro=0;
 
-for($c = 1; $c <= 6; $c++){
+for($c = 1; $c <= 7; $c++){
     if (isset($_POST["flt$c"]) == true) {
         $codfiltro=$c;
     }
