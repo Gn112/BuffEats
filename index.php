@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="src/Views/css/landingpage.css">
     <title>BuffEats | Início</title>
-    <link rel="icon" type="image/x-icon" href="../BuffeEats/interno_landing/img/icon.png">
+    <link rel="icon" type="image/x-icon" href="src/Views/img/icon.png">
 </head>
 
 <body>
