@@ -89,7 +89,7 @@ header('Content-Type: text/html; charset=UTF-8');
                                 <!-- Aqui vai ter o loop dos produtos -->
                                 <tr>
                                     <td class="text-lg">Bombom de Brigadeiro</td>
-                                    <td class="text-center text-lg">R$ 3,50</td>
+                                    <td class="text-center text-lg">R$ 4.00</td>
                                     <td class="flex flex-col items-center md:flex-row gap-3">
 
                                         <button id="min_1" onclick="decrementaValor(1)" class="bg-vermelho text-white rounded-lg w-8 h-8">-</button>
@@ -101,7 +101,7 @@ header('Content-Type: text/html; charset=UTF-8');
                                 </tr>
                                 <tr>
                                     <td class="text-lg">Bombom de Ninho com Frutas Vermelhas</td>
-                                    <td class="text-center text-lg">R$ 3,50</td>
+                                    <td class="text-center text-lg">R$ 4.00</td>
                                     <td class="flex flex-col items-center md:flex-row gap-3">
                                         <button id="min_2" onclick="decrementaValor(2)" class="bg-vermelho text-white rounded-lg w-8 h-8">-</button>
                                         <input id="produto2" class="text-center text-lg border rounded-md"
@@ -111,7 +111,7 @@ header('Content-Type: text/html; charset=UTF-8');
                                 </tr>
                                 <tr>
                                     <td class="text-lg">Bombom de Nozes</td>
-                                    <td class="text-center text-lg">R$ 3,50</td>
+                                    <td class="text-center text-lg">R$ 4.00</td>
                                     <td class="flex flex-col items-center md:flex-row gap-3">
 
                                         <button id="min_3" onclick="decrementaValor(3)" class="bg-vermelho text-white rounded-lg w-8 h-8">-</button>

@@ -47,7 +47,7 @@ function calcularTotal() {
     var input2 = document.getElementById('produto2');
     var input3 = document.getElementById('produto3');
     
-    var total = parseInt(input1.value) * 3.50 + parseInt(input2.value) * 3.50 + parseInt(input3.value) * 3.50;
+    var total = parseInt(input1.value) * 4.00 + parseInt(input2.value) * 4.00 + parseInt(input3.value) * 4.00;
     
     document.getElementById('totalPedido').textContent = 'R$ ' + total.toFixed(2);
 }
